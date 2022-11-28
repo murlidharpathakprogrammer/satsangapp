@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "782088168142",
+    "project_id": "santmat-satsang-b6dfa",
+    "storage_bucket": "santmat-satsang-b6dfa.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:782088168142:android:d9f39f4250d083547c269f",
+        "android_client_info": {
+          "package_name": "com.santmatsatsang.satsangapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "782088168142-05rg9jtldot4h8f53d31laqv33jlpm6j.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDhfGbFAjUGRN6_1NrQIvdgqcAplxKnASE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "782088168142-05rg9jtldot4h8f53d31laqv33jlpm6j.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
