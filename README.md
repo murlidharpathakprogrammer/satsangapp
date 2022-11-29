@@ -1,6 +1,6 @@
 # satsangapp
 
-A new Flutter project.
+A Flutter project for a Yogashram.
 
 ## Getting Started
 
