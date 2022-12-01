@@ -17,7 +17,7 @@ class QueryPage extends StatelessWidget{
                 onPressed: (){
                   //action code for button 2
                 },
-                child: Text("WhatsApp"),
+                child: const Text("WhatsApp"),
               )
           ), //button first
 
@@ -29,7 +29,7 @@ class QueryPage extends StatelessWidget{
                   //action code for button 2
                 },
                 // child: const Icon(Icons.whatsapp),
-                child: Text("Facebook"),
+                child: const Text("Facebook"),
               )
           ), // button second
 
@@ -41,7 +41,7 @@ class QueryPage extends StatelessWidget{
                   //action code for button 2
                 },
                 // child: const Icon(Icons.whatsapp),
-                child: Text("Email"),
+                child: const Text("Email"),
               )
           ),// button third
 

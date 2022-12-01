@@ -128,21 +128,21 @@ class _MyHomePageState extends State<MyHomePage> {
     ),
   );
 
-  void _showCurrentEpubCfi(context) {
-    final cfi = _epubReaderController.generateEpubCfi();
-
-    if (cfi != null) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
-          content: Text(cfi),
-          action: SnackBarAction(
-            label: 'GO',
-            onPressed: () {
-              _epubReaderController.gotoEpubCfi(cfi);
-            },
-          ),
-        ),
-      );
-    }
-  }
+  // void _showCurrentEpubCfi(context) {
+  //   final cfi = _epubReaderController.generateEpubCfi();
+  //
+  //   if (cfi != null) {
+  //     ScaffoldMessenger.of(context).showSnackBar(
+  //       SnackBar(
+  //         content: Text(cfi),
+  //         action: SnackBarAction(
+  //           label: 'GO',
+  //           onPressed: () {
+  //             _epubReaderController.gotoEpubCfi(cfi);
+  //           },
+  //         ),
+  //       ),
+  //     );
+  //   }
+  // }
 }

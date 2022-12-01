@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:iconly/iconly.dart';
-import 'package:provider/provider.dart';
+// import 'package:iconly/iconly.dart';
+// import 'package:provider/provider.dart';
 import 'package:satsangapp/screens/user.dart';
 // import 'package:satsang/screens/categories.dart';
 // import 'package:satsang/screens/downloads.dart';
 // import 'package:satsang/screens/home_screen.dart';
 // import 'package:satsang/screens/user.dart';
 
-import '../provider/dark_theme_provider.dart';
-import 'categories.dart';
-import 'downloads.dart';
+// import '../provider/dark_theme_provider.dart';
+// import 'categories.dart';
+// import 'downloads.dart';
 import 'home_screen.dart';
 
 class BottomBarScreen extends StatefulWidget {
@@ -21,23 +21,23 @@ class BottomBarScreen extends StatefulWidget {
 }
 
 class _BottomBarScreenState extends State<BottomBarScreen> {
-  int _selectedIndex = 0;
-  final List<Map<String, dynamic>> _pages = [
-    {'page': const HomeScreen(), 'title': 'संतमत-सत्संग'},
+  // int _selectedIndex = 0;
+  // final List<Map<String, dynamic>> _pages = [
+  //   {'page': const HomeScreen(), 'title': 'संतमत-सत्संग'},
     // {'page': const CategoriesScreen(), 'title': 'Home'},
     // {'page': const DownloadsScreen(), 'title': 'Downloads'},
     // {'page': const UserScreen(), 'title': 'Users'},
-  ];
-  void _selectedPage(int index) {
-    setState(() {
-      _selectedIndex = index;
-    });
-  }
+  // ];
+  // void _selectedPage(int index) {
+  //   setState(() {
+  //     _selectedIndex = index;
+  //   });
+  // }
 
   @override
   Widget build(BuildContext context) {
-    final themeState = Provider.of<DarkThemeProvider>(context);
-    bool _isDark = themeState.getDarkTheme;
+    // final themeState = Provider.of<DarkThemeProvider>(context);
+    // bool _isDark = themeState.getDarkTheme;
     return Scaffold(
       appBar: AppBar(
         title: Text('संतमत-सत्संग',

@@ -61,6 +61,8 @@ dependencies:
   epub_view: ^3.0.0
   internet_file: ^1.0.0+2
   circular_bottom_navigation: ^2.3.0
+  intl: ^0.17.0
+  fluttertoast: ^8.1.1
 
 
 dev_dependencies:

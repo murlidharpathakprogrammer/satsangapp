@@ -1,9 +1,8 @@
-import 'package:flutter/cupertino.dart';
+// import 'package:flutter/cupertino.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:animated_text_kit/animated_text_kit.dart';
+// import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 import 'package:satsangapp/signup_page.dart';
 import 'package:satsangapp/widgets/text_widget.dart';
 
@@ -77,7 +76,7 @@ class _LoginPageState extends State<LoginPage> {
                         BoxShadow(
                             blurRadius: 10,
                             spreadRadius: 7,
-                            offset: Offset(1, 1),
+                            offset: const Offset(1, 1),
                             color: Colors.grey.withOpacity(0.2))
                       ]),
                   child: TextField(
@@ -98,14 +97,14 @@ class _LoginPageState extends State<LoginPage> {
                           ),
                         ),
                         enabledBorder: OutlineInputBorder(
-                            borderSide: BorderSide(
+                            borderSide: const BorderSide(
                               color: Colors.white,
                               width: 1.0,
                             ),
                             borderRadius: BorderRadius.circular(30)),
                         border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(30))),
-                    style: TextStyle(color: Colors.green),
+                    style: const TextStyle(color: Colors.green),
                   ),
                 ),
                 SizedBox(
@@ -209,17 +208,17 @@ class _LoginPageState extends State<LoginPage> {
           if (!isKeyBoard)
             RichText(
                 text: TextSpan(
-                    text: "Don\'t have an account?",
+                    text: "Don't have an account?",
                     style: TextStyle(color: Colors.grey[500], fontSize: 20),
                     children: [
                   TextSpan(
                     text: " Create",
-                    style: TextStyle(
+                    style: const TextStyle(
                         color: Colors.black,
                         fontSize: 20,
                         fontWeight: FontWeight.bold),
                     recognizer: TapGestureRecognizer()
-                      ..onTap = () => Get.to(() => SignUpPage()),
+                      ..onTap = () => Get.to(() => const SignUpPage()),
                   )
                 ])
             )

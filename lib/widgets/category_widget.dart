@@ -17,7 +17,7 @@ class _CategoryWidgetState extends State<CategoryWidget> {
   @override
   Widget build(BuildContext context) {
     final Color color = Utils(context).color;
-    final theme = Utils(context).getTheme;
+    // final theme = Utils(context).getTheme;
     Size size = Utils(context).getScreenSize;
     return Material(
       color: Theme.of(context).cardColor.withOpacity(0.9),

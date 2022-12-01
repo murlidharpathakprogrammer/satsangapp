@@ -3,7 +3,7 @@ import 'package:iconly/iconly.dart';
 import 'package:provider/provider.dart';
 
 import '../provider/dark_theme_provider.dart';
-import '../services/utils.dart';
+// import '../services/utils.dart';
 
 class AshramWidget extends StatelessWidget{
   const AshramWidget({Key? key}) : super(key: key);
@@ -11,11 +11,11 @@ class AshramWidget extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     final themeState = Provider.of<DarkThemeProvider>(context);
-    double _screenWidth = MediaQuery.of(context).size.width;
+    // double _screenWidth = MediaQuery.of(context).size.width;
     // final Color color = themeState.getDarkTheme ? Colors.white : Colors.black;
-    final Color color = themeState.getDarkTheme ? Colors.black : Colors.white;
-    final Color txtcol = themeState.getDarkTheme ? Colors.red : Colors.deepOrange;
-    final Color captionColor = themeState.getDarkTheme ? Colors.white : Colors.black;
+    // final Color color = themeState.getDarkTheme ? Colors.black : Colors.white;
+    // final Color txtcol = themeState.getDarkTheme ? Colors.red : Colors.deepOrange;
+    // final Color captionColor = themeState.getDarkTheme ? Colors.white : Colors.black;
     final Color cardColor = themeState.getDarkTheme ? Colors.black87 : Colors.white;
 
 
@@ -25,13 +25,14 @@ class AshramWidget extends StatelessWidget{
       body: ListView.builder(
           itemCount: 10,
           itemBuilder: (BuildContext context, int index) {
-            Size size = Utils(context).getScreenSize;
+            // Size size = Utils(context).getScreenSize;
 
             return InkWell(
               splashColor: Colors.red,
               onTap: (){print('clicked');},
               child: Card(
                 shadowColor: Colors.red,
+                color: cardColor,
                 child: const SizedBox(
                   width: 200,
                   height: 100,
@@ -45,7 +46,6 @@ class AshramWidget extends StatelessWidget{
                     ),
                   ),
                 ),
-                color: cardColor,
               ),
             );
             // return const Card(

@@ -1,21 +1,16 @@
 import 'dart:async';
 
-import 'package:epub_view/epub_view.dart';
 import 'package:fancy_shimmer_image/fancy_shimmer_image.dart';
-import 'package:firebase_storage/firebase_storage.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:iconly/iconly.dart';
 import 'package:provider/provider.dart';
-import 'package:satsangapp/player/audio_player.dart';
 import 'package:satsangapp/screens/epub_reader.dart';
-import 'package:satsangapp/screens/pub_reader.dart';
 import 'package:satsangapp/widgets/text_widget.dart';
 import '../provider/dark_theme_provider.dart';
-import '../services/utils.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 class Books extends StatefulWidget {
+  const Books({Key? key}) : super(key: key);
+
   @override
   _BooksState createState() => _BooksState();
 }
@@ -24,6 +19,20 @@ class Books extends StatefulWidget {
 class _BooksState extends State<Books> {
   // int counter = 0;
   List _booksDetails =[];
+  late FixedExtentScrollController controller;
+
+  @override
+  void initState(){
+    fetchBookDetails();
+    super.initState();
+    controller = FixedExtentScrollController();
+  }
+
+  @override
+  void dispose(){
+    controller.dispose();
+    super.dispose();
+  }
 
   fetchBookDetails() async{
     var _firestoreInstance = FirebaseFirestore.instance;
@@ -46,28 +55,22 @@ class _BooksState extends State<Books> {
     return qn.docs;
   }
 
-  @override
-  void initState(){
-    fetchBookDetails();
-
-    super.initState();
-  }
 
   StreamController counterController = StreamController();
   @override
   Widget build(BuildContext context) {
     final themeState = Provider.of<DarkThemeProvider>(context);
-    double _screenWidth = MediaQuery.of(context).size.width;
-    final Color color = themeState.getDarkTheme ? Colors.black : Colors.white;
-    final Color txtcol =
-    themeState.getDarkTheme ? Colors.red : Colors.deepOrange;
+    // double _screenWidth = MediaQuery.of(context).size.width;
+    // final Color color = themeState.getDarkTheme ? Colors.black : Colors.white;
+    // final Color txtcol =
+    // themeState.getDarkTheme ? Colors.red : Colors.deepOrange;
     final Color captionColor =
     themeState.getDarkTheme ? Colors.white : Colors.black;
     final Color cardColor =
     themeState.getDarkTheme ? const Color.fromRGBO(53, 93, 113, 0.8) : const Color.fromRGBO(
         255, 245, 200, 0.9);
     final double screenWidth = MediaQuery.of(context).size.width;
-    final double screenHeight = MediaQuery.of(context).size.height;
+    // final double screenHeight = MediaQuery.of(context).size.height;
     FirebaseFirestore db = FirebaseFirestore.instance;
 
 
@@ -110,8 +113,8 @@ class _BooksState extends State<Books> {
                     splashColor: Colors.deepPurple,
                     onTap: (){
                       print("Firebase Book Card tapped");
-                      print("Title: " + document['bookTitle']);
-                      String bookAsset = "${document['author']}";
+                      print({"Title: " + document['bookTitle']});
+                      // String bookAsset = "${document['author']}";
                       String bookUrl = "${document['bookUrl']}";
                       Navigator.push(context, MaterialPageRoute(builder: (context) => MyePubApp(bookUrl)));
                       // Navigator.push(context,
@@ -128,7 +131,7 @@ class _BooksState extends State<Books> {
                               children: [
                                 SizedBox(
                                   // height: 270,
-                                    width: screenWidth/3.5,
+                                    width: screenWidth*0.3,
                                     child: Padding(
                                       padding: const EdgeInsets.all(5.0),
                                       child: FancyShimmerImage(
@@ -143,22 +146,20 @@ class _BooksState extends State<Books> {
                                     )
                                 ),
                                 SizedBox(
-                                  width: screenWidth/25,
+                                  width: screenWidth*0.05,
                                   // height: 300,
                                 ),
-                                Center(
-                                  child: SizedBox(
-                                    height: 150,
-                                    width: screenWidth/2.4,
-                                    child: Column(
-                                      children: [
-                                        TextWidget(
-                                          text: "${document['bookTitle']}",
-                                          color: captionColor,
-                                          textSize: 23,
-                                        ),
-                                        TextWidget(text: "${document['author']}", color: captionColor, textSize:15,),
-                                      ],
+                                SizedBox(
+                                  height: 150,
+                                  width: screenWidth*0.5,
+                                  child: Padding(
+                                    padding: const EdgeInsets.only(right: 3.0),
+                                    child: TextWidget(
+                                      text: "${document['bookTitle']}",
+                                      color: captionColor,
+                                      textSize: 23,
+
+
                                     ),
                                   ),
                                 ),
@@ -167,13 +168,6 @@ class _BooksState extends State<Books> {
                             ),
                           ),
                         ),
-                        SizedBox(
-                          width: _screenWidth/10,
-                          child: GestureDetector(
-                            // onTap: ,
-                            child: const Icon(Icons.download),
-                          ),
-                        )
                       ],
                     ),
                   ),

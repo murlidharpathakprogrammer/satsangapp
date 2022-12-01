@@ -9,6 +9,7 @@ class BhajanScreen extends StatefulWidget {
 }
 
 class _BhajanScreenState extends State<BhajanScreen> {
+  @override
   Widget build(BuildContext context){
     return Scaffold(
       appBar: AppBar(

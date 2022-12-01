@@ -1,4 +1,4 @@
-import 'dart:typed_data';
+// import 'dart:typed_data';
 
 import 'package:epub_view/epub_view.dart';
 import 'package:flutter/material.dart';
@@ -30,7 +30,7 @@ String bookUrl;
       // document: EpubDocument.openData(InternetFile.get('https://link.to/book.epub')),
       document: EpubDocument.openAsset(bookUrl),
       // Set start point
-      epubCfi: 'epubcfi(/6/6[chapter-2]!/4/2/1612)',
+      // epubCfi: 'epubcfi(/6/6[chapter-2]!/4/2/1612)',
     );
   }
 
@@ -43,13 +43,13 @@ String bookUrl;
         title: EpubViewActualChapter(
             controller: _epubController,
             builder: (chapterValue) => Text(
-                  'Chapter: ' +
-                      (chapterValue?.chapter?.Title
+                  chapterValue?.chapter?.Title
                               ?.replaceAll('\n', '')
                               .trim() ??
-                          ''),
+                          '',
                   textAlign: TextAlign.start,
                 )),
+        backgroundColor: Colors.orange,
       ),
       // Show table of contents
       drawer: Drawer(

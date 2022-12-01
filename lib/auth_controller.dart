@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:satsangapp/login_page.dart';
 import 'package:satsangapp/screens/btm_bar.dart';
-import 'package:satsangapp/screens/home_screen.dart';
+// import 'package:satsangapp/screens/home_screen.dart';
 
 class AuthController extends GetxController {
   static AuthController instance = Get.find();
@@ -25,9 +25,9 @@ class AuthController extends GetxController {
     if(user==null){
 
       print("login page");
-      Get.offAll(()=>LoginPage());
+      Get.offAll(()=>const LoginPage());
     }else{
-      Get.offAll(()=>BottomBarScreen());
+      Get.offAll(()=>const BottomBarScreen());
     }
   }
 
@@ -42,7 +42,7 @@ class AuthController extends GetxController {
       Get.snackbar("About User", "User message",
           backgroundColor: Colors.redAccent,
           snackPosition: SnackPosition.BOTTOM,
-          titleText: Text(
+          titleText: const Text(
             "Account creation failed",
             style: TextStyle(
                 color: Colors.white
@@ -50,7 +50,7 @@ class AuthController extends GetxController {
           ),
           messageText: Text(
               e.toString(),
-              style: TextStyle(
+              style: const TextStyle(
                   color: Colors.white
               )
           )
@@ -65,7 +65,7 @@ class AuthController extends GetxController {
       Get.snackbar("About Login", "Login message",
           backgroundColor: Colors.redAccent,
           snackPosition: SnackPosition.BOTTOM,
-          titleText: Text(
+          titleText: const Text(
             "Login failed",
             style: TextStyle(
                 color: Colors.white
@@ -73,7 +73,7 @@ class AuthController extends GetxController {
           ),
           messageText: Text(
               e.toString(),
-              style: TextStyle(
+              style: const TextStyle(
                   color: Colors.white
               )
           )

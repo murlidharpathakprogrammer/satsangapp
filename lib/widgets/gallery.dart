@@ -3,9 +3,9 @@ import 'dart:core';
 import 'dart:io';
 import 'package:fancy_shimmer_image/fancy_shimmer_image.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-import '../provider/dark_theme_provider.dart';
-import '../services/utils.dart';
+// import 'package:provider/provider.dart';
+// import '../provider/dark_theme_provider.dart';
+// import '../services/utils.dart';
 
 class GalleryScreen extends StatefulWidget{
   const GalleryScreen({Key? key}) : super(key: key);
@@ -28,14 +28,14 @@ class _GalleryScreenState extends State<GalleryScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final themeState = Provider.of<DarkThemeProvider>(context);
-    final Utils utils = Utils(context);
+    // final themeState = Provider.of<DarkThemeProvider>(context);
+    // final Utils utils = Utils(context);
     double _screenWidth = MediaQuery.of(context).size.width;
-    final Color color = themeState.getDarkTheme ? Colors.black : Colors.white;
-    final Color txtcol = themeState.getDarkTheme ? Colors.red : Colors.deepOrange;
-    final Color captionColor = themeState.getDarkTheme ? Colors.white : Colors.black;
-    final Color cardColor = themeState.getDarkTheme ? const Color.fromRGBO(53, 93, 113, 0.8) : Color.fromRGBO(249, 211, 124, 0.3);
-    Size size = utils.getScreenSize;
+    // final Color color = themeState.getDarkTheme ? Colors.black : Colors.white;
+    // final Color txtcol = themeState.getDarkTheme ? Colors.red : Colors.deepOrange;
+    // final Color captionColor = themeState.getDarkTheme ? Colors.white : Colors.black;
+    // final Color cardColor = themeState.getDarkTheme ? const Color.fromRGBO(53, 93, 113, 0.8) : Color.fromRGBO(249, 211, 124, 0.3);
+    // Size size = utils.getScreenSize;
 
     return Scaffold(
         appBar: AppBar(title: const Text("गैलरी"), backgroundColor: Colors.orange,),
