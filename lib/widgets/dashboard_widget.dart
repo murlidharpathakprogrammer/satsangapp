@@ -53,13 +53,17 @@ class DashboardWidget extends StatelessWidget {
                           );
                         },
                         child: Card(
+                          
                           color: cardColor,
                           elevation: 2.0,
-                          shape: RoundedRectangleBorder(
-                              side: const BorderSide(
+                          shape: const RoundedRectangleBorder(
+                              side: BorderSide(
                                   color: Colors.white12
                               ),
-                              borderRadius: BorderRadius.circular(2.0)),
+                              borderRadius: BorderRadius.only(
+                                  topLeft: Radius.circular(20)
+                              ),
+                          ),
                           child: Center(
                             child: Padding(
                               padding: const EdgeInsets.all(8.0),
@@ -186,11 +190,14 @@ class DashboardWidget extends StatelessWidget {
                         child: Card(
                           color: cardColor,
                           elevation: 2.0,
-                          shape: RoundedRectangleBorder(
-                              side: const BorderSide(
-                                  color: Colors.white12
-                              ),
-                              borderRadius: BorderRadius.circular(2.0)),
+                          shape: const RoundedRectangleBorder(
+                            side: BorderSide(
+                                color: Colors.white12
+                            ),
+                            borderRadius: BorderRadius.only(
+                                topRight: Radius.circular(20)
+                            ),
+                          ),
                           child: Center(
                             child: Padding(
                               padding: const EdgeInsets.all(8.0),

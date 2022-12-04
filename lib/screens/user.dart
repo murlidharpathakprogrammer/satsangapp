@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:iconly/iconly.dart';
@@ -58,7 +60,7 @@ class _UserScreenState extends State<UserScreen> {
                               ),
                               recognizer: TapGestureRecognizer()
                                 ..onTap = () {
-                                  print('My name is pressed');
+                                  stdout.write('My name is pressed');
                                 }),
                         ]),
                   ),

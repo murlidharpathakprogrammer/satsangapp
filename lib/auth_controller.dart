@@ -1,9 +1,10 @@
+import 'dart:io';
+
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:satsangapp/login_page.dart';
 import 'package:satsangapp/screens/btm_bar.dart';
-// import 'package:satsangapp/screens/home_screen.dart';
 
 class AuthController extends GetxController {
   static AuthController instance = Get.find();
@@ -24,7 +25,7 @@ class AuthController extends GetxController {
   _initialScreen(User? user){
     if(user==null){
 
-      print("login page");
+      stdout.write("login page");
       Get.offAll(()=>const LoginPage());
     }else{
       Get.offAll(()=>const BottomBarScreen());

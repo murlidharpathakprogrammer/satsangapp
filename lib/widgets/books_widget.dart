@@ -1,5 +1,7 @@
 // import 'package:cloud_firestore/cloud_firestore.dart';
 // import 'package:fancy_shimmer_image/fancy_shimmer_image.dart';
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:iconly/iconly.dart';
 import 'package:provider/provider.dart';
@@ -39,7 +41,7 @@ class BooksWidget extends StatelessWidget{
             return InkWell(
               splashColor: Colors.red,
               onTap: () {
-                print('${index+1} auther clicked');
+                stdout.write('${index+1} auther clicked');
                 Navigator.push(context,
                     MaterialPageRoute(builder: (context) => const Books()));
               },

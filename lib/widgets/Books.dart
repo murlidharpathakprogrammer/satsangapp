@@ -1,5 +1,5 @@
+import 'dart:io';
 import 'dart:async';
-
 import 'package:fancy_shimmer_image/fancy_shimmer_image.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -35,8 +35,8 @@ class _BooksState extends State<Books> {
   }
 
   fetchBookDetails() async{
-    var _firestoreInstance = FirebaseFirestore.instance;
-    QuerySnapshot qn = await _firestoreInstance.collection('Books').get();
+    var firestoreInstance = FirebaseFirestore.instance;
+    QuerySnapshot qn = await firestoreInstance.collection('Books').get();
     setState(() {
       for(int i=0; i<qn.docs.length; i++){
         _booksDetails.add(
@@ -49,7 +49,7 @@ class _BooksState extends State<Books> {
           }
           // qn.docs[i]["bookUrl"],
         );
-        print(qn.docs[i]["bookUrl"]);
+        stdout.write(qn.docs[i]["bookUrl"]);
       }
     });
     return qn.docs;
@@ -60,10 +60,6 @@ class _BooksState extends State<Books> {
   @override
   Widget build(BuildContext context) {
     final themeState = Provider.of<DarkThemeProvider>(context);
-    // double _screenWidth = MediaQuery.of(context).size.width;
-    // final Color color = themeState.getDarkTheme ? Colors.black : Colors.white;
-    // final Color txtcol =
-    // themeState.getDarkTheme ? Colors.red : Colors.deepOrange;
     final Color captionColor =
     themeState.getDarkTheme ? Colors.white : Colors.black;
     final Color cardColor =
@@ -73,18 +69,16 @@ class _BooksState extends State<Books> {
     // final double screenHeight = MediaQuery.of(context).size.height;
     FirebaseFirestore db = FirebaseFirestore.instance;
 
-
-
-    void getStarted_readData() async {
+    void getStartedReadData() async {
       // [START get_started_read_data]
       await db.collection("users").get().then((event) {
         for (var doc in event.docs) {
-          print("${doc.id} => ${doc.data()}");
+          stdout.write("${doc.id} => ${doc.data()}");
         }
       });
     }
 
-    getStarted_readData();
+    getStartedReadData();
     // countDocuments();
 
     // print("Count ${queryCount}");
@@ -112,8 +106,8 @@ class _BooksState extends State<Books> {
                     focusColor: Colors.red,
                     splashColor: Colors.deepPurple,
                     onTap: (){
-                      print("Firebase Book Card tapped");
-                      print({"Title: " + document['bookTitle']});
+                      stdout.write("Firebase Book Card tapped");
+                      stdout.write("Title: " + document['bookTitle']);
                       // String bookAsset = "${document['author']}";
                       String bookUrl = "${document['bookUrl']}";
                       Navigator.push(context, MaterialPageRoute(builder: (context) => MyePubApp(bookUrl)));

@@ -1,15 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:satsangapp/widgets/books_widget.dart';
 
-class BooksPage extends StatefulWidget{
-  const BooksPage({Key? key}) : super(key: key);
+import '../widgets/news_widget.dart';
+import 'news_page.dart';
+
+class NewsPage extends StatefulWidget{
+  const NewsPage({Key? key}) : super(key: key);
 
   @override
-  State<StatefulWidget> createState() => _BooksPageState();
+  State<StatefulWidget> createState() => _NewsPageState();
 
 }
 
-class _BooksPageState extends State<BooksPage>{
+class _NewsPageState extends State<NewsPage>{
   @override
   Widget build(BuildContext context){
     return const Scaffold(
@@ -17,7 +20,7 @@ class _BooksPageState extends State<BooksPage>{
       //   title: const Text("पठन सामग्री"),
       //   backgroundColor: Colors.orange,
       // ),
-      body: BooksWidget(),
+      body: News(),
     );
   }
 }

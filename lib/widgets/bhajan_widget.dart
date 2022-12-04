@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:iconly/iconly.dart';
@@ -32,9 +34,9 @@ class BhajanWidget extends StatelessWidget {
 
 
     void countDocuments() async {
-      QuerySnapshot _myDoc = await db.collection('Books').get();
-      List<DocumentSnapshot> _myDocCount = _myDoc.docs;
-      print(_myDocCount.length);  // Count of Documents in Collection
+      QuerySnapshot myDoc = await db.collection('Books').get();
+      List<DocumentSnapshot> myDocCount = myDoc.docs;
+      stdout.write(myDocCount.length);  // Count of Documents in Collection
     }
 
     // getStarted_readData();
@@ -56,7 +58,7 @@ class BhajanWidget extends StatelessWidget {
           return InkWell(
             splashColor: Colors.red,
             onTap: () {
-              print('clicked');
+              stdout.write('clicked');
               Navigator.push(context,
                   MaterialPageRoute(builder: (context) => const Bhajans()));
             },

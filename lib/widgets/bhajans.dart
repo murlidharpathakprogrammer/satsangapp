@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:io';
 
 import 'package:fancy_shimmer_image/fancy_shimmer_image.dart';
 import 'package:flutter/material.dart';
@@ -26,11 +27,11 @@ class _BhajansState extends State<Bhajans> {
             255, 245, 200, 0.9);
     final double screenWidth = MediaQuery.of(context).size.width;
     FirebaseFirestore db = FirebaseFirestore.instance;
-    void getStarted_readData() async {
+    void getStartedReadData() async {
       // [START get_started_read_data]
       await db.collection("users").get().then((event) {
         for (var doc in event.docs) {
-          print("${doc.id} => ${doc.data()}");
+          stdout.write("${doc.id} => ${doc.data()}");
         }
       });
     }
@@ -41,7 +42,7 @@ class _BhajansState extends State<Bhajans> {
     //   print(_myDocCount.length);  // Count of Documents in Collection
     // }
 
-    getStarted_readData();
+    getStartedReadData();
     // countDocuments();
 
     // print("Count ${queryCount}");
@@ -69,8 +70,8 @@ class _BhajansState extends State<Bhajans> {
                     focusColor: Colors.red,
                     splashColor: Colors.deepPurple,
                     onTap: (){
-                      print("Firebase Book Card tapped");
-                      print("Title: " + document['bookTitle']);
+                      stdout.write("Firebase Book Card tapped");
+                      stdout.write("Title: " + document['bookTitle']);
                       // MyAudioApp();
                     },
                     child: Card(

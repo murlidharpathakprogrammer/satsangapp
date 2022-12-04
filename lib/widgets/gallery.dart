@@ -30,7 +30,7 @@ class _GalleryScreenState extends State<GalleryScreen> {
   Widget build(BuildContext context) {
     // final themeState = Provider.of<DarkThemeProvider>(context);
     // final Utils utils = Utils(context);
-    double _screenWidth = MediaQuery.of(context).size.width;
+    double screenWidth = MediaQuery.of(context).size.width;
     // final Color color = themeState.getDarkTheme ? Colors.black : Colors.white;
     // final Color txtcol = themeState.getDarkTheme ? Colors.red : Colors.deepOrange;
     // final Color captionColor = themeState.getDarkTheme ? Colors.white : Colors.black;
@@ -39,7 +39,7 @@ class _GalleryScreenState extends State<GalleryScreen> {
 
     return Scaffold(
         appBar: AppBar(title: const Text("गैलरी"), backgroundColor: Colors.orange,),
-        body: FancyShimmerImage(imageUrl: 'https://logos-world.net/wp-content/uploads/2021/02/Google-Cloud-Symbol.png', shimmerBaseColor: Colors.orange, shimmerHighlightColor: Colors.blue, width: _screenWidth,)
+        body: FancyShimmerImage(imageUrl: 'https://logos-world.net/wp-content/uploads/2021/02/Google-Cloud-Symbol.png', shimmerBaseColor: Colors.orange, shimmerHighlightColor: Colors.blue, width: screenWidth,)
     );
   }
 

@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:iconly/iconly.dart';
 import 'package:provider/provider.dart';
@@ -29,7 +31,7 @@ class AshramWidget extends StatelessWidget{
 
             return InkWell(
               splashColor: Colors.red,
-              onTap: (){print('clicked');},
+              onTap: (){stdout.write('clicked');},
               child: Card(
                 shadowColor: Colors.red,
                 color: cardColor,
