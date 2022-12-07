@@ -1,5 +1,4 @@
 import 'dart:io';
-
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:iconly/iconly.dart';
@@ -233,9 +232,6 @@ class _UserScreenState extends State<UserScreen> {
         text: title,
         color: color,
         textSize: 20,
-        // isTitle: true,
-        // title,
-        // style: TextStyle(fontSize: title =='Logout'? 20 : 15, fontWeight: title =='Logout'? FontWeight.bold : FontWeight.normal),
       ),
       subtitle: Text(subtitle == null ? "" : subtitle),
       leading: Icon(icon),

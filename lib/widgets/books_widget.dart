@@ -41,7 +41,7 @@ class BooksWidget extends StatelessWidget{
             return InkWell(
               splashColor: Colors.red,
               onTap: () {
-                stdout.write('${index+1} auther clicked');
+                stdout.write('${index+1} author clicked');
                 Navigator.push(context,
                     MaterialPageRoute(builder: (context) => const Books()));
               },

@@ -12,7 +12,6 @@ class AuthController extends GetxController {
   late Rx<User?> _user;
   final FirebaseAuth auth = FirebaseAuth.instance;
 
-
   @override
   void onReady(){
     super.onReady();

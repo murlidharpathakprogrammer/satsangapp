@@ -3,12 +3,10 @@ import 'package:fancy_shimmer_image/fancy_shimmer_image.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:satsangapp/screens/news_screen.dart';
-
 import '../provider/dark_theme_provider.dart';
 import '../services/utils.dart';
 import '../widgets/dashboard_widget.dart';
 import '../widgets/news_widget.dart';
-import 'bhajan_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -103,7 +101,6 @@ class _HomeScreenState extends State<HomeScreen> {
                                 style: TextStyle(
                                     color: progTxtCol,
                                     fontSize: 19,
-                                    // fontWeight: FontWeight.bold,
                                     shadows: [
                                       Shadow(
                                           blurRadius: 30,
@@ -111,8 +108,6 @@ class _HomeScreenState extends State<HomeScreen> {
                                           offset: const Offset(1, 1))
                                     ]),
                               ),
-
-                              // TextWidget(text: "प्रोग्राम", color: progTxtCol, textSize: 22, isTitle: true,),
                             ]),
                             Column(children: const [
                               Icon(Icons.arrow_right),
@@ -172,7 +167,6 @@ class _HomeScreenState extends State<HomeScreen> {
                                 style: TextStyle(
                                     color: progTxtCol,
                                     fontSize: 19,
-                                    // fontWeight: FontWeight.bold,
                                     shadows: [
                                       Shadow(
                                           blurRadius: 30,
@@ -185,8 +179,6 @@ class _HomeScreenState extends State<HomeScreen> {
                             ]),
                             Column(children: const [
                               Icon(Icons.arrow_right),
-
-                              // TextWidget(text: "प्रोग्राम", color: progTxtCol, textSize: 22, isTitle: true,),
                             ]),
                           ],
                         ),

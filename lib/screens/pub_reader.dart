@@ -2,8 +2,6 @@ import 'package:epub_view/epub_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart' show SystemChrome, SystemUiOverlayStyle;
 
-
-
 class MyPubApp extends StatefulWidget {
   const MyPubApp( {Key? key}) : super(key: key);
 
@@ -83,11 +81,6 @@ class _MyHomePageState extends State<MyHomePage> {
     _epubReaderController = EpubController(
       document:
       EpubDocument.openAsset('assets/PhilosophyOfLiberationAManualOfSantMatMysticism_Philosophy_Of_Liberation.epub'),
-      // EpubDocument.openData(InternetFile.get('')),
-      // epubCfi:
-          // 'epubcfi(/6/)', // book.epub Chapter 3 paragraph 10
-      // epubCfi:
-      //     'epubcfi(/6/6[chapter-2]!/4/2/1612)', // book_2.epub Chapter 16 paragraph 3
     );
     super.initState();
   }
@@ -108,13 +101,6 @@ class _MyHomePageState extends State<MyHomePage> {
           textAlign: TextAlign.start,
         ),
       ),
-      // actions: <Widget>[
-      //   IconButton(
-      //     icon: const Icon(Icons.save_alt),
-      //     color: Colors.white,
-      //     onPressed: () => _showCurrentEpubCfi(context),
-      //   ),
-      // ],
     ),
     drawer: Drawer(
       child: EpubViewTableOfContents(controller: _epubReaderController),
@@ -127,22 +113,4 @@ class _MyHomePageState extends State<MyHomePage> {
       controller: _epubReaderController,
     ),
   );
-
-  // void _showCurrentEpubCfi(context) {
-  //   final cfi = _epubReaderController.generateEpubCfi();
-  //
-  //   if (cfi != null) {
-  //     ScaffoldMessenger.of(context).showSnackBar(
-  //       SnackBar(
-  //         content: Text(cfi),
-  //         action: SnackBarAction(
-  //           label: 'GO',
-  //           onPressed: () {
-  //             _epubReaderController.gotoEpubCfi(cfi);
-  //           },
-  //         ),
-  //       ),
-  //     );
-  //   }
-  // }
 }

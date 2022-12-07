@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:satsangapp/widgets/books_widget.dart';
-
-import '../widgets/news_widget.dart';
 import 'news_page.dart';
 
 class NewsPage extends StatefulWidget{

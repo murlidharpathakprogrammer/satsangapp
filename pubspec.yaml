@@ -63,6 +63,7 @@ dependencies:
   circular_bottom_navigation: ^2.3.0
   intl: ^0.17.0
   fluttertoast: ^8.1.1
+  flutter_cached_pdfview: ^0.4.1
 
 
 dev_dependencies:

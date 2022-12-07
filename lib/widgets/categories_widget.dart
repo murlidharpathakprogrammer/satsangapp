@@ -54,5 +54,4 @@ class CategoriesWidget extends StatelessWidget{
       ),
     );
   }
-
 }
