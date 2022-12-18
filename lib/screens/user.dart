@@ -1,3 +1,4 @@
+import 'dart:io';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:iconly/iconly.dart';
@@ -58,7 +59,7 @@ class _UserScreenState extends State<UserScreen> {
                               ),
                               recognizer: TapGestureRecognizer()
                                 ..onTap = () {
-                                  print('My name is pressed');
+                                  stdout.write('My name is pressed');
                                 }),
                         ]),
                   ),
@@ -205,7 +206,7 @@ class _UserScreenState extends State<UserScreen> {
           // },
           controller: _addressTextController,
           maxLines: 5,
-          decoration: InputDecoration(hintText: "Your address"),
+          decoration: const InputDecoration(hintText: "Your address"),
         ),
         actions: [
           TextButton(
@@ -231,9 +232,6 @@ class _UserScreenState extends State<UserScreen> {
         text: title,
         color: color,
         textSize: 20,
-        // isTitle: true,
-        // title,
-        // style: TextStyle(fontSize: title =='Logout'? 20 : 15, fontWeight: title =='Logout'? FontWeight.bold : FontWeight.normal),
       ),
       subtitle: Text(subtitle == null ? "" : subtitle),
       leading: Icon(icon),

@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:get/get.dart';
 import 'package:satsangapp/services/firebase_storage_service.dart';
 
@@ -18,7 +20,7 @@ class SwiperImgController extends GetxController{
         allImages.add(imgUrl!);
       }
     } catch (e) {
-      print(e);
+      stdout.write(e);
     }
   }
 }

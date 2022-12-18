@@ -1,16 +1,16 @@
+import 'dart:io';
+
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:satsangapp/login_page.dart';
 import 'package:satsangapp/screens/btm_bar.dart';
-import 'package:satsangapp/screens/home_screen.dart';
 
 class AuthController extends GetxController {
   static AuthController instance = Get.find();
   //email, password, name...
   late Rx<User?> _user;
   final FirebaseAuth auth = FirebaseAuth.instance;
-
 
   @override
   void onReady(){
@@ -24,10 +24,10 @@ class AuthController extends GetxController {
   _initialScreen(User? user){
     if(user==null){
 
-      print("login page");
-      Get.offAll(()=>LoginPage());
+      stdout.write("login page");
+      Get.offAll(()=>const LoginPage());
     }else{
-      Get.offAll(()=>BottomBarScreen());
+      Get.offAll(()=>const BottomBarScreen());
     }
   }
 
@@ -42,7 +42,7 @@ class AuthController extends GetxController {
       Get.snackbar("About User", "User message",
           backgroundColor: Colors.redAccent,
           snackPosition: SnackPosition.BOTTOM,
-          titleText: Text(
+          titleText: const Text(
             "Account creation failed",
             style: TextStyle(
                 color: Colors.white
@@ -50,7 +50,7 @@ class AuthController extends GetxController {
           ),
           messageText: Text(
               e.toString(),
-              style: TextStyle(
+              style: const TextStyle(
                   color: Colors.white
               )
           )
@@ -65,7 +65,7 @@ class AuthController extends GetxController {
       Get.snackbar("About Login", "Login message",
           backgroundColor: Colors.redAccent,
           snackPosition: SnackPosition.BOTTOM,
-          titleText: Text(
+          titleText: const Text(
             "Login failed",
             style: TextStyle(
                 color: Colors.white
@@ -73,7 +73,7 @@ class AuthController extends GetxController {
           ),
           messageText: Text(
               e.toString(),
-              style: TextStyle(
+              style: const TextStyle(
                   color: Colors.white
               )
           )

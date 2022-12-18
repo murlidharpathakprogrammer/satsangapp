@@ -1,5 +1,4 @@
-
-
+import 'dart:io';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:get/get.dart';
 
@@ -13,11 +12,11 @@ class FirebaseStorageService extends GetxService{
     try{
       var urlRef = fireStorage
           .child("images/homeScreen/swiper")
-          .child('${imgName.toLowerCase()}');
+          .child(imgName.toLowerCase());
       var imgUrl = await urlRef.getDownloadURL();
       return imgUrl;
     } catch (e) {
-      print(e);
+      stdout.write(e);
       return null;
     }
   }

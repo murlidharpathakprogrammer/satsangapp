@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class SplashScreen extends StatelessWidget{
@@ -14,12 +13,11 @@ class SplashScreen extends StatelessWidget{
         child: Container(
           width: 100,
           height: 100,
-          child: CircularProgressIndicator(
+          child: const CircularProgressIndicator(
             backgroundColor: Colors.orangeAccent,
           ),
         ),
       ),
     );
   }
-
 }

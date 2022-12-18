@@ -1,17 +1,17 @@
 import 'dart:async';
+import 'dart:io';
 
 import 'package:fancy_shimmer_image/fancy_shimmer_image.dart';
-import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
-import 'package:iconly/iconly.dart';
+// import 'package:iconly/iconly.dart';
 import 'package:provider/provider.dart';
-import 'package:satsangapp/player/audio_player.dart';
 import 'package:satsangapp/widgets/text_widget.dart';
 import '../provider/dark_theme_provider.dart';
-import '../services/utils.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 class Bhajans extends StatefulWidget {
+  const Bhajans({Key? key}) : super(key: key);
+
   @override
   _BhajansState createState() => _BhajansState();
 }
@@ -22,23 +22,16 @@ class _BhajansState extends State<Bhajans> {
   @override
   Widget build(BuildContext context) {
     final themeState = Provider.of<DarkThemeProvider>(context);
-    double _screenWidth = MediaQuery.of(context).size.width;
-    final Color color = themeState.getDarkTheme ? Colors.black : Colors.white;
-    final Color txtcol =
-        themeState.getDarkTheme ? Colors.red : Colors.deepOrange;
-    final Color captionColor =
-        themeState.getDarkTheme ? Colors.white : Colors.black;
     final Color cardColor =
         themeState.getDarkTheme ? Colors.black87 : const Color.fromRGBO(
             255, 245, 200, 0.9);
     final double screenWidth = MediaQuery.of(context).size.width;
-    final double screenHeight = MediaQuery.of(context).size.height;
     FirebaseFirestore db = FirebaseFirestore.instance;
-    void getStarted_readData() async {
+    void getStartedReadData() async {
       // [START get_started_read_data]
       await db.collection("users").get().then((event) {
         for (var doc in event.docs) {
-          print("${doc.id} => ${doc.data()}");
+          stdout.write("${doc.id} => ${doc.data()}");
         }
       });
     }
@@ -49,7 +42,7 @@ class _BhajansState extends State<Bhajans> {
     //   print(_myDocCount.length);  // Count of Documents in Collection
     // }
 
-    getStarted_readData();
+    getStartedReadData();
     // countDocuments();
 
     // print("Count ${queryCount}");
@@ -77,8 +70,8 @@ class _BhajansState extends State<Bhajans> {
                     focusColor: Colors.red,
                     splashColor: Colors.deepPurple,
                     onTap: (){
-                      print("Firebase Book Card tapped");
-                      print("Title: " + document['bookTitle']);
+                      stdout.write("Firebase Book Card tapped");
+                      stdout.write("Title: " + document['bookTitle']);
                       // MyAudioApp();
                     },
                     child: Card(

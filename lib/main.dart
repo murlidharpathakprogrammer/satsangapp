@@ -4,14 +4,11 @@ import 'package:flutter/services.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:provider/provider.dart';
 import 'package:get/get.dart';
-import 'package:satsangapp/api/firebase_api.dart';
 import 'package:satsangapp/auth_controller.dart';
-import 'package:satsangapp/model/firebase_file.dart';
 import 'login_page.dart';
 import 'provider/dark_theme_provider.dart';
 
 import 'consts/theme_data.dart';
-import 'login_page.dart';
 
 Future<void> main() async {
   WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
@@ -20,11 +17,11 @@ Future<void> main() async {
   ]);
   FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
   await Firebase.initializeApp().then((value) => Get.put(AuthController()));
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatefulWidget {
-  MyApp({Key? key}) : super(key: key);
+  const MyApp({Key? key}) : super(key: key);
 
   @override
   State<MyApp> createState() => _MyAppState();
@@ -43,7 +40,7 @@ class _MyAppState extends State<MyApp> {
     getCurrentAppTheme();
     Get.put(AuthController());
     super.initState();
-    Future.delayed(Duration(seconds: 3)).then((value) => {
+    Future.delayed(const Duration(seconds: 3)).then((value) => {
       FlutterNativeSplash.remove()
     });
   }

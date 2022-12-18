@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-// import 'package:satsang/provider/dark_theme_provider.dart';
-
 import '../provider/dark_theme_provider.dart';
 
 class Utils{

@@ -1,16 +1,9 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:satsangapp/screens/bhajan_screen.dart';
 import 'package:satsangapp/widgets/ashram_widget.dart';
-// import 'package:satsang/screens/query_page.dart';
-// import 'package:satsang/widgets/books_widget.dart';
-// import 'package:satsang/widgets/categories_widget.dart';
-
 import '../provider/dark_theme_provider.dart';
-import '../screens/categories.dart';
 import '../services/utils.dart';
-import 'bhajan_widget.dart';
 import 'books_widget.dart';
 import 'gallery.dart';
 
@@ -21,7 +14,6 @@ class DashboardWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     final Utils utils = Utils(context);
     final themeState = Provider.of<DarkThemeProvider>(context);
-    final Color color = themeState.getDarkTheme ? Colors.black : Colors.white;
     const Color txtcol = Color.fromARGB(255, 200, 0, 0);
     final Color captionColor =
         themeState.getDarkTheme ? Colors.white : Colors.black;
@@ -41,7 +33,7 @@ class DashboardWidget extends StatelessWidget {
                   children: [
                     SizedBox(
                       width: size.width * 0.33,
-                      height: size.height * 0.22,
+                      height: size.height * 0.19,
                       child: InkWell(
                         splashColor: Colors.deepOrange,
                         onTap: () {
@@ -55,11 +47,11 @@ class DashboardWidget extends StatelessWidget {
                         child: Card(
                           color: cardColor,
                           elevation: 2.0,
-                          shape: RoundedRectangleBorder(
-                              side: const BorderSide(
-                                  color: Colors.white12
-                              ),
-                              borderRadius: BorderRadius.circular(2.0)),
+                          shape: const RoundedRectangleBorder(
+                            side: BorderSide(color: Colors.white12),
+                            borderRadius:
+                                BorderRadius.only(topLeft: Radius.circular(20)),
+                          ),
                           child: Center(
                             child: Padding(
                               padding: const EdgeInsets.all(8.0),
@@ -68,27 +60,25 @@ class DashboardWidget extends StatelessWidget {
                                   Image.asset(
                                     "assets/images/pictures/dashboard/flag128.png",
                                     // width: 64.0,
-                                    height: size.height*0.05,
+                                    height: size.height * 0.05,
                                   ),
-                                  SizedBox(height: size.height*0.03),
+                                  SizedBox(height: size.height * 0.02),
                                   // const Divider(thickness: 1,),
                                   Text("भजन एवं",
                                       style: TextStyle(
                                         color: txtcol,
                                         fontWeight: FontWeight.bold,
-                                        fontSize: size.height*.021,
+                                        fontSize: size.height * .021,
                                         // fontFamily: "Eczar"
-                                      )
-                                  ),
+                                      )),
                                   Text("सत्संग",
                                       style: TextStyle(
                                         color: txtcol,
                                         fontWeight: FontWeight.bold,
-                                        fontSize: size.height*.021,
-                                      )
-                                  ),
+                                        fontSize: size.height * .021,
+                                      )),
                                   SizedBox(
-                                    height: size.height*0.01,
+                                    height: size.height * 0.01,
                                   ),
                                   Expanded(
                                     child: Container(
@@ -110,7 +100,7 @@ class DashboardWidget extends StatelessWidget {
                     ),
                     SizedBox(
                       width: size.width * 0.33,
-                      height: size.height * 0.22,
+                      height: size.height * 0.19,
                       child: InkWell(
                         splashColor: Colors.deepOrange,
                         onTap: () {
@@ -125,9 +115,7 @@ class DashboardWidget extends StatelessWidget {
                           color: cardColor,
                           elevation: 2.0,
                           shape: RoundedRectangleBorder(
-                              side: const BorderSide(
-                                  color: Colors.white12
-                              ),
+                              side: const BorderSide(color: Colors.white12),
                               borderRadius: BorderRadius.circular(2.0)),
                           child: Center(
                             child: Padding(
@@ -136,26 +124,24 @@ class DashboardWidget extends StatelessWidget {
                                 children: [
                                   Image.asset(
                                     "assets/images/pictures/dashboard/about128.png",
-                                    height: size.height*0.05,
+                                    height: size.height * 0.05,
                                   ),
-                                  SizedBox(height: size.height*0.03),
+                                  SizedBox(height: size.height * 0.02),
                                   // const Divider(thickness: 1,),
                                   Text("संतमत",
                                       style: TextStyle(
                                         color: txtcol,
                                         fontWeight: FontWeight.bold,
-                                        fontSize: size.height*.021,
-                                      )
-                                  ),
+                                        fontSize: size.height * .021,
+                                      )),
                                   Text("परिचय",
                                       style: TextStyle(
                                         color: txtcol,
                                         fontWeight: FontWeight.bold,
-                                        fontSize: size.height*.021,
-                                      )
-                                  ),
+                                        fontSize: size.height * .021,
+                                      )),
                                   SizedBox(
-                                    height: size.height*0.01,
+                                    height: size.height * 0.01,
                                   ),
                                   Expanded(
                                     child: Container(
@@ -175,7 +161,7 @@ class DashboardWidget extends StatelessWidget {
                     ),
                     SizedBox(
                       width: size.width * 0.33,
-                      height: size.height * 0.22,
+                      height: size.height * 0.19,
                       child: InkWell(
                         splashColor: Colors.deepOrange,
                         onTap: () {
@@ -186,11 +172,11 @@ class DashboardWidget extends StatelessWidget {
                         child: Card(
                           color: cardColor,
                           elevation: 2.0,
-                          shape: RoundedRectangleBorder(
-                              side: const BorderSide(
-                                  color: Colors.white12
-                              ),
-                              borderRadius: BorderRadius.circular(2.0)),
+                          shape: const RoundedRectangleBorder(
+                            side: BorderSide(color: Colors.white12),
+                            borderRadius: BorderRadius.only(
+                                topRight: Radius.circular(20)),
+                          ),
                           child: Center(
                             child: Padding(
                               padding: const EdgeInsets.all(8.0),
@@ -198,26 +184,24 @@ class DashboardWidget extends StatelessWidget {
                                 children: [
                                   Image.asset(
                                     "assets/images/pictures/dashboard/temple128.png",
-                                    height: size.height*0.05,
+                                    height: size.height * 0.05,
                                   ),
-                                  SizedBox(height: size.height*0.03),
+                                  SizedBox(height: size.height * 0.02),
                                   // const Divider(thickness: 1,),
                                   Text("महर्षि मेँहीँ",
                                       style: TextStyle(
                                         color: txtcol,
                                         fontWeight: FontWeight.bold,
-                                        fontSize: size.height*.021,
-                                      )
-                                  ),
+                                        fontSize: size.height * .021,
+                                      )),
                                   Text("योगाश्रम",
                                       style: TextStyle(
                                         color: txtcol,
                                         fontWeight: FontWeight.bold,
-                                        fontSize: size.height*.021,
-                                      ))
-                                  ,
+                                        fontSize: size.height * .021,
+                                      )),
                                   SizedBox(
-                                    height: size.height*0.01,
+                                    height: size.height * 0.01,
                                   ),
                                   Expanded(
                                     child: Container(
@@ -237,7 +221,7 @@ class DashboardWidget extends StatelessWidget {
                     ),
                     SizedBox(
                       width: size.width * 0.33,
-                      height: size.height * 0.22,
+                      height: size.height * 0.19,
                       child: InkWell(
                         splashColor: Colors.deepOrange,
                         onTap: () {
@@ -252,10 +236,9 @@ class DashboardWidget extends StatelessWidget {
                           color: cardColor,
                           elevation: 2.0,
                           shape: const RoundedRectangleBorder(
-                              side: BorderSide(
-                                  color: Colors.white12
-                              ),
-                              borderRadius: BorderRadius.only(bottomLeft: Radius.circular(22))),
+                              side: BorderSide(color: Colors.white12),
+                              borderRadius: BorderRadius.only(
+                                  bottomLeft: Radius.circular(22))),
                           child: Center(
                             child: Padding(
                               padding: const EdgeInsets.all(8.0),
@@ -263,14 +246,14 @@ class DashboardWidget extends StatelessWidget {
                                 children: [
                                   Image.asset(
                                     "assets/images/pictures/dashboard/gallery128.png",
-                                    height: size.height*0.05,
+                                    height: size.height * 0.05,
                                   ),
-                                  SizedBox(height: size.height*0.03),
+                                  SizedBox(height: size.height * 0.02),
                                   Text("गैलरी",
                                       style: TextStyle(
                                         color: txtcol,
                                         fontWeight: FontWeight.bold,
-                                        fontSize: size.height*.021,
+                                        fontSize: size.height * .021,
                                       )),
                                   const SizedBox(
                                     height: 5.0,
@@ -293,7 +276,7 @@ class DashboardWidget extends StatelessWidget {
                     ),
                     SizedBox(
                       width: size.width * 0.33,
-                      height: size.height * 0.22,
+                      height: size.height * 0.19,
                       child: InkWell(
                         splashColor: Colors.deepOrange,
                         onTap: () {
@@ -303,9 +286,7 @@ class DashboardWidget extends StatelessWidget {
                           color: cardColor,
                           elevation: 2.0,
                           shape: RoundedRectangleBorder(
-                              side: const BorderSide(
-                                  color: Colors.white12
-                              ),
+                              side: const BorderSide(color: Colors.white12),
                               borderRadius: BorderRadius.circular(2.0)),
                           child: Center(
                             child: Padding(
@@ -314,14 +295,14 @@ class DashboardWidget extends StatelessWidget {
                                 children: [
                                   Image.asset(
                                     "assets/images/pictures/dashboard/hierarchy128.png",
-                                    height: size.height*0.05,
+                                    height: size.height * 0.05,
                                   ),
-                                  SizedBox(height: size.height*0.03),
+                                  SizedBox(height: size.height * 0.02),
                                   Text("महासभा",
                                       style: TextStyle(
                                         color: txtcol,
                                         fontWeight: FontWeight.bold,
-                                        fontSize: size.height*.021,
+                                        fontSize: size.height * .021,
                                       )),
                                   const SizedBox(
                                     height: 5.0,
@@ -344,7 +325,7 @@ class DashboardWidget extends StatelessWidget {
                     ),
                     SizedBox(
                       width: size.width * 0.33,
-                      height: size.height * 0.22,
+                      height: size.height * 0.19,
                       child: InkWell(
                         splashColor: Colors.deepOrange,
                         onTap: () {
@@ -359,10 +340,9 @@ class DashboardWidget extends StatelessWidget {
                           color: cardColor,
                           elevation: 2.0,
                           shape: const RoundedRectangleBorder(
-                            side: BorderSide(
-                              color: Colors.white12
-                            ),
-                              borderRadius: BorderRadius.only(bottomRight: Radius.circular(22))),
+                              side: BorderSide(color: Colors.white12),
+                              borderRadius: BorderRadius.only(
+                                  bottomRight: Radius.circular(22))),
                           child: Center(
                             child: Padding(
                               padding: const EdgeInsets.all(8.0),
@@ -370,14 +350,14 @@ class DashboardWidget extends StatelessWidget {
                                 children: [
                                   Image.asset(
                                     "assets/images/pictures/dashboard/open-book128.png",
-                                    height: size.height*0.05,
+                                    height: size.height * 0.05,
                                   ),
-                                  SizedBox(height: size.height*0.03),
+                                  SizedBox(height: size.height * 0.02),
                                   Text("पुस्तक",
                                       style: TextStyle(
                                         color: txtcol,
                                         fontWeight: FontWeight.bold,
-                                        fontSize: size.height*.021,
+                                        fontSize: size.height * .021,
                                         // fontFamily: "Eczar",
                                       )),
                                   const SizedBox(
@@ -417,18 +397,4 @@ Route _createRoute(Widget widFun) {
       return child;
     },
   );
-}
-
-class Page2 extends StatelessWidget {
-  const Page2({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(),
-      body: const Center(
-        child: Text('Page 2'),
-      ),
-    );
-  }
 }
