@@ -16,21 +16,13 @@ class BooksWidget extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     final themeState = Provider.of<DarkThemeProvider>(context);
-    // final Utils utils = Utils(context);
-    // double _screenWidth = MediaQuery.of(context).size.width;
-    // final Color color = themeState.getDarkTheme ? Colors.black : Colors.white;
-    // final Color txtcol = themeState.getDarkTheme ? Colors.red : Colors.deepOrange;
-    // final Color captionColor = themeState.getDarkTheme ? Colors.white : Colors.black;
     final Color cardColor = themeState.getDarkTheme ? const Color.fromRGBO(53, 93, 113, 0.8) : const Color.fromRGBO(249, 211, 124, 0.3);
-    // Size size = utils.getScreenSize;
-
 
     // getStarted_readData();
     final List<Map<String, String>> entries = [
       {"auther": "महर्षि मेँहीँ परमहंस जी महाराज", "imgUrl": "https://res.cloudinary.com/de9omilub/image/upload/c_thumb,w_200,g_face/v1669774363/satsangapp/images/books/author/11111-removebg-preview_ltagz8.png",},
       {"auther": "महर्षि योगनन्द परमहंस जी महाराज", "imgUrl": "https://res.cloudinary.com/de9omilub/image/upload/c_thumb,w_200,g_face/v1669774018/satsangapp/images/books/author/1_ccexpress_zwaggw.png"},
     ];
-
 
     return Scaffold(
       appBar: AppBar(title: const Text("पाठन सामग्री"), backgroundColor: Colors.orange,),

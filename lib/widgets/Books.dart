@@ -66,22 +66,21 @@ class _BooksState extends State<Books> {
     themeState.getDarkTheme ? const Color.fromRGBO(53, 93, 113, 0.8) : const Color.fromRGBO(
         255, 245, 200, 0.9);
     final double screenWidth = MediaQuery.of(context).size.width;
+
     // final double screenHeight = MediaQuery.of(context).size.height;
-    FirebaseFirestore db = FirebaseFirestore.instance;
-
-    void getStartedReadData() async {
-      // [START get_started_read_data]
-      await db.collection("users").get().then((event) {
-        for (var doc in event.docs) {
-          stdout.write("${doc.id} => ${doc.data()}");
-        }
-      });
-    }
-
-    getStartedReadData();
+    // FirebaseFirestore db = FirebaseFirestore.instance;
+    // void getStartedReadData() async {
+    //   // [START get_started_read_data]
+    //   await db.collection("users").get().then((event) {
+    //     for (var doc in event.docs) {
+    //       stdout.write("${doc.id} => ${doc.data()}");
+    //     }
+    //   });
+    // }
+    // getStartedReadData();
     // countDocuments();
-
     // print("Count ${queryCount}");
+
     return Scaffold(
       appBar: AppBar(
         title: const Text("पुस्तक"),
@@ -107,7 +106,7 @@ class _BooksState extends State<Books> {
                     splashColor: Colors.deepPurple,
                     onTap: (){
                       stdout.write("Firebase Book Card tapped");
-                      stdout.write("Title: " + document['bookTitle']);
+                      stdout.write('Title: ${document['bookTitle']}');
                       // String bookAsset = "${document['author']}";
                       String bookUrl = "${document['bookUrl']}";
                       Navigator.push(context, MaterialPageRoute(builder: (context) => MyePubApp(bookUrl)));

@@ -19,7 +19,7 @@ class _HomeScreenState extends State<HomeScreen> {
   final List<String> _swiperImages = [
     'https://res.cloudinary.com/de9omilub/image/upload/v1669761679/satsangapp/images/hoomeSwiper/edit_1_i7qny5.jpg',
     'https://res.cloudinary.com/de9omilub/image/upload/v1669761679/satsangapp/images/hoomeSwiper/edit_2_zpfgvz.jpg',
-    'https://res.cloudinary.com/de9omilub/image/upload/v1669761689/satsangapp/images/hoomeSwiper/edit_3_xu6a5h.jpg',
+    'https://res.cloudinary.com/de9omilub/image/upload/v1672309850/satsangapp/images/hoomeSwiper/WhatsApp_Image_2022-12-09_at_19.47.00_f3qmpm.jpg',
   ];
   @override
   Widget build(BuildContext context) {
@@ -45,7 +45,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 shimmerHighlightColor: Colors.red,
                 // shimmerBackColor: Colors.orange,
                 boxFit: BoxFit.fill,
-                errorWidget: Image.asset("assets/images/offers/logo.png"),
+                errorWidget: Image.asset("assets/images/offers/logoCenter.png"),
               );
             },
             autoplay: true,
@@ -60,7 +60,7 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
         Card(
           // elevation: 2,
-          shadowColor: const Color.fromRGBO(192, 183, 250, 1.0),
+          // shadowColor: const Color.fromRGBO(192, 183, 250, 1.0),
           shape: const RoundedRectangleBorder(
               borderRadius: BorderRadius.only(
                   bottomLeft: Radius.circular(20),
@@ -72,17 +72,17 @@ class _HomeScreenState extends State<HomeScreen> {
                 child: Card(
                   shape: RoundedRectangleBorder(
                       borderRadius:
-                          const BorderRadius.only(bottomLeft: Radius.circular(30), topLeft: Radius.circular(10)),
+                          const BorderRadius.only(bottomLeft: Radius.circular(20), topLeft: Radius.circular(10)),
                       side: BorderSide(
                           color: progBorder)),
                   child: InkWell(
-                    borderRadius: const BorderRadius.only(bottomLeft: Radius.circular(30), topLeft: Radius.circular(10)),
+                    borderRadius: const BorderRadius.only(bottomLeft: Radius.circular(20), topLeft: Radius.circular(10)),
                     splashColor: Colors.brown.withOpacity(0.7), // Splash color
                     onTap: () {},
                     child: Ink(
                       decoration: const BoxDecoration(
                         borderRadius:
-                            BorderRadius.only(bottomLeft: Radius.circular(30), topLeft: Radius.circular(10)),
+                            BorderRadius.only(bottomLeft: Radius.circular(20), topLeft: Radius.circular(10)),
                         image: DecorationImage(
                           opacity: 0.4,
                           fit: BoxFit.cover,
@@ -132,11 +132,11 @@ class _HomeScreenState extends State<HomeScreen> {
                 child: Card(
                   shape: RoundedRectangleBorder(
                       borderRadius:
-                          const BorderRadius.only(bottomRight: Radius.circular(30), topRight: Radius.circular(10)),
+                          const BorderRadius.only(bottomRight: Radius.circular(20), topRight: Radius.circular(10)),
                       side: BorderSide(
                           color: progBorder)),
                   child: InkWell(
-                    borderRadius: const BorderRadius.only(bottomRight: Radius.circular(30), topRight: Radius.circular(10)),
+                    borderRadius: const BorderRadius.only(bottomRight: Radius.circular(20), topRight: Radius.circular(10)),
                     splashColor: Colors.brown.withOpacity(0.7), // Splash color
                     onTap: () {
                       Navigator.push(
@@ -148,7 +148,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     child: Ink(
                       decoration: const BoxDecoration(
                         borderRadius:
-                        BorderRadius.only(bottomRight: Radius.circular(30), topRight: Radius.circular(10)),
+                        BorderRadius.only(bottomRight: Radius.circular(20), topRight: Radius.circular(10)),
                         image: DecorationImage(
                           opacity: 0.4,
                           fit: BoxFit.cover,

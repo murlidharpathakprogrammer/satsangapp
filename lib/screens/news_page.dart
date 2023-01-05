@@ -4,9 +4,9 @@ import 'package:fancy_shimmer_image/fancy_shimmer_image.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
-import 'package:satsangapp/screens/epub_reader.dart';
+// import 'package:satsangapp/screens/epub_reader.dart';
 import 'package:satsangapp/widgets/error_widget.dart';
-import 'package:satsangapp/widgets/text_widget.dart';
+// import 'package:satsangapp/widgets/text_widget.dart';
 import '../provider/dark_theme_provider.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
@@ -38,9 +38,9 @@ class _NewsState extends State<News> {
     final themeState = Provider.of<DarkThemeProvider>(context);
     final Color captionColor =
         themeState.getDarkTheme ? Colors.white : Colors.black;
-    final Color cardColor = themeState.getDarkTheme
-        ? const Color.fromRGBO(255, 87, 0, 0.4)
-        : const Color.fromRGBO(255, 245, 200, 0.9);
+    // final Color cardColor = themeState.getDarkTheme
+    //     ? const Color.fromRGBO(255, 87, 0, 0.4)
+    //     : const Color.fromRGBO(255, 245, 200, 0.9);
     final double screenWidth = MediaQuery.of(context).size.width;
 
     return Scaffold(
@@ -132,7 +132,7 @@ class _NewsState extends State<News> {
                                 height: 150,
                                 child: Center(
                                   child: Image.asset(
-                                    "assets/images/offers/logo.png",
+                                    "assets/images/offers/logoCenter.png",
                                     cacheHeight: 480,
                                   ),
                                 ),

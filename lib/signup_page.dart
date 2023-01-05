@@ -205,7 +205,7 @@ class SignUpPage extends StatelessWidget {
                         radius: 28,
                         backgroundColor: Colors.white,
                         backgroundImage: AssetImage(
-                            "assets/images/pictures/social-icons/"+images[index]
+                            'assets/images/pictures/social-icons/${images[index]}'
                         ),
                       ),
                     ),

@@ -13,21 +13,14 @@ import '../provider/dark_theme_provider.dart';
 // import '../screens/books_screen.dart';
 // import '../services/utils.dart';
 
-class BhajanWidget extends StatelessWidget {
-  const BhajanWidget({Key? key}) : super(key: key);
+class BhajanWidgets extends StatelessWidget {
+  const BhajanWidgets({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     final themeState = Provider.of<DarkThemeProvider>(context);
-    // final Utils utils = Utils(context);
-    // final themeState = Provider.of<DarkThemeProvider>(context);
-    // final Color color = themeState.getDarkTheme ? Colors.black : Colors.white;
-    // final Color txtcol =
-    //     themeState.getDarkTheme ? Colors.red : Colors.deepOrange;
-    // final Color captionColor =
-    //     themeState.getDarkTheme ? Colors.white : Colors.black;
     final Color cardColor =
-    themeState.getDarkTheme ? Colors.white10 : Colors.white;
+        themeState.getDarkTheme ? Colors.white10 : Colors.white;
     // Size size = utils.getScreenSize;
     FirebaseFirestore db = FirebaseFirestore.instance;
 
@@ -41,9 +34,14 @@ class BhajanWidget extends StatelessWidget {
 
     // getStarted_readData();
     countDocuments();
+    // double _screenWidth = MediaQuery.of(context).size.width;
+    // final Color color = themeState.getDarkTheme ? Colors.white : Colors.black;
     final List<Map<String, String>> entries = [
       {"auther": "स्वामी जी का प्रवचन", "url": "thisIsUrl1"},
       {"auther": "स्वामी जी का भजन", "url": "thisIsUrl2"},
+      {"auther": "अन्य संतों का प्रवचन", "url": "thisIsUrl3"},
+      {"auther": "अन्य संतों का भजन", "url": "thisIsUrl4"},
+
     ];
     // final List<int> colorCodes = <int>[600, 500, 100, 300];
 

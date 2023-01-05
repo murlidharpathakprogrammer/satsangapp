@@ -1,11 +1,7 @@
-
 import 'dart:core';
 import 'dart:io';
 import 'package:fancy_shimmer_image/fancy_shimmer_image.dart';
 import 'package:flutter/material.dart';
-// import 'package:provider/provider.dart';
-// import '../provider/dark_theme_provider.dart';
-// import '../services/utils.dart';
 
 class GalleryScreen extends StatefulWidget{
   const GalleryScreen({Key? key}) : super(key: key);
@@ -15,7 +11,6 @@ class GalleryScreen extends StatefulWidget{
 }
 
 class _GalleryScreenState extends State<GalleryScreen> {
-
   String changeTitle = "Grid View";
   bool checkView = false;
   File? imageFile;
@@ -25,8 +20,6 @@ class _GalleryScreenState extends State<GalleryScreen> {
 
   @override
   Widget build(BuildContext context) {
-    // final themeState = Provider.of<DarkThemeProvider>(context);
-    // final Utils utils = Utils(context);
     double screenWidth = MediaQuery.of(context).size.width;
 
     return Scaffold(

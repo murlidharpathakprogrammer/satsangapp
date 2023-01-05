@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:satsangapp/screens/bhajan_screen.dart';
 import 'package:satsangapp/widgets/ashram_widget.dart';
 import '../provider/dark_theme_provider.dart';
+import '../screens/about_santmat_screen.dart';
+import '../screens/bhajan_pravachan_screen.dart';
 import '../services/utils.dart';
 import 'books_widget.dart';
 import 'gallery.dart';
@@ -41,7 +42,7 @@ class DashboardWidget extends StatelessWidget {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => const BhajanScreen()),
+                                builder: (context) => const BhajanPravachanScreen()),
                           );
                         },
                         child: Card(
@@ -71,7 +72,7 @@ class DashboardWidget extends StatelessWidget {
                                         fontSize: size.height * .021,
                                         // fontFamily: "Eczar"
                                       )),
-                                  Text("सत्संग",
+                                  Text("प्रवचन",
                                       style: TextStyle(
                                         color: txtcol,
                                         fontWeight: FontWeight.bold,
@@ -108,7 +109,7 @@ class DashboardWidget extends StatelessWidget {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => const BhajanScreen()),
+                                builder: (context) => const SantmatScreen()),
                           );
                         },
                         child: Card(

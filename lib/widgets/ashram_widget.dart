@@ -16,7 +16,7 @@ class AshramWidget extends StatelessWidget{
     return Scaffold(
       appBar: AppBar(title: const Text("योगाश्रम"), backgroundColor: Colors.orange,),
       body: ListView.builder(
-          itemCount: 10,
+          itemCount: 3,
           itemBuilder: (BuildContext context, int index) {
             // Size size = Utils(context).getScreenSize;
 

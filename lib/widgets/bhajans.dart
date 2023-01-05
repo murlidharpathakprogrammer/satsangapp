@@ -71,7 +71,6 @@ class _BhajansState extends State<Bhajans> {
                     splashColor: Colors.deepPurple,
                     onTap: (){
                       stdout.write("Firebase Book Card tapped");
-                      stdout.write("Title: " + document['bookTitle']);
                       // MyAudioApp();
                     },
                     child: Card(

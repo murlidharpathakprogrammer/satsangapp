@@ -7,7 +7,6 @@ import 'package:get/get.dart';
 import 'package:satsangapp/auth_controller.dart';
 import 'login_page.dart';
 import 'provider/dark_theme_provider.dart';
-
 import 'consts/theme_data.dart';
 
 Future<void> main() async {
