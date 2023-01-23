@@ -160,6 +160,8 @@ class DashboardWidget extends StatelessWidget {
                         ),
                       ),
                     ),
+
+                    // Yogashram
                     SizedBox(
                       width: size.width * 0.33,
                       height: size.height * 0.19,
@@ -168,7 +170,7 @@ class DashboardWidget extends StatelessWidget {
                         onTap: () {
                           debugPrint('Card tapped.');
                           Navigator.of(context)
-                              .push(_createRoute(const AshramWidget()));
+                              .push(_createRoute(AshramWidget()));
                         },
                         child: Card(
                           color: cardColor,
@@ -220,6 +222,7 @@ class DashboardWidget extends StatelessWidget {
                         ),
                       ),
                     ),
+
                     SizedBox(
                       width: size.width * 0.33,
                       height: size.height * 0.19,

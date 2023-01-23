@@ -88,7 +88,7 @@ class PbSorted extends StatelessWidget {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => myYouTubePlayer(v: vidSrc,)
+                            builder: (context) => myYouTubePlayer(v: vidSrc)
                         )
                     );
                   },

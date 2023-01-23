@@ -80,7 +80,8 @@ class SignUpPage extends StatelessWidget {
                   child: TextField(
                     controller: emailController,
                     decoration: InputDecoration(
-                        hintText: "Email Address",
+                        hintText: "ईमेल अड्रेस",
+                        hintStyle: const TextStyle(color: Colors.grey),
                         prefixIcon: const Icon(Icons.email, color: Colors.orangeAccent,),
                         focusedBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(30),
@@ -97,6 +98,7 @@ class SignUpPage extends StatelessWidget {
                             borderRadius: BorderRadius.circular(30)),
                         border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(30))),
+                    style: const TextStyle(color: Colors.brown),
                   ),
                 ),
                 SizedBox(
@@ -117,7 +119,8 @@ class SignUpPage extends StatelessWidget {
                     controller: passwordController,
                     obscureText: true,
                     decoration: InputDecoration(
-                        hintText: "Create Password",
+                        hintText: "नया पासवर्ड डालें",
+                        hintStyle: const TextStyle(color: Colors.grey),
                         prefixIcon: const Icon(Icons.password, color: Colors.orangeAccent,),
                         focusedBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(30),
@@ -135,6 +138,7 @@ class SignUpPage extends StatelessWidget {
                         ),
                         border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(30))),
+                    style: const TextStyle(color: Colors.brown),
                   ),
                 ),
                 SizedBox(

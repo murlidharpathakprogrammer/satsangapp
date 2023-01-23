@@ -357,13 +357,16 @@ class AboutSantmatWidget extends StatelessWidget {
                           padding: const EdgeInsets.all(8.0),
                           child: Column(
                             children: [
-                              const Text(
-                                "परम सन्त तुलसी साहब",
-                                textAlign: TextAlign.start,
-                                style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.deepOrange,
-                                  fontSize: 20,
+                              const Padding(
+                                padding: EdgeInsets.all(8.0),
+                                child: Text(
+                                  "परम सन्त तुलसी साहब",
+                                  textAlign: TextAlign.start,
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.deepOrange,
+                                    fontSize: 20,
+                                  ),
                                 ),
                               ),
                               FancyShimmerImage(
@@ -473,13 +476,16 @@ class AboutSantmatWidget extends StatelessWidget {
                           padding: const EdgeInsets.all(8.0),
                           child: Column(
                             children: [
-                              const Text(
-                                "बाबा देवी साहब",
-                                textAlign: TextAlign.start,
-                                style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.deepOrange,
-                                  fontSize: 20,
+                              const Padding(
+                                padding: EdgeInsets.all(8.0),
+                                child: Text(
+                                  "बाबा देवी साहब",
+                                  textAlign: TextAlign.start,
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.deepOrange,
+                                    fontSize: 20,
+                                  ),
                                 ),
                               ),
                               FancyShimmerImage(
@@ -542,13 +548,16 @@ class AboutSantmatWidget extends StatelessWidget {
                           padding: const EdgeInsets.all(8.0),
                           child: Column(
                             children: [
-                              const Text(
-                                "महर्षि मेँहीँ परमहंस जी महाराज",
-                                textAlign: TextAlign.start,
-                                style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.deepOrange,
-                                  fontSize: 20,
+                              const Padding(
+                                padding: EdgeInsets.all(8.0),
+                                child: Text(
+                                  "महर्षि मेँहीँ परमहंस जी महाराज",
+                                  textAlign: TextAlign.start,
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.deepOrange,
+                                    fontSize: 20,
+                                  ),
                                 ),
                               ),
                               FancyShimmerImage(
@@ -647,13 +656,16 @@ class AboutSantmatWidget extends StatelessWidget {
                           padding: const EdgeInsets.all(8.0),
                           child: Column(
                             children: [
-                              const Text(
-                                "संत श्रीधर महाराज",
-                                textAlign: TextAlign.start,
-                                style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.deepOrange,
-                                  fontSize: 20,
+                              const Padding(
+                                padding: EdgeInsets.all(8.0),
+                                child: Text(
+                                  "संत श्रीधर महाराज",
+                                  textAlign: TextAlign.start,
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.deepOrange,
+                                    fontSize: 20,
+                                  ),
                                 ),
                               ),
                               FancyShimmerImage(
@@ -701,13 +713,16 @@ class AboutSantmatWidget extends StatelessWidget {
                           padding: const EdgeInsets.all(8.0),
                           child: Column(
                             children: [
-                              const Text(
-                                "महर्षि संतसेवी परमहंसजी महाराज",
-                                textAlign: TextAlign.start,
-                                style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.deepOrange,
-                                  fontSize: 20,
+                              const Padding(
+                                padding: EdgeInsets.all(8.0),
+                                child: Text(
+                                  "महर्षि संतसेवी परमहंसजी महाराज",
+                                  textAlign: TextAlign.start,
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.deepOrange,
+                                    fontSize: 20,
+                                  ),
                                 ),
                               ),
                               FancyShimmerImage(
@@ -772,13 +787,16 @@ class AboutSantmatWidget extends StatelessWidget {
                           padding: const EdgeInsets.all(8.0),
                           child: Column(
                             children: [
-                              const Text(
-                                "महर्षि शाही जी महाराज",
-                                textAlign: TextAlign.start,
-                                style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.deepOrange,
-                                  fontSize: 20,
+                              const Padding(
+                                padding: EdgeInsets.all(8.0),
+                                child: Text(
+                                  "महर्षि शाही जी महाराज",
+                                  textAlign: TextAlign.start,
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.deepOrange,
+                                    fontSize: 20,
+                                  ),
                                 ),
                               ),
                               FancyShimmerImage(
@@ -843,13 +861,16 @@ class AboutSantmatWidget extends StatelessWidget {
                           padding: const EdgeInsets.all(8.0),
                           child: Column(
                             children: [
-                              const Text(
-                                "महर्षि योगानंद परमहंस जी महाराज",
-                                textAlign: TextAlign.start,
-                                style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.deepOrange,
-                                  fontSize: 20,
+                              const Padding(
+                                padding: EdgeInsets.all(8.0),
+                                child: Text(
+                                  "महर्षि योगानंद परमहंस जी महाराज",
+                                  textAlign: TextAlign.start,
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.deepOrange,
+                                    fontSize: 20,
+                                  ),
                                 ),
                               ),
                               FancyShimmerImage(
