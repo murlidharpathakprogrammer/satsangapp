@@ -10,14 +10,19 @@ class ResidingMonkWidget extends StatelessWidget{
       'राम चंद्र बाबा (व्यवस्थापक)',
       'स्वामी प्रभुतानन्द जी महाराज (आचार्य)',
       'महर्षि योगनन्द परमहंस जी महाराज (आचार्य)',
+      'प्रलोग बाबा',
+      'ब्रह्मचारी विद्यानंद',
+      'शिवानंद सुमन',
+      'पंकज ब्रह्मचारी',
+      'लक्ष्मण बाबा'
     ];
     return ListView.builder(
-      physics: NeverScrollableScrollPhysics(),
+      physics: const NeverScrollableScrollPhysics(),
       itemCount: residingMonks.length,
       itemBuilder: (context, int index) =>
           ListTile(
-            leading: Icon(Icons.flag_circle),
-            title: Text('${residingMonks[index]}'),
+            leading: const Icon(Icons.person),
+            title: Text(residingMonks[index]),
           ),
 
     );

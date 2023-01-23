@@ -5,19 +5,19 @@ class MahotsavaWidgetList extends StatelessWidget{
   @override
   Widget build(BuildContext context){
     List<String> mahoList = [
-      'वार्षिक महोत्सव 1',
-      'वार्षिक महोत्सव 2',
-      'वार्षिक महोत्सव 3',
-      'वार्षिक महोत्सव 4',
-      'वार्षिक महोत्सव 5'
+      'गुरु जयंती',
+      'गुरु पूर्णिमा',
+      '9 दिनों का something 25 जनवरी से 30 जनवरी तक',
+      '15 अगस्त आजादी महोत्सव',
+      '26 जनवरी गणतंत्र दिवस'
     ];
     return ListView.builder(
-      physics: NeverScrollableScrollPhysics(),
+      physics: const NeverScrollableScrollPhysics(),
       itemCount: mahoList.length,
       itemBuilder: (context, int index) =>
          ListTile(
-          leading: Icon(Icons.flag_circle),
-          title: Text('${mahoList[index]}'),
+          leading: const Icon(Icons.flag_circle),
+          title: Text(mahoList[index]),
         ),
 
     );
