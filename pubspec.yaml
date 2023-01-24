@@ -71,6 +71,7 @@ dependencies:
   flutter_launcher_icons: ^0.11.0
   readmore: ^2.2.0
   youtube_player_flutter: ^8.1.2
+  splashscreen: ^1.2.0
 
 
 dev_dependencies:
