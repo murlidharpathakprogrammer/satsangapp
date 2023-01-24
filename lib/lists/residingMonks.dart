@@ -15,6 +15,17 @@ class ResidingMonkWidget extends StatelessWidget{
       'पंकज ब्रह्मचारी',
       'लक्ष्मण बाबा'
     ];
+    List<String> monksImg = [
+      'महर्षि योगनन्द परमहंस जी महाराज (आचार्य)',
+      'गुरु प्रसाद बाबा (व्यवस्थापक)',
+      'राम चंद्र बाबा (व्यवस्थापक)',
+      'स्वामी प्रभुतानन्द जी महाराज',
+      'प्रलोग बाबा',
+      'ब्रह्मचारी विद्यानंद',
+      'शिवानंद सुमन',
+      'पंकज ब्रह्मचारी',
+      'लक्ष्मण बाबा'
+    ];
     return ListView.builder(
       physics: const NeverScrollableScrollPhysics(),
       itemCount: residingMonks.length,
