@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:iconly/iconly.dart';
 import 'package:provider/provider.dart';
 import 'package:satsangapp/auth_controller.dart';
+import 'package:satsangapp/screens/privacyPolicy.dart';
+import 'package:satsangapp/screens/tocScreen.dart';
 import '../provider/dark_theme_provider.dart';
 import '../widgets/text_widget.dart';
 
@@ -83,15 +85,17 @@ class _UserScreenState extends State<UserScreen> {
                   const SizedBox(
                     height: 20,
                   ),
-                  _listTiles(
-                      title: 'Address',
-                      subtitle: 'Update my address',
-                      icon: IconlyLight.location,
-                      onPressed: () async{
-                        await _showAddressDialog();
-                      },
-                      color: color
-                  ),
+                  // _listTiles(
+                  //     title: 'Address',
+                  //     subtitle: 'Update my address',
+                  //     icon: IconlyLight.location,
+                  //     onPressed: () async{
+                  //       await _showAddressDialog();
+                  //     },
+                  //     color: color
+                  // ),
+
+
                   SwitchListTile(
                     title: TextWidget(
                       text: 'Dark mode',
@@ -111,32 +115,49 @@ class _UserScreenState extends State<UserScreen> {
                     },
                     value: themeState.getDarkTheme,
                   ),
+
+                  // Privacy Policy
                   _listTiles(
                       title: 'Privacy Policy',
                       color: color,
                       // subtitle: 'My subtitle',
                       icon: Icons.privacy_tip,
-                      onPressed: () {}),
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => const PrivacyPolicy()),
+                      );
+                    },),
+
+                  // TOC
                   _listTiles(
                     title: 'Terms and Conditions',
                     color: color,
                     // subtitle: 'Terms and Conditions',
                     icon: Icons.list,
-                    onPressed: () {},
-                  ),
-                  _listTiles(
-                    title: 'Forgot Password',
-                    color: color,
-                    // subtitle: 'Terms and Conditions',
-                    icon: IconlyLight.password,
                     onPressed: () {
-                      // _showLogoutDialog();
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => const TocScreen()),
+                      );
                     },
                   ),
+
+                  // Forgot Password
+                  // _listTiles(
+                  //   title: 'Forgot Password',
+                  //   color: color,
+                  //   // subtitle: 'Terms and Conditions',
+                  //   icon: IconlyLight.password,
+                  //   onPressed: () {
+                  //     // _showLogoutDialog();
+                  //   },
+                  // ),
+
+                  // Logout
                   _listTiles(
                     title: 'Logout',
                     color: color,
-                    // subtitle: 'Terms and Conditions',
                     icon: Icons.logout,
                     onPressed: () {
                       _showLogoutDialog();

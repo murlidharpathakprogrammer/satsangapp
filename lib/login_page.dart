@@ -1,3 +1,4 @@
+import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -18,6 +19,33 @@ class _LoginPageState extends State<LoginPage> {
 
   var emailController = TextEditingController();
   var passwordController = TextEditingController();
+
+  var _connectionStatus = 'Unknown';
+
+  @override
+  void initState() {
+    super.initState();
+    _checkInternetConnection();
+  }
+
+  _checkInternetConnection() async {
+    var connectivityResult = await (Connectivity().checkConnectivity());
+    if (connectivityResult == ConnectivityResult.none) {
+      setState(() {
+        _connectionStatus = 'No internet connection';
+      });
+    } else {
+      setState(() {
+        _connectionStatus = 'Connected';
+      });
+    }
+  }
+
+  _showSnackBar(BuildContext context) {
+    final snackBar = SnackBar(content: Text(_connectionStatus));
+    ScaffoldMessenger.of(context).showSnackBar(snackBar);
+  }
+
 
   @override
   Widget build(BuildContext context) {
@@ -202,6 +230,8 @@ class _LoginPageState extends State<LoginPage> {
                     borderRadius: BorderRadius.circular(30)),
                 child: InkWell(
                   onTap: () {
+                    // _checkInternetConnection();
+                    // _showSnackBar(context);
                     AuthController.instance.login(emailController.text.trim(),
                         passwordController.text.trim());
                   },

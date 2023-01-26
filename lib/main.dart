@@ -39,7 +39,7 @@ class _MyAppState extends State<MyApp> {
     getCurrentAppTheme();
     Get.put(AuthController());
     super.initState();
-    Future.delayed(const Duration(seconds: 3)).then((value) => {
+    Future.delayed(const Duration(seconds: 0)).then((value) => {
       FlutterNativeSplash.remove()
     });
   }

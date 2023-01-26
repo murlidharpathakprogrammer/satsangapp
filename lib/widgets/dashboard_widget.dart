@@ -32,6 +32,8 @@ class DashboardWidget extends StatelessWidget {
               child: Center(
                 child: Wrap(
                   children: [
+
+                    // BhajanPravachanScreen
                     SizedBox(
                       width: size.width * 0.33,
                       height: size.height * 0.19,
@@ -99,6 +101,8 @@ class DashboardWidget extends StatelessWidget {
                         ),
                       ),
                     ),
+
+                    // SantmatScreen
                     SizedBox(
                       width: size.width * 0.33,
                       height: size.height * 0.19,
@@ -223,6 +227,7 @@ class DashboardWidget extends StatelessWidget {
                       ),
                     ),
 
+                    // GalleryScreen
                     SizedBox(
                       width: size.width * 0.33,
                       height: size.height * 0.19,

@@ -40,7 +40,7 @@ class AuthController extends GetxController {
       await  auth.createUserWithEmailAndPassword(email: email, password: password);
     }catch(e){
       Get.snackbar("About User", "User message",
-          backgroundColor: Colors.redAccent,
+          backgroundColor: Colors.black,
           snackPosition: SnackPosition.BOTTOM,
           titleText: const Text(
             "Account creation failed",
@@ -48,10 +48,11 @@ class AuthController extends GetxController {
                 color: Colors.white
             ),
           ),
-          messageText: Text(
-              e.toString(),
-              style: const TextStyle(
-                  color: Colors.white
+          messageText: const Text(
+              "रजिस्टर नहीं हो सका",
+              style: TextStyle(
+                  color: Colors.white,
+                fontSize: 20
               )
           )
       );
@@ -63,7 +64,7 @@ class AuthController extends GetxController {
       await  auth.signInWithEmailAndPassword(email: email, password: password);
     }catch(e){
       Get.snackbar("About Login", "Login message",
-          backgroundColor: Colors.redAccent,
+          backgroundColor: Colors.black,
           snackPosition: SnackPosition.BOTTOM,
           titleText: const Text(
             "Login failed",
@@ -71,10 +72,11 @@ class AuthController extends GetxController {
                 color: Colors.white
             ),
           ),
-          messageText: Text(
-              e.toString(),
-              style: const TextStyle(
-                  color: Colors.white
+          messageText: const Text(
+              "लॉगिन नहीं हो सका",
+              style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 20
               )
           )
       );
