@@ -1,12 +1,12 @@
 import 'dart:io';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:iconly/iconly.dart';
+// import 'package:iconly/iconly.dart';
 import 'package:provider/provider.dart';
-import 'package:satsangapp/auth_controller.dart';
+// import 'package:satsangapp/auth_controller.dart';
 import '../lists/tocLists.dart';
 import '../provider/dark_theme_provider.dart';
-import '../widgets/text_widget.dart';
+// import '../widgets/text_widget.dart';
 
 class PrivacyPolicy extends StatefulWidget {
   const PrivacyPolicy({Key? key}) : super(key: key);
@@ -23,7 +23,7 @@ class _PrivacyPolicyState extends State<PrivacyPolicy> {
     return Scaffold(
         appBar: AppBar(
           title: const Text("Privacy policy"),
-          backgroundColor: Colors.black54,
+          backgroundColor: Colors.orangeAccent,
         ),
         body: Center(
           child: SingleChildScrollView(

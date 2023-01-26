@@ -1,12 +1,14 @@
 import 'dart:io';
+import 'package:fancy_shimmer_image/fancy_shimmer_image.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:iconly/iconly.dart';
 import 'package:provider/provider.dart';
-import 'package:satsangapp/auth_controller.dart';
+// import 'package:satsangapp/auth_controller.dart';
 import 'package:satsangapp/screens/privacyPolicy.dart';
 import 'package:satsangapp/screens/tocScreen.dart';
 import '../provider/dark_theme_provider.dart';
+import '../services/utils.dart';
 import '../widgets/text_widget.dart';
 
 class UserScreen extends StatefulWidget {
@@ -28,6 +30,7 @@ class _UserScreenState extends State<UserScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final double screenWidth = MediaQuery.of(context).size.width;
     final themeState = Provider.of<DarkThemeProvider>(context);
     final Color color = themeState.getDarkTheme ? Colors.white : Colors.black;
     return Scaffold(
@@ -40,36 +43,34 @@ class _UserScreenState extends State<UserScreen> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  const SizedBox(
-                    height: 15,
-                  ),
-                  RichText(
-                    text: TextSpan(
-                        text: 'नमस्ते ',
-                        style: const TextStyle(
-                          color: Colors.cyan,
-                          fontSize: 27,
-                          fontWeight: FontWeight.bold,
-                        ),
-                        children: <TextSpan>[
-                          TextSpan(
-                              text: ' मेरा नाम !',
-                              style: TextStyle(
-                                color: color,
-                                fontSize: 25,
-                                fontWeight: FontWeight.w600,
-                              ),
-                              recognizer: TapGestureRecognizer()
-                                ..onTap = () {
-                                  stdout.write('My name is pressed');
-                                }),
-                        ]),
-                  ),
+                  Center(child: SizedBox(width: screenWidth, height: screenWidth/1.5 ,child: FancyShimmerImage(imageUrl: "https://res.cloudinary.com/de9omilub/image/upload/v1672941229/satsangapp/images/monks/My_project-1_21_dq5hig.png"))),
+                  // RichText(
+                  //   text: TextSpan(
+                  //       text: 'नमस्ते ',
+                  //       style: const TextStyle(
+                  //         color: Colors.cyan,
+                  //         fontSize: 27,
+                  //         fontWeight: FontWeight.bold,
+                  //       ),
+                  //       children: <TextSpan>[
+                  //         TextSpan(
+                  //             text: ' ',
+                  //             style: TextStyle(
+                  //               color: color,
+                  //               fontSize: 25,
+                  //               fontWeight: FontWeight.w600,
+                  //             ),
+                  //             recognizer: TapGestureRecognizer()
+                  //               ..onTap = () {
+                  //                 stdout.write('My name is pressed');
+                  //               }),
+                  //       ]),
+                  // ),
                   const SizedBox(
                     height: 5,
                   ),
                   TextWidget(
-                    text: 'user@email.com',
+                    text: '',
                     color: color,
                     textSize: 18,
                     // isTitle: true,
@@ -155,14 +156,14 @@ class _UserScreenState extends State<UserScreen> {
                   // ),
 
                   // Logout
-                  _listTiles(
-                    title: 'Logout',
-                    color: color,
-                    icon: Icons.logout,
-                    onPressed: () {
-                      _showLogoutDialog();
-                    },
-                  )
+                  // _listTiles(
+                  //   title: 'Logout',
+                  //   color: color,
+                  //   icon: Icons.logout,
+                  //   onPressed: () {
+                  //     _showLogoutDialog();
+                  //   },
+                  // )
                 ],
               ),
             ),
@@ -170,51 +171,51 @@ class _UserScreenState extends State<UserScreen> {
         ));
   }
 
-  Future<void> _showLogoutDialog() async {
-    await showDialog(
-        context: context,
-        builder: (context) {
-          return AlertDialog(
-            title: Row(children: [
-              Image.asset(
-                'assets/images/icons8-logout-100 (1).png',
-                height: 20,
-                width: 20,
-                fit: BoxFit.fill,
-              ),
-              const SizedBox(
-                width: 8,
-              ),
-              const Text('  Sign out')
-            ]),
-            content: const Text('Do you want to sign out ?'),
-            actions: [
-              TextButton(
-                onPressed: () {
-                  if (Navigator.canPop(context)) {
-                    Navigator.pop(context);
-                  }
-                },
-                child: TextWidget(
-                  color: Colors.cyan,
-                  text: 'Cancel',
-                  textSize: 18,
-                ),
-              ),
-              TextButton(
-                onPressed: () {
-                  AuthController.instance.logOut();
-                },
-                child: TextWidget(
-                  color: Colors.red,
-                  text: 'OK',
-                  textSize: 18,
-                ),
-              ),
-            ],
-          );
-        });
-  }
+  // Future<void> _showLogoutDialog() async {
+  //   await showDialog(
+  //       context: context,
+  //       builder: (context) {
+  //         return AlertDialog(
+  //           title: Row(children: [
+  //             Image.asset(
+  //               'assets/images/icons8-logout-100 (1).png',
+  //               height: 20,
+  //               width: 20,
+  //               fit: BoxFit.fill,
+  //             ),
+  //             const SizedBox(
+  //               width: 8,
+  //             ),
+  //             const Text('  Sign out')
+  //           ]),
+  //           content: const Text('Do you want to sign out ?'),
+  //           actions: [
+  //             TextButton(
+  //               onPressed: () {
+  //                 if (Navigator.canPop(context)) {
+  //                   Navigator.pop(context);
+  //                 }
+  //               },
+  //               child: TextWidget(
+  //                 color: Colors.cyan,
+  //                 text: 'Cancel',
+  //                 textSize: 18,
+  //               ),
+  //             ),
+  //             TextButton(
+  //               onPressed: () {
+  //                 AuthController.instance.logOut();
+  //               },
+  //               child: TextWidget(
+  //                 color: Colors.red,
+  //                 text: 'OK',
+  //                 textSize: 18,
+  //               ),
+  //             ),
+  //           ],
+  //         );
+  //       });
+  // }
 
   Future <void> _showAddressDialog() async {
     await showDialog(context: context, builder: (context){
