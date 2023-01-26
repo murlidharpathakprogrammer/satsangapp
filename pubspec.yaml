@@ -75,6 +75,8 @@ dependencies:
   cloudinary_flutter: ^0.0.4
   cloudinary_dart: ^0.0.7
   connectivity_plus: ^2.1.0
+  rename_app: ^1.1.0
+  rename: ^2.1.1
 
 
 dev_dependencies:
