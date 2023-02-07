@@ -77,6 +77,12 @@ dependencies:
   connectivity_plus: ^2.1.0
   rename_app: ^1.1.0
   rename: ^2.1.1
+  flutter_markdown: ^0.6.13
+  flutter_windowmanager: ^0.2.0
+  no_internet_check: ^1.0.0
+  flutter_toastr: ^1.0.3
+  path_provider: ^2.0.12
+  carousel_slider: ^4.2.1
 
 
 dev_dependencies:

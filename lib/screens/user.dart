@@ -2,7 +2,9 @@ import 'dart:io';
 import 'package:fancy_shimmer_image/fancy_shimmer_image.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_windowmanager/flutter_windowmanager.dart';
 import 'package:iconly/iconly.dart';
+import 'package:no_internet_check/internet_connectivity/initialize_internet_checker.dart';
 import 'package:provider/provider.dart';
 // import 'package:satsangapp/auth_controller.dart';
 import 'package:satsangapp/screens/privacyPolicy.dart';
@@ -19,6 +21,11 @@ class UserScreen extends StatefulWidget {
 }
 
 class _UserScreenState extends State<UserScreen> {
+  @override void initState() {
+    disableCapture();
+    InternetChecker(); //TODO: ADD THIS LINE
+    super.initState();
+  }
   final TextEditingController _addressTextController =
   TextEditingController(text: "");
 
@@ -34,6 +41,7 @@ class _UserScreenState extends State<UserScreen> {
     final themeState = Provider.of<DarkThemeProvider>(context);
     final Color color = themeState.getDarkTheme ? Colors.white : Colors.black;
     return Scaffold(
+
         appBar: AppBar(title: const Text("संतमत सत्संग"), backgroundColor: Colors.orange,),
         body: Center(
           child: SingleChildScrollView(
@@ -216,6 +224,11 @@ class _UserScreenState extends State<UserScreen> {
   //         );
   //       });
   // }
+
+  Future<void> disableCapture() async {
+    //disable screenshots and record screen in current screen
+    await FlutterWindowManager.addFlags(FlutterWindowManager.FLAG_SECURE);
+  }
 
   Future <void> _showAddressDialog() async {
     await showDialog(context: context, builder: (context){
