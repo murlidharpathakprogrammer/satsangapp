@@ -11,7 +11,7 @@ class MyePubApp extends StatefulWidget {
 
 class _MyePubAppState extends State<MyePubApp> with WidgetsBindingObserver {
   late EpubController _epubController;
-String bookUrl;
+  String bookUrl;
   _MyePubAppState(this.bookUrl);
 
   @override
@@ -30,10 +30,8 @@ String bookUrl;
         title: EpubViewActualChapter(
             controller: _epubController,
             builder: (chapterValue) => Text(
-                  chapterValue?.chapter?.Title
-                              ?.replaceAll('\n', '')
-                              .trim() ??
-                          '',
+                  chapterValue?.chapter?.Title?.replaceAll('\n', '').trim() ??
+                      '',
                   textAlign: TextAlign.start,
                 )),
         backgroundColor: Colors.orange,

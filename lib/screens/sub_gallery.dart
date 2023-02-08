@@ -5,45 +5,47 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:path_provider/path_provider.dart';
 import 'package:provider/provider.dart';
-import 'package:satsangapp/screens/sub_gallery.dart';
 import 'package:satsangapp/widgets/gallery.dart';
 
 import '../provider/dark_theme_provider.dart';
 
-class GalleryScreen extends StatefulWidget {
+class SubGalleryScreen extends StatefulWidget {
+  final List<String> subFolderNames;
+  const SubGalleryScreen(this.subFolderNames, int lnth, {Key? key}) : super(key: key);
+
   @override
-  _GalleryScreenState createState() => _GalleryScreenState();
+  _SubGalleryScreenState createState() => _SubGalleryScreenState(subFolderNames);
 }
 
-class _GalleryScreenState extends State<GalleryScreen> {
+class _SubGalleryScreenState extends State<SubGalleryScreen> {
+  List<String> subFolderNames ;
+  _SubGalleryScreenState(this.subFolderNames);
+
   @override
   Widget build(BuildContext context) {
     final themeState = Provider.of<DarkThemeProvider>(context);
-    final Color crdCol = themeState.getDarkTheme ? const Color.fromRGBO(108, 50, 0, 100) : const Color.fromRGBO(
-        255, 166, 54, 0.7);
+    final Color color = themeState.getDarkTheme ? Colors.white : Colors.black;
     final Color bgColor =
-        themeState.getDarkTheme ? Colors.black : Colors.white;
+    themeState.getDarkTheme ? Colors.black : Colors.white;
     final double screenWidth = MediaQuery.of(context).size.width;
     final double screenHeight = MediaQuery.of(context).size.height;
 
 
-    InkWell _buildImgsCrd(Color color, String cardTitle, List<String> imgIndxLst, List<String> subFolders ) {
-      int lnth = subFolders.length;
+    InkWell _buildImgsCrd(Color color, String folderName, List<String> imgIndxLst, int lnth) {
       return InkWell(
-          onTap: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                  builder: (context) => SubGalleryScreen(subFolders, lnth)),
-            );
-          },
+        onTap: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+                builder: (context) => GridGalleryScreen()),
+          );
+        },
         child: Padding(
           padding: const EdgeInsets.all(8.0),
           child: Card(
             elevation: 6.0,
-            color: crdCol,
+            color: color,
             shadowColor: color.withBlue(255),
-            /*1*/
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(14),
             ),
@@ -53,7 +55,7 @@ class _GalleryScreenState extends State<GalleryScreen> {
                 children: [
                   Padding(
                     padding: const EdgeInsets.only(top: 15.0),
-                    child: Text(cardTitle, style: TextStyle(color: bgColor, fontWeight: FontWeight.bold),),
+                    child: Text(folderName, style: TextStyle(color: bgColor, fontWeight: FontWeight.bold),),
                   ),
                   Container(
                     width: screenWidth,
@@ -64,7 +66,7 @@ class _GalleryScreenState extends State<GalleryScreen> {
                       crossAxisCount: 3,
                       children: List.generate(
                         3,
-                        (index) {
+                            (index) {
                           String thisImgUrlQual10 =
                               'https://ik.imagekit.io/imgktmdp/monks/tr:q-1/monkimg__${imgIndxLst[index]}_.JPG';
                           return Padding(
@@ -86,8 +88,8 @@ class _GalleryScreenState extends State<GalleryScreen> {
                   Spacer(),
                   Container(color: bgColor.withOpacity(0.2), width: double.infinity,child: const Center(child: Padding(
                     padding: EdgeInsets.only(top: 8.0, bottom: 8),
-                    child: Text('और फोटो देखें', style: TextStyle(color: Colors.blueAccent),),
-                  )),),
+                    child: Spacer(),),
+                  )),
                 ],
               ),
             ),
@@ -96,27 +98,35 @@ class _GalleryScreenState extends State<GalleryScreen> {
       );
     }
 
+    int lnth = subFolderNames.length;
     return Scaffold(
       appBar: AppBar(
-        title: const Text("गैलरी"),
+        title: const Text("सब फ़ोल्डर्स"),
         backgroundColor: Colors.deepOrange,
       ),
       backgroundColor: bgColor,
       body: SingleChildScrollView(
         child: Column(
-          children: [
-            _buildImgsCrd(
-                crdCol, "महर्षि योगनन्द परमहंस जी महाराज का कुप्पाघाट में कुछ तस्वीरें", ['1', '2', '000'], ['संतसेवी जी महाराज के साथ बिताये गये कुछ पल', 'ब्रह्मचर्य के समय की कुछ तस्वीरें']),
-            _buildImgsCrd(
-                crdCol, "वर्तमान के कुछ पल", ['10', '11', '000'], ['साधु समाज के साथ कुछ तस्वीरें', 'गुरु महाराज के निवास स्थल तथा समाधि स्थल', 'कुप्पाघाट आश्रम में भ्रमण करते हुए']),
-            _buildImgsCrd(
-                crdCol, "बीते कार्यक्रम की कुछ तस्वीरें", ['21', '22', '000'], ['जिला वार्षिक, प्रखण्ड अधिवेशन, पर्सनल प्रोग्राम']),
-            _buildImgsCrd(
-                crdCol, "अन्य फोटो", ['31', '32', '000'], []),
-          ],
+          children: List.generate(
+          lnth,
+          (index) {
+            return _buildImgsCrd(color, subFolderNames[index], ['1', '2', '000'], lnth);
+    },
         ),
+        // child: Column(
+        //   children: [
+        //     _buildImgsCrd(
+        //         color, "महर्षि योगनन्द परमहंस जी महाराज का कुप्पाघाट में कुछ तस्वीरें", ['1', '2', '000']),
+        //     _buildImgsCrd(
+        //         color, "वर्तमान के कुछ पल", ['10', '11', '000']),
+        //     _buildImgsCrd(
+        //         color, "बीते कार्यक्रम की कुछ तस्वीरें", ['21', '22', '000']),
+        //     _buildImgsCrd(
+        //         color, "अन्य फोटो", ['31', '32', '000']),
+        //   ],
+        // ),
       ),
-    );
+    ));
   }
 }
 

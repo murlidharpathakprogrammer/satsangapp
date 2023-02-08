@@ -105,7 +105,6 @@ import 'dart:io';
 import 'package:fancy_shimmer_image/fancy_shimmer_image.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
-// import 'package:shimmer/shimmer.dart';
 import 'package:no_internet_check/no_internet_check.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:provider/provider.dart';
@@ -127,19 +126,11 @@ class _GridGalleryScreenState extends State<GridGalleryScreen> {
     final Color color = themeState.getDarkTheme ? Colors.white : Colors.black;
     final Color bgColor =
         themeState.getDarkTheme ? Colors.white10 : Colors.white;
-    Future<void> saveImageToFileSystem(String imageUrl) async {
-      // var httpsUri = Uri(path: imageUrl);
-      // var response = await http.get(httpsUri);
-      // final file = File('path/to/image.jpg');
-      // var filePath = '/path/to/image/on/';
-      final Directory temp = await getTemporaryDirectory();
-      final File imageFile = File('${temp.path}/images/someImageFile.png');
-    }
 
     return Scaffold(
       appBar: AppBar(
         title: const Text("गैलरी"),
-        backgroundColor: Colors.deepOrangeAccent,
+        backgroundColor: Colors.deepOrange,
       ),
       backgroundColor: bgColor,
       body: GridView.count(
