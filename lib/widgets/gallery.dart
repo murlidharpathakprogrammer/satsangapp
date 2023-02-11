@@ -100,36 +100,40 @@
 // }
 
 // import 'dart:html';
-import 'dart:io';
+// import 'dart:io';
 
 import 'package:fancy_shimmer_image/fancy_shimmer_image.dart';
 import 'package:flutter/material.dart';
-import 'package:http/http.dart' as http;
-import 'package:no_internet_check/no_internet_check.dart';
-import 'package:path_provider/path_provider.dart';
 import 'package:provider/provider.dart';
 
 import '../provider/dark_theme_provider.dart';
 
 class GridGalleryScreen extends StatefulWidget {
+  final String folderName;
+  final List<String> imgLst;
+  GridGalleryScreen({Key? key, required this.imgLst, required this.folderName}) : super(key: key);
+
+
   @override
-  _GridGalleryScreenState createState() => _GridGalleryScreenState();
+  _GridGalleryScreenState createState() => _GridGalleryScreenState(imgLst, folderName);
 }
 
 class _GridGalleryScreenState extends State<GridGalleryScreen> {
-  int present = 0;
-  int perPage = 15;
+  List<String> imgsLst= ['h', 'njk'];
+  String folderName;
+
+  _GridGalleryScreenState(this.imgsLst, this.folderName);
 
   @override
   Widget build(BuildContext context) {
     final themeState = Provider.of<DarkThemeProvider>(context);
-    final Color color = themeState.getDarkTheme ? Colors.white : Colors.black;
+    final Color borderColor = themeState.getDarkTheme ? Colors.white : Colors.black;
     final Color bgColor =
         themeState.getDarkTheme ? Colors.white10 : Colors.white;
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text("गैलरी"),
+        title:  Text(folderName),
         backgroundColor: Colors.deepOrange,
       ),
       backgroundColor: bgColor,
@@ -137,17 +141,17 @@ class _GridGalleryScreenState extends State<GridGalleryScreen> {
         physics: const BouncingScrollPhysics(),
         crossAxisCount: 2,
         children: List.generate(
-          20,
+          imgsLst.length,
           (index) {
             String thisImgUrlQual10 =
-                'https://ik.imagekit.io/imgktmdp/monks/tr:q-1/monkimg__${index + 1}_.JPG';
+                'https://ik.imagekit.io/imgktmdp/monks/tr:q-1/monkimg__${imgsLst[index]}_.JPG';
             String thisImgUrl =
-                'https://ik.imagekit.io/imgktmdp/monks/tr:q-20/monkimg__${index + 1}_.JPG';
+                'https://ik.imagekit.io/imgktmdp/monks/tr:q-20/monkimg__${imgsLst[index]}_.JPG';
             return Padding(
               padding: const EdgeInsets.all(3.0),
               child: Container(
                 decoration: BoxDecoration(
-                    color: Colors.yellow[100],
+                    color: borderColor,
                     borderRadius: BorderRadius.circular(20),
                     border: Border.all(color: Colors.yellow, width: 1)),
                 child: GestureDetector(
@@ -162,17 +166,18 @@ class _GridGalleryScreenState extends State<GridGalleryScreen> {
                     );
                   },
                   child: ClipRRect(
-                    borderRadius: const BorderRadius.all(Radius.circular(25)),
+                    borderRadius: const BorderRadius.all(Radius.circular(20)),
                     child: Padding(
                       padding: const EdgeInsets.all(1.0),
-                      child: FancyShimmerImage(
+                      child:
+                      FancyShimmerImage(
                         imageUrl: thisImgUrlQual10,
                         boxFit: BoxFit.cover,
                         shimmerHighlightColor: Colors.orange,
                         shimmerBaseColor: Colors.white,
                         shimmerDuration: const Duration(milliseconds: 1000),
                         errorWidget:
-                            Icon(Icons.photo_size_select_actual_outlined),
+                            const Icon(Icons.photo_size_select_actual_outlined),
                       ),
                     ),
                   ),
@@ -195,10 +200,10 @@ class FullScreenImagePage extends StatelessWidget {
   Widget build(BuildContext context) {
     final double screenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
-      appBar: AppBar(
-        title: Icon(Icons.photo_size_select_actual_outlined),
-        backgroundColor: Colors.deepOrangeAccent,
-      ),
+      // appBar: AppBar(
+      //   title: Icon(Icons.photo_size_select_actual_outlined),
+      //   backgroundColor: Colors.deepOrangeAccent,
+      // ),
       body: GestureDetector(
         onTap: () {
           Navigator.pop(context);
