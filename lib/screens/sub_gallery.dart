@@ -27,28 +27,25 @@ class _SubGalleryScreenState extends State<SubGalleryScreen> {
   setImgsVals(String choice) {
     switch (choice) {
       case 'संतसेवी जी महाराज के साथ बिताये गये कुछ पल':
-        imgLst = ['11', '2', '3'];
+        imgLst = ['1', '2', '3', '16', '17', '18', '26', '27', '28', '36'];
         break;
       case 'ब्रह्मचर्य के समय की कुछ तस्वीरें':
-        imgLst = ['4', '5', '6', '7', '8'];
+        imgLst = ['4', '5', '6', '7', '8', '37', '38', '46', '47', '48'];
         break;
       case 'साधु समाज के साथ कुछ तस्वीरें':
-        imgLst = ['9', '10', '11', '12', '13','14', '15'];
+        imgLst = ['9', '10', '11', '12', '13','14', '15', '56', '57', '58'];
         break;
       case 'गुरु महाराज के निवास स्थल तथा समाधि स्थल':
-        imgLst = ['19', '20', '21', '22', '23','24', '25'];
+        imgLst = ['19', '20', '21', '22', '23','24', '25', '59', '60', '61'];
         break;
       case 'कुप्पाघाट आश्रम में भ्रमण करते हुए':
-        imgLst = ['29', '30', '31', '32', '33','34', '35'];
+        imgLst = ['29', '30', '31', '32', '33','34', '35', '62', '63', '64'];
         break;
       case 'जिला वार्षिक, प्रखण्ड अधिवेशन, पर्सनल प्रोग्राम':
-        imgLst = ['39', '40', '41', '42', '43','44', '45'];
-        break;
-      case 'साधु समाज के साथ कुछ तस्वीरें':
-        imgLst = ['49', '50', '51', '52', '53','54', '55'];
+        imgLst = ['39', '40', '41', '42', '43','44', '45', '65', '66', '67'];
         break;
       default:
-        imgLst = ['13'];
+        imgLst = ['71', '1', '2', '3', '4', '5'];
         break;
     }
   }
@@ -64,7 +61,7 @@ class _SubGalleryScreenState extends State<SubGalleryScreen> {
     final double screenWidth = MediaQuery.of(context).size.width;
     final double screenHeight = MediaQuery.of(context).size.height;
 
-    final List<Color> crdCols = [Colors.lightGreenAccent, Colors.white70, Colors.orangeAccent, Colors.lightBlueAccent];
+    // final List<Color> crdCols = [Colors.lightGreenAccent, Colors.white70, Colors.orangeAccent, Colors.lightBlueAccent];
 
     InkWell _buildImgsCrd(Color crdCol, List<Color> crdCols, String folderName, List<String> imgIndxLst, int lnth, int colIndex) {
       return InkWell(
@@ -135,7 +132,7 @@ class _SubGalleryScreenState extends State<SubGalleryScreen> {
 
     int lnth = subFolderNames.length;
     List<Color> crdColsList = [Colors.lightGreen, Colors.cyan, Colors.orange, Colors.deepPurple];
-    List<Color> crdTxtColsList = themeState.getDarkTheme ? [Colors.black, Colors.black] : [Colors.black, Colors.white];
+    // List<Color> crdTxtColsList = themeState.getDarkTheme ? [Colors.black, Colors.black] : [Colors.black, Colors.white];
     return Scaffold(
       appBar: AppBar(
         title: Text(folderName),
