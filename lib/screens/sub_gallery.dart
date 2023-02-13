@@ -117,10 +117,10 @@ class _SubGalleryScreenState extends State<SubGalleryScreen> {
                       ),
                     ),
                   ),
-                  Spacer(),
+                  const Spacer(),
                   Container(color: bgColor.withOpacity(0.2), width: double.infinity,child: Center(child: Padding(
                     padding: const EdgeInsets.only(top: 8.0, bottom: 8),
-                    child: Text(imgLst[0], style: TextStyle(color: crdTxtCols[1]),),),
+                    child: Text('और देखें', style: TextStyle(color: crdTxtCols[1]),),),
                   )),
                 ],
               ),
