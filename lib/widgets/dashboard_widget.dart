@@ -5,6 +5,7 @@ import '../provider/dark_theme_provider.dart';
 import '../screens/about_santmat_screen.dart';
 import '../screens/bhajan_pravachan_screen.dart';
 import '../screens/gallery_screen.dart';
+import '../screens/mahasabha_screen.dart';
 import '../services/utils.dart';
 import 'books_widget.dart';
 import 'gallery.dart';
@@ -284,6 +285,8 @@ class DashboardWidget extends StatelessWidget {
                         ),
                       ),
                     ),
+
+                    // MahasabhaScreen
                     SizedBox(
                       width: size.width * 0.33,
                       height: size.height * 0.19,
@@ -291,6 +294,11 @@ class DashboardWidget extends StatelessWidget {
                         splashColor: Colors.deepOrange,
                         onTap: () {
                           debugPrint('Card tapped.');
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const MahasabhaScreen()),
+                          );
                         },
                         child: Card(
                           color: cardColor,

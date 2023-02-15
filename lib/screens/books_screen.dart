@@ -13,10 +13,6 @@ class _BooksPageState extends State<BooksPage>{
   @override
   Widget build(BuildContext context){
     return const Scaffold(
-      // appBar: AppBar(
-      //   title: const Text("पठन सामग्री"),
-      //   backgroundColor: Colors.orange,
-      // ),
       body: BooksWidget(),
     );
   }
