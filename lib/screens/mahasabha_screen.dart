@@ -26,6 +26,7 @@ class _MahasabhaScreenState extends State<MahasabhaScreen> {
         backgroundColor: Colors.orange,
       ),
       body: const MahasabhaWidget(),
+      backgroundColor: Colors.amberAccent,
     );
   }
 }
