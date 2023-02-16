@@ -352,6 +352,7 @@ class MahasabhaWidget extends StatelessWidget {
                                   '(${index + 1})',
                                   style: const TextStyle(
                                       fontSize: 15,
+                                      color: Colors.black,
                                       fontWeight: FontWeight.bold),
                                 ),
                               ),
@@ -361,6 +362,7 @@ class MahasabhaWidget extends StatelessWidget {
                                   members[index],
                                   maxLines: 1,
                                   style: const TextStyle(
+                                    color: Colors.black,
                                     fontSize: 15,
                                     // fontWeight: FontWeight.bold,
                                     // overflow: TextOverflow,
@@ -426,6 +428,7 @@ class MahasabhaWidget extends StatelessWidget {
                                 child: Text(
                                   '(${index + 1})',
                                   style: const TextStyle(
+                                      color: Colors.black,
                                       fontSize: 15,
                                       fontWeight: FontWeight.bold),
                                 ),
@@ -436,6 +439,7 @@ class MahasabhaWidget extends StatelessWidget {
                                   karyamembers[index],
                                   maxLines: 1,
                                   style: const TextStyle(
+                                    color: Colors.black,
                                     fontSize: 15,
                                     // fontWeight: FontWeight.bold,
                                     // overflow: TextOverflow,
@@ -502,6 +506,7 @@ class MahasabhaWidget extends StatelessWidget {
                                   '(${index + 1})',
                                   style: const TextStyle(
                                       fontSize: 15,
+                                      color: Colors.black,
                                       fontWeight: FontWeight.bold),
                                 ),
                               ),
@@ -511,10 +516,10 @@ class MahasabhaWidget extends StatelessWidget {
                                   padenMembers[index],
                                   // maxLines: 1,
                                   style: const TextStyle(
-                                    fontSize: 15,
-                                    // fontWeight: FontWeight.bold,
-                                    // overflow: TextOverflow,
-                                  ),
+                                      fontSize: 15, color: Colors.black
+                                      // fontWeight: FontWeight.bold,
+                                      // overflow: TextOverflow,
+                                      ),
                                 ),
                               ),
                             ],
@@ -576,6 +581,7 @@ class MahasabhaWidget extends StatelessWidget {
                                 child: Text(
                                   '(${index + 1})',
                                   style: const TextStyle(
+                                      color: Colors.black,
                                       fontSize: 15,
                                       fontWeight: FontWeight.bold),
                                 ),
@@ -586,10 +592,10 @@ class MahasabhaWidget extends StatelessWidget {
                                   aamantriMembers[index],
                                   // maxLines: 1,
                                   style: const TextStyle(
-                                    fontSize: 15,
-                                    // fontWeight: FontWeight.bold,
-                                    // overflow: TextOverflow,
-                                  ),
+                                      fontSize: 15, color: Colors.black
+                                      // fontWeight: FontWeight.bold,
+                                      // overflow: TextOverflow,
+                                      ),
                                 ),
                               ),
                             ],
@@ -603,7 +609,7 @@ class MahasabhaWidget extends StatelessWidget {
           const Center(
             child: Padding(
               padding: EdgeInsets.only(bottom: 18.0),
-              child: Icon(Icons.star_border_purple500),
+              child: Icon(Icons.star_border_purple500, color: Colors.deepOrange, size: 40,),
             ),
           )
         ],

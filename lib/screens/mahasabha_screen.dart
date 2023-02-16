@@ -15,14 +15,7 @@ class _MahasabhaScreenState extends State<MahasabhaScreen> {
     return Scaffold(
       appBar: AppBar(
         title: const Text("महासभा", style: TextStyle(
-          fontSize: 25,
-          shadows: [
-            Shadow(
-              blurRadius:5.0,  // shadow blur
-              color: Colors.black, // shadow color
-              offset: Offset(1.0,1.0), // how much shadow will be shown
-            ),
-          ],),),
+          fontSize: 25, fontWeight: FontWeight.bold),),
         backgroundColor: Colors.orange,
       ),
       body: const MahasabhaWidget(),
