@@ -4,6 +4,7 @@ import 'package:satsangapp/widgets/ashram_widget.dart';
 import '../provider/dark_theme_provider.dart';
 import '../screens/about_santmat_screen.dart';
 import '../screens/bhajan_pravachan_screen.dart';
+import '../screens/books_screen.dart';
 import '../screens/gallery_screen.dart';
 import '../screens/mahasabha_screen.dart';
 import '../services/utils.dart';
@@ -341,6 +342,8 @@ class DashboardWidget extends StatelessWidget {
                         ),
                       ),
                     ),
+
+                    // BooksScreen
                     SizedBox(
                       width: size.width * 0.33,
                       height: size.height * 0.19,
@@ -351,7 +354,7 @@ class DashboardWidget extends StatelessWidget {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => const BooksWidget()),
+                                builder: (context) => const BooksPage()),
                           );
                         },
                         child: Card(

@@ -4,6 +4,7 @@ import 'package:fancy_shimmer_image/fancy_shimmer_image.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:satsangapp/screens/epub_reader.dart';
+import 'package:satsangapp/screens/pdf_viewer.dart';
 import 'package:satsangapp/widgets/text_widget.dart';
 import '../provider/dark_theme_provider.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -67,20 +68,6 @@ class _BooksState extends State<Books> {
         255, 245, 200, 0.9);
     final double screenWidth = MediaQuery.of(context).size.width;
 
-    // final double screenHeight = MediaQuery.of(context).size.height;
-    // FirebaseFirestore db = FirebaseFirestore.instance;
-    // void getStartedReadData() async {
-    //   // [START get_started_read_data]
-    //   await db.collection("users").get().then((event) {
-    //     for (var doc in event.docs) {
-    //       stdout.write("${doc.id} => ${doc.data()}");
-    //     }
-    //   });
-    // }
-    // getStartedReadData();
-    // countDocuments();
-    // print("Count ${queryCount}");
-
     return Scaffold(
       appBar: AppBar(
         title: const Text("पुस्तक"),
@@ -108,8 +95,9 @@ class _BooksState extends State<Books> {
                       stdout.write("Firebase Book Card tapped");
                       stdout.write('Title: ${document['bookTitle']}');
                       // String bookAsset = "${document['author']}";
+                      // String bookUrl = "${document['bookUrl']}";
                       String bookUrl = "${document['bookUrl']}";
-                      Navigator.push(context, MaterialPageRoute(builder: (context) => MyePubApp(bookUrl)));
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => PdfViewerScreen(bookUrl)));
                       // Navigator.push(context,
                       //     MaterialPageRoute(builder: (context) => Bhajans()));
                     },

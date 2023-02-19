@@ -84,6 +84,9 @@ dependencies:
   path_provider: ^2.0.12
   carousel_slider: ^4.2.1
   flutter_treeview: ^1.0.7+1
+  flutter_pdfview: ^1.2.5
+  http: ^0.13.5
+  path: ^1.8.2
 
 
 dev_dependencies:
