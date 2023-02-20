@@ -23,14 +23,6 @@ class _PdfViewerScreenState extends State<PdfViewerScreen> {
     setState(() {
       isLoading = true;
     });
-    // var url = 'http://www.pdf995.com/samples/pdf.pdf';
-    // final response = await http.get(Uri.parse(url));
-    // final bytes = response.bodyBytes;
-    // final filename = basename(url);
-    // final dir = await getApplicationDocumentsDirectory();
-    // var file = File('${dir.path}/$filename');
-    // await file.writeAsBytes(bytes, flush: true);
-    // var pdfUrl = 'http://www.pdf995.com/samples/pdf.pdf';
     final response = await http.get(Uri.parse(pdfUrl));
     final bytes = response.bodyBytes;
     final filename = basename(pdfUrl);
@@ -62,7 +54,7 @@ class _PdfViewerScreenState extends State<PdfViewerScreen> {
         mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: const [
-              Center(child: CircularProgressIndicator(color: Colors.amberAccent, backgroundColor: Colors.deepOrange,)),
+              Center(child: CircularProgressIndicator(color: Colors.amberAccent, backgroundColor: Colors.blueAccent,)),
               Padding(
                 padding: EdgeInsets.only(top: 28.0),
                 child: Text("पुस्तक लोड हो रहा है\n कृपया प्रतीक्षा करें ...", style: TextStyle(fontSize: 20),),

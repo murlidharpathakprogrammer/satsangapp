@@ -25,32 +25,38 @@ class BooksWidget extends StatelessWidget {
       {
         "author": "महर्षि मेँहीँ परमहंस जी महाराज",
         "imgUrl":
-            "https://res.cloudinary.com/de9omilub/image/upload/c_thumb,w_200,g_face/v1669774363/satsangapp/images/books/author/11111-removebg-preview_ltagz8.png",
+            "https://ik.imagekit.io/prmhnsimgkt/sntmtstngapp/imgs/mnksProfiles/menhi.jpg",
+        "tag": "1"
       },
       {
         "author": "महर्षि योगानन्द परमहंस जी महाराज",
         "imgUrl":
-            "https://res.cloudinary.com/de9omilub/image/upload/c_thumb,w_200,g_face/v1669774018/satsangapp/images/books/author/1_ccexpress_zwaggw.png"
+            "https://ik.imagekit.io/prmhnsimgkt/sntmtstngapp/imgs/mnksProfiles/yoganand.png?tr:w-1000,h-700",
+        "tag": "2"
       },
       {
         "author": "महर्षि हरिनन्दन",
         "imgUrl":
-            "https://ik.imagekit.io/prmhnsimgkt/sntmtstngapp/imgs/mnksProfiles/%E0%A4%AE%E0%A4%B9%E0%A4%B0%E0%A5%8D%E0%A4%B7%E0%A4%BF_%E0%A4%B9%E0%A4%B0%E0%A4%BF%E0%A4%A8%E0%A4%A8%E0%A5%8D%E0%A4%A6%E0%A4%A8.jpg"
+            "https://ik.imagekit.io/prmhnsimgkt/sntmtstngapp/imgs/mnksProfiles/harinandan.jpg",
+        "tag": "3"
       },
       {
         "author": "महर्षि संतसेवी जी महाराज",
         "imgUrl":
-            "https://res.cloudinary.com/de9omilub/image/upload/c_thumb,w_200,g_face/v1669774018/satsangapp/images/books/author/1_ccexpress_zwaggw.png"
+            "https://ik.imagekit.io/prmhnsimgkt/sntmtstngapp/imgs/mnksProfiles/santsevi.jpg?tr=w-900,h-700,cm-extract,xc-530,yc-500",
+        "tag": "4"
       },
       {
         "author": "स्वामी कमलानंद जी महाराज",
         "imgUrl":
-            "https://res.cloudinary.com/de9omilub/image/upload/c_thumb,w_200,g_face/v1669774018/satsangapp/images/books/author/1_ccexpress_zwaggw.png"
+            "https://ik.imagekit.io/prmhnsimgkt/sntmtstngapp/imgs/mnksProfiles/kamlanand.jpg?tr=w-1000,h-700",
+        "tag": "5"
       },
       {
         "author": "स्वामी स्वरूपानंद जी महाराज",
         "imgUrl":
-            "https://res.cloudinary.com/de9omilub/image/upload/c_thumb,w_200,g_face/v1669774018/satsangapp/images/books/author/1_ccexpress_zwaggw.png"
+            "https://ik.imagekit.io/prmhnsimgkt/sntmtstngapp/imgs/mnksProfiles/default.png",
+        "tag": "6"
       },
     ];
 
@@ -80,25 +86,33 @@ class BooksWidget extends StatelessWidget {
                     ),
                     // leading: Icon(Icons.music_note,),
                     title: Text(
-                      '${entries[index]["author"]} की लिखी हुई रचनाएं',
+                      '${entries[index]["tag"]}. ${entries[index]["author"]} की लिखी हुई रचनाएं',
                       textAlign: TextAlign.justify,
                       style: const TextStyle(fontSize: 18),
                     ),
                     // subtitle: Text('${entries[index]["url"]}'),
                     trailing: InkWell(
-                      child: const Card(
-                        child: Padding(
+                      highlightColor: Colors.transparent,
+                      child: Card(
+                        shape: RoundedRectangleBorder(
+                          side: const BorderSide(width: 1, color: Colors.blue, ),
+                          borderRadius: BorderRadius.circular(10)
+                        ),
+                        child: const Padding(
                           padding: EdgeInsets.only(
-                              top: 8.0, bottom: 8, left: 15, right: 15),
-                          child: Text("देखें", style: TextStyle(
-                            fontSize: 18
-                          ),),
+                              top: 10.0, bottom: 8, left: 15, right: 15),
+                          child: Text(
+                            "देखें",
+                            style: TextStyle(fontSize: 18),
+                          ),
                         ),
                       ),
                       onTap: () {
-                        stdout.write('${index+1} author clicked');
-                        Navigator.push(context,
-                            MaterialPageRoute(builder: (context) => const Books()));
+                        stdout.write('${index + 1} author clicked');
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => Books('${entries[index]["author"]}','${entries[index]["tag"]}')));
                       },
                     ),
                   ),
