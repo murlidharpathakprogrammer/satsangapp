@@ -20,7 +20,7 @@ class Books extends StatefulWidget {
 class _BooksState extends State<Books> {
   String author;
   String tag;
-  List _booksDetails = [];
+  final List _booksDetails = [];
   late FixedExtentScrollController controller;
   _BooksState(this.author, this.tag);
 
@@ -89,6 +89,7 @@ class _BooksState extends State<Books> {
           }
 
           return ListView(
+            physics: BouncingScrollPhysics(),
             children: snapshot.data!.docs.map((document) {
               return Padding(
                 padding: const EdgeInsets.only(

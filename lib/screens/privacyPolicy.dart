@@ -1,15 +1,7 @@
-import 'dart:io';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_markdown/flutter_markdown.dart';
-import 'package:provider/provider.dart';
 import 'package:satsangapp/widgets/privacyWidget.dart';
 import 'package:url_launcher/url_launcher.dart';
-// import 'package:satsangapp/auth_controller.dart';
-import '../lists/tocLists.dart';
-import '../provider/dark_theme_provider.dart';
-// import '../widgets/text_widget.dart';
-
 class PrivacyPolicy extends StatefulWidget {
   const PrivacyPolicy({Key? key}) : super(key: key);
 
@@ -20,10 +12,9 @@ class PrivacyPolicy extends StatefulWidget {
 class _PrivacyPolicyState extends State<PrivacyPolicy> {
   @override
   Widget build(BuildContext context) {
-    String url =
-        "https://github.com/murlidharpathakprogrammer/ss/blob/main/privacy-policy.md";
-    final themeState = Provider.of<DarkThemeProvider>(context);
-    final Color color = themeState.getDarkTheme ? Colors.white : Colors.black;
+    // String url =
+    //     "https://github.com/murlidharpathakprogrammer/ss/blob/main/privacy-policy.md";
+    // final themeState = Provider.of<DarkThemeProvider>(context);
     return Scaffold(
         appBar: AppBar(
           title: const Text("Privacy policy"),

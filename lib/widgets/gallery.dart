@@ -105,13 +105,12 @@
 import 'package:fancy_shimmer_image/fancy_shimmer_image.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-
 import '../provider/dark_theme_provider.dart';
 
 class GridGalleryScreen extends StatefulWidget {
   final String folderName;
   final List<String> imgLst;
-  GridGalleryScreen({Key? key, required this.imgLst, required this.folderName}) : super(key: key);
+  const GridGalleryScreen({Key? key, required this.imgLst, required this.folderName}) : super(key: key);
 
 
   @override
@@ -194,16 +193,12 @@ class _GridGalleryScreenState extends State<GridGalleryScreen> {
 class FullScreenImagePage extends StatelessWidget {
   final String imageUrl;
 
-  const FullScreenImagePage({required this.imageUrl});
+  const FullScreenImagePage({Key? key, required this.imageUrl}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     final double screenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
-      // appBar: AppBar(
-      //   title: Icon(Icons.photo_size_select_actual_outlined),
-      //   backgroundColor: Colors.deepOrangeAccent,
-      // ),
       body: GestureDetector(
         onTap: () {
           Navigator.pop(context);

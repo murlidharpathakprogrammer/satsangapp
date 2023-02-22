@@ -1,16 +1,12 @@
-import 'dart:io';
 import 'package:fancy_shimmer_image/fancy_shimmer_image.dart';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_windowmanager/flutter_windowmanager.dart';
 import 'package:iconly/iconly.dart';
 import 'package:no_internet_check/internet_connectivity/initialize_internet_checker.dart';
 import 'package:provider/provider.dart';
-// import 'package:satsangapp/auth_controller.dart';
 import 'package:satsangapp/screens/privacyPolicy.dart';
 import 'package:satsangapp/screens/tocScreen.dart';
 import '../provider/dark_theme_provider.dart';
-import '../services/utils.dart';
 import '../widgets/text_widget.dart';
 
 class UserScreen extends StatefulWidget {
@@ -230,30 +226,6 @@ class _UserScreenState extends State<UserScreen> {
     await FlutterWindowManager.addFlags(FlutterWindowManager.FLAG_SECURE);
   }
 
-  Future <void> _showAddressDialog() async {
-    await showDialog(context: context, builder: (context){
-      return AlertDialog(
-        title: const Text('Update'),
-        content: TextField(
-          // onChanged: (value){
-          //   // _addressTextController.text;
-          //   print('_addressTextController.text ${_addressTextController.text}');
-          // },
-          controller: _addressTextController,
-          maxLines: 5,
-          decoration: const InputDecoration(hintText: "Your address"),
-        ),
-        actions: [
-          TextButton(
-              onPressed: () {
-
-              },
-              child: const Text('Update')
-          ),
-        ],
-      );
-    });
-  }
 
   Widget _listTiles({
     required String title,

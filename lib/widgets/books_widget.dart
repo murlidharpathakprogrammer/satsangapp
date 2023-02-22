@@ -1,13 +1,7 @@
-// import 'package:cloud_firestore/cloud_firestore.dart';
-// import 'package:fancy_shimmer_image/fancy_shimmer_image.dart';
 import 'dart:io';
-
 import 'package:flutter/material.dart';
-import 'package:iconly/iconly.dart';
 import 'package:provider/provider.dart';
-
 import '../provider/dark_theme_provider.dart';
-// import '../services/utils.dart';
 import 'Books.dart';
 
 class BooksWidget extends StatelessWidget {
@@ -62,6 +56,7 @@ class BooksWidget extends StatelessWidget {
 
     return Scaffold(
       body: ListView.builder(
+        physics: const BouncingScrollPhysics(),
           padding: const EdgeInsets.all(8),
           itemCount: entries.length,
           itemBuilder: (BuildContext context, int index) {

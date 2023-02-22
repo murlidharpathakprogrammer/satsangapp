@@ -8,8 +8,6 @@ import '../screens/books_screen.dart';
 import '../screens/gallery_screen.dart';
 import '../screens/mahasabha_screen.dart';
 import '../services/utils.dart';
-import 'books_widget.dart';
-import 'gallery.dart';
 
 class DashboardWidget extends StatelessWidget {
   const DashboardWidget({Key? key}) : super(key: key);

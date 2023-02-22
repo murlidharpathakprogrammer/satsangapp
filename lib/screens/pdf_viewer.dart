@@ -15,7 +15,7 @@ class PdfViewerScreen extends StatefulWidget {
 
 class _PdfViewerScreenState extends State<PdfViewerScreen> {
   String pdfUrl;
-  late File Pfile;
+  late File pFile;
   bool isLoading = false;
 
   _PdfViewerScreenState(this.pdfUrl);
@@ -30,10 +30,9 @@ class _PdfViewerScreenState extends State<PdfViewerScreen> {
     var file = File('${dir.path}/$filename');
     await file.writeAsBytes(bytes, flush: true);
     setState(() {
-      Pfile = file;
+      pFile = file;
     });
 
-    print(Pfile);
     setState(() {
       isLoading = false;
     });
@@ -61,14 +60,12 @@ class _PdfViewerScreenState extends State<PdfViewerScreen> {
               )
             ],
           )
-          : Container(
-        child: Center(
-          child: PDFView(
-            filePath: Pfile.path,
-            swipeHorizontal: true,
+          : Center(
+            child: PDFView(
+              filePath: pFile.path,
+              swipeHorizontal: true,
+            ),
           ),
-        ),
-      ),
     );
   }
 }

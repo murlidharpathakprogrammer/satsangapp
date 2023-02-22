@@ -123,7 +123,7 @@ class AshramWidget extends StatelessWidget {
                         ),
                       ),
                     ),
-                    Container(height: 520, child: const ResidingMonkWidget())
+                    const SizedBox(height: 520, child: ResidingMonkWidget())
                   ],
                 ),
               ),
@@ -166,7 +166,7 @@ class AshramWidget extends StatelessWidget {
                         ),
                       ),
                     ),
-                    Container(height: 1250, child: const AshramRulesWidget())
+                    const SizedBox(height: 1250, child: AshramRulesWidget())
                   ],
                 ),
               ),
@@ -209,7 +209,7 @@ class AshramWidget extends StatelessWidget {
                         ),
                       ),
                     ),
-                    Container(height: 300, child: const MahotsavaWidgetList())
+                    const SizedBox(height: 300, child: MahotsavaWidgetList())
                   ],
                 ),
               ),

@@ -1,28 +1,13 @@
-import 'dart:io';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:fancy_shimmer_image/fancy_shimmer_image.dart';
 import 'package:flutter/material.dart';
-import 'package:iconly/iconly.dart';
-import 'package:provider/provider.dart';
-import 'package:readmore/readmore.dart';
-import 'package:satsangapp/widgets/text_widget.dart';
-import '../provider/dark_theme_provider.dart';
 
 class MahasabhaWidget extends StatelessWidget {
   const MahasabhaWidget({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    final themeState = Provider.of<DarkThemeProvider>(context);
     double w = MediaQuery.of(context).size.width;
     double h = MediaQuery.of(context).size.height;
-    final Color txtcol =
-        themeState.getDarkTheme ? Colors.white70 : Colors.black;
-    final Color titleColor =
-        themeState.getDarkTheme ? Colors.orange : Colors.black;
-    final Color cardColor = themeState.getDarkTheme
-        ? Colors.white10
-        : const Color.fromRGBO(255, 180, 102, 1);
     Map<String, Color> allColors = {
       'crdCol1': const Color.fromRGBO(255, 180, 102, 1),
       'crdCol2': const Color.fromRGBO(100, 180, 255, 1),

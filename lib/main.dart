@@ -2,14 +2,11 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
-import 'package:flutter_toastr/flutter_toastr.dart';
 import 'package:no_internet_check/internet_connectivity/initialize_internet_checker.dart';
 import 'package:no_internet_check/internet_connectivity/navigation_Service.dart';
 import 'package:provider/provider.dart';
 import 'package:get/get.dart';
-// import 'package:satsangapp/auth_controller.dart';
 import 'package:satsangapp/screens/btm_bar.dart';
-// import 'login_page.dart';
 import 'provider/dark_theme_provider.dart';
 import 'consts/theme_data.dart';
 import 'package:flutter_windowmanager/flutter_windowmanager.dart';
@@ -68,7 +65,7 @@ class _MyAppState extends State<MyApp> {
             title: 'Santmat Satsang',
             theme: Styles.themeData(themeProvider.getDarkTheme, context),
             navigatorKey: NavigationService.navigationKey, //TODO: ADD THIS LINE
-            home: const BottomBarScreen());FlutterToastr.show("Flutter Toastr is a Flutter package for non-blocking notifications", context, duration: FlutterToastr.lengthShort, position:  FlutterToastr.bottom);
+            home: const BottomBarScreen());
 
       }),
     );

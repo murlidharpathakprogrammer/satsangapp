@@ -1,16 +1,13 @@
-import 'dart:io';
-
 import 'package:fancy_shimmer_image/fancy_shimmer_image.dart';
 import 'package:flutter/material.dart';
-import 'package:http/http.dart' as http;
-import 'package:path_provider/path_provider.dart';
 import 'package:provider/provider.dart';
 import 'package:satsangapp/screens/sub_gallery.dart';
-import 'package:satsangapp/widgets/gallery.dart';
 
 import '../provider/dark_theme_provider.dart';
 
 class GalleryScreen extends StatefulWidget {
+  const GalleryScreen({Key? key}) : super(key: key);
+
   @override
   _GalleryScreenState createState() => _GalleryScreenState();
 }
@@ -19,9 +16,6 @@ class _GalleryScreenState extends State<GalleryScreen> {
   @override
   Widget build(BuildContext context) {
     final themeState = Provider.of<DarkThemeProvider>(context);
-    final Color crdCol = themeState.getDarkTheme
-        ? const Color.fromRGBO(108, 50, 0, 100)
-        : const Color.fromRGBO(255, 166, 54, 0.7);
     final Color bgColor = themeState.getDarkTheme ? Colors.black : Colors.white;
     final Color crdTxtCol =
         themeState.getDarkTheme ? Colors.black : Colors.black;
@@ -70,7 +64,7 @@ class _GalleryScreenState extends State<GalleryScreen> {
                     height: screenHeight * 0.2,
                     padding: const EdgeInsets.only(top: 8, left: 10, right: 10),
                     child: GridView.count(
-                      physics: NeverScrollableScrollPhysics(),
+                      physics: const NeverScrollableScrollPhysics(),
                       crossAxisCount: 3,
                       children: List.generate(
                         3,
@@ -97,7 +91,7 @@ class _GalleryScreenState extends State<GalleryScreen> {
                       ),
                     ),
                   ),
-                  Spacer(),
+                  const Spacer(),
                   Container(
                     color: Colors.black.withOpacity(0.5),
                     width: double.infinity,
@@ -127,7 +121,7 @@ class _GalleryScreenState extends State<GalleryScreen> {
       ),
       backgroundColor: bgColor,
       body: SingleChildScrollView(
-        physics: BouncingScrollPhysics(),
+        physics: const BouncingScrollPhysics(),
         child: Column(
           children: [
             _buildImgsCrd(
@@ -177,7 +171,7 @@ class FullScreenImagePage extends StatelessWidget {
     final double screenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
       appBar: AppBar(
-        title: Icon(Icons.photo_size_select_actual_outlined),
+        title: const Icon(Icons.photo_size_select_actual_outlined),
         backgroundColor: Colors.deepOrangeAccent,
       ),
       body: GestureDetector(

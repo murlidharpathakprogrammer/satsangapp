@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import '../widgets/about_satsang_widget.dart';
 import '../widgets/mahasabha_widget.dart';
 
 class MahasabhaScreen extends StatefulWidget {

@@ -1,14 +1,5 @@
-import 'dart:io';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
-import 'package:provider/provider.dart';
-import 'package:url_launcher/url_launcher.dart';
-// import 'package:satsangapp/auth_controller.dart';
-import '../lists/tocLists.dart';
-import '../provider/dark_theme_provider.dart';
-// import '../widgets/text_widget.dart';
-
 class PrivacyWidget extends StatefulWidget {
   const PrivacyWidget({Key? key}) : super(key: key);
 
@@ -70,8 +61,6 @@ Contact Information:
 Email: support@santmatsatsang.com
 
     """;
-    final themeState = Provider.of<DarkThemeProvider>(context);
-    final Color color = themeState.getDarkTheme ? Colors.white : Colors.black;
     return SizedBox(height: h*0.8 ,child: Markdown(data: mdstring));
   }
 }

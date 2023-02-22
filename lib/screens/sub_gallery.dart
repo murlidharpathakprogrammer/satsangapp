@@ -94,7 +94,7 @@ class _SubGalleryScreenState extends State<SubGalleryScreen> {
                     height: screenHeight * 0.2,
                     padding: const EdgeInsets.only(top: 18, left: 10, right: 10),
                     child: GridView.count(
-                      physics: NeverScrollableScrollPhysics(),
+                      physics: const NeverScrollableScrollPhysics(),
                       crossAxisCount: 3,
                       children: List.generate(
                         3,
@@ -163,7 +163,7 @@ class FullScreenImagePage extends StatelessWidget {
     final double screenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
       appBar: AppBar(
-        title: Icon(Icons.photo_size_select_actual_outlined),
+        title: const Icon(Icons.photo_size_select_actual_outlined),
         backgroundColor: Colors.deepOrangeAccent,
       ),
       body: GestureDetector(

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:satsangapp/screens/pdf_viewer.dart';
 import 'package:satsangapp/widgets/books_widget.dart';
 
 class BooksPage extends StatefulWidget{

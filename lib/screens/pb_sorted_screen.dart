@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:fancy_shimmer_image/fancy_shimmer_image.dart';
 import 'package:satsangapp/screens/yt_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -14,17 +15,15 @@ class PbSorted extends StatelessWidget {
       {Key? key, required this.title, required this.author, required this.type})
       : super(key: key);
 
-  List _prBhDetails = [];
+  final List _prBhDetails = [];
   late FixedExtentScrollController controller;
 
-  @override
   void initState() {
     fetchPrBhDetails();
     initState();
     controller = FixedExtentScrollController();
   }
 
-  @override
   void dispose() {
     controller.dispose();
     dispose();
@@ -50,20 +49,18 @@ class PbSorted extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final themeState = Provider.of<DarkThemeProvider>(context);
-    final Color captionColor =
-        themeState.getDarkTheme ? const Color.fromRGBO(255, 166, 40, 1) : Colors.deepOrangeAccent;
     final Color cardColor = themeState.getDarkTheme
         ? const Color.fromRGBO(79, 118, 255, 0.8)
-        : const Color.fromRGBO(255, 245, 200, 0.9);
+        : const Color.fromRGBO(255, 255, 200, 0.9);
+    final Color playCol = themeState.getDarkTheme
+        ? const Color.fromRGBO(255, 242, 27, 1.0)
+        : const Color.fromRGBO(1, 76, 211, 0.9019607843137255);
     final double screenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
       appBar: AppBar(
         title: Text(title),
         backgroundColor: Colors.orange,
       ),
-      // body: Center(
-      //   child: Text('${author}, ${type}'),
-      // ),
       body: StreamBuilder<QuerySnapshot>(
           stream: FirebaseFirestore.instance
               .collection("bhajanPravachan")
@@ -77,98 +74,110 @@ class PbSorted extends StatelessWidget {
               );
             }
             return ListView(
-              physics: const BouncingScrollPhysics(),
+                physics: const BouncingScrollPhysics(),
                 children: snapshot.data!.docs.map((document) {
-              return SizedBox(
-                height: 80,
-                width: screenWidth,
-                child: InkWell(
-                  onTap: () {
-                    String vidSrc = "${document['vidSrc']}";
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => myYouTubePlayer(v: vidSrc)
-                        )
-                    );
-                  },
-                  child: Padding(
-                    padding: const EdgeInsets.all(0),
-                    child: Card(
-                      color: cardColor,
-                      elevation: 1,
-                      child:ListTile(
-                    title: Text("${document['title']}", maxLines: 2, style: const TextStyle(fontWeight: FontWeight.bold),),
-                  leading: const Icon(Icons.audiotrack),
-                  trailing: Icon(Icons.play_circle_fill_outlined, color: captionColor, size: 40,),
-                  // onTap: (){
-                  //   // you can add Play/push code over here
-                  //   myYouTubePlayer(v: vidSrc,)
-                  // },
-                ),
+                  return SizedBox(
+                    width: screenWidth,
+                    child: InkWell(
+                      onTap: () {
+                        String vidSrc = "${document['vidSrc']}";
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) =>
+                                    myYouTubePlayer(v: vidSrc)));
+                      },
+                      child: Padding(
+                        padding: const EdgeInsets.all(2),
+                        child: Card(
+                          color: cardColor,
+                          elevation: 3,
+                          child: Row(
+                            children: [
+                              Column(
+                                children: [
+                                  Padding(
+                                    padding: const EdgeInsets.all(0.0),
+                                    child: SizedBox(
+                                      width: 170,
+                                      height: 100,
+                                      child: FancyShimmerImage(
+                                        imageUrl:
+                                            'https://i.ytimg.com/vi/${document['vidSrc']}/mqdefault.jpg',
+                                        boxFit: BoxFit.cover,
+                                        shimmerDuration:
+                                            const Duration(milliseconds: 500),
+                                        shimmerBaseColor: Colors.amberAccent,
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.end,
+                                children: [
+                                  Row(
+                                    children: [
+                                      SizedBox(
+                                        width: screenWidth * 0.5,
+                                        child: Padding(
+                                          padding: const EdgeInsets.only(
+                                              left: 8.0, right: 8, top: 8),
+                                          child: Text(
+                                            "${document['title']}",
+                                            maxLines: 3,
+                                            textAlign: TextAlign.justify,
+                                            style: const TextStyle(
+                                                fontSize: 15,
+                                                fontWeight: FontWeight.bold),
+                                          ),
+                                        ),
+                                      )
+                                    ],
+                                  ),
+                                  Row(
+                                    mainAxisAlignment: MainAxisAlignment.end,
+                                    children: [
+                                      Padding(
+                                        padding: const EdgeInsets.all(10.0),
+                                        child: Icon(
+                                          Icons.play_circle_outlined,
+                                          color: playCol,
+                                          size: 30,
+                                        ),
+                                      )
+                                    ],
+                                  )
+                                ],
+                              )
+                            ],
+                          ),
+                          // child: ListTile(
+                          //   leading: FancyShimmerImage(
+                          //       width: 150,
+                          //       height: 100,
+                          //       imageUrl:
+                          //       'https://i.ytimg.com/vi/${document['vidSrc']}/sddefault.jpg'),
+                          //   title: Text(
+                          //     "${document['title']}",
+                          //     maxLines: 2,
+                          //     style:
+                          //     const TextStyle(fontWeight: FontWeight.bold),
+                          //   ),
+                          //   trailing: Icon(
+                          //     Icons.play_circle_fill_outlined,
+                          //     color: captionColor,
+                          //     size: 40,
+                          //   ),
+                          // ),
+                        ),
+                      ),
                     ),
-                  ),
-                ),
-              );
-            }).toList());
+                  );
+                }).toList());
           }),
     );
   }
 
   void setState(Null Function() param0) {}
 }
-
-// class _SecondScreenState extends State<SecondScreen>{
-//   List _prBhDetails =[];
-//   late FixedExtentScrollController controller;
-//
-//   @override
-//   void initState(){
-//     fetchPrBhDetails();
-//     super.initState();
-//     controller = FixedExtentScrollController();
-//   }
-//
-//   @override
-//   void dispose(){
-//     controller.dispose();
-//     super.dispose();
-//   }
-//
-//   fetchPrBhDetails() async{
-//     var firestoreInstance = FirebaseFirestore.instance;
-//     QuerySnapshot qn = await firestoreInstance.collection('bhajanPravachan').get();
-//     setState(() {
-//       for(int i=0; i<qn.docs.length; i++){
-//         _prBhDetails.add(
-//             {
-//               "author":qn.docs[i]["author"],
-//               "bookTitle":qn.docs[i]["bookTitle"],
-//               "bookUrl":qn.docs[i]["bookUrl"],
-//               "imageUrl":qn.docs[i]["imageUrl"],
-//               "tag":qn.docs[i]["tag"],
-//             }
-//           // qn.docs[i]["bookUrl"],
-//         );
-//         stdout.write(qn.docs[i]["bookUrl"]);
-//       }
-//     });
-//     return qn.docs;
-//   }
-//
-//   StreamController counterController = StreamController();
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       appBar: AppBar(
-//         title: Text('${title}'),
-//         backgroundColor: Colors.orange,
-//       ),
-//       body: Center(
-//         child: Text('${author}, ${type}'),
-//       ),
-//     );
-//   }
-// }
-
-//Imported from books.dart for reference

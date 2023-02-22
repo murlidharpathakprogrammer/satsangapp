@@ -28,12 +28,7 @@ class AboutSantmatWidget extends StatelessWidget {
       stdout.write(myDocCount.length); // Count of Documents in Collection
     }
 
-    // getStarted_readData();
     countDocuments();
-    final List<Map<String, String>> entries = [
-      {"auther": "स्वामी जी का प्रवचन", "url": "thisIsUrl1"},
-    ];
-    // final List<int> colorCodes = <int>[600, 500, 100, 300];
 
     return SingleChildScrollView(
       physics: const BouncingScrollPhysics(),
@@ -345,7 +340,7 @@ class AboutSantmatWidget extends StatelessWidget {
                   ),
 
                   // परम सन्त तुलसी साहब
-                  Container(
+                  SizedBox(
                     width: double.infinity,
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),
@@ -464,7 +459,7 @@ class AboutSantmatWidget extends StatelessWidget {
                   ),
 
                   // बाबा देवी साहब
-                  Container(
+                  SizedBox(
                     width: double.infinity,
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),
@@ -536,7 +531,7 @@ class AboutSantmatWidget extends StatelessWidget {
                   ),
 
                   // महर्षि मेँहीँ परमहंस जी महाराज
-                  Container(
+                  SizedBox(
                     width: double.infinity,
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),
@@ -644,7 +639,7 @@ class AboutSantmatWidget extends StatelessWidget {
                   ),
 
                   // संत श्रीधर महाराज
-                  Container(
+                  SizedBox(
                     width: double.infinity,
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),
@@ -701,7 +696,7 @@ class AboutSantmatWidget extends StatelessWidget {
                   ),
 
                   // महर्षि संतसेवी परमहंसजी महाराज
-                  Container(
+                  SizedBox(
                     width: double.infinity,
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),
@@ -775,7 +770,7 @@ class AboutSantmatWidget extends StatelessWidget {
                   ),
 
                   // महर्षि शाही जी महाराज
-                  Container(
+                  SizedBox(
                     width: double.infinity,
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),
@@ -849,7 +844,7 @@ class AboutSantmatWidget extends StatelessWidget {
                   ),
 
                   // महर्षि योगानंद परमहंस जी महाराज
-                  Container(
+                  SizedBox(
                     width: double.infinity,
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),
