@@ -239,7 +239,7 @@ class DashboardWidget extends StatelessWidget {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => GalleryScreen()),
+                                builder: (context) => const GalleryScreen()),
                           );
                         },
                         child: Card(

@@ -85,7 +85,7 @@ class PbSorted extends StatelessWidget {
                             context,
                             MaterialPageRoute(
                                 builder: (context) =>
-                                    myYouTubePlayer(v: vidSrc)));
+                                    MyYouTubePlayer(v: vidSrc)));
                       },
                       child: Padding(
                         padding: const EdgeInsets.all(2),

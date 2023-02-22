@@ -2,19 +2,19 @@ import 'package:flutter/material.dart';
 
 import 'package:youtube_player_iframe/youtube_player_iframe.dart';
 
-class myYouTubePlayer extends StatefulWidget {
+class MyYouTubePlayer extends StatefulWidget {
   final String v;
 
-  const myYouTubePlayer({
+  const MyYouTubePlayer({
     Key? key,
     required this.v,
   }) : super(key: key);
 
   @override
-  _myYouTubePlayerState createState() => _myYouTubePlayerState();
+  _MyYouTubePlayerState createState() => _MyYouTubePlayerState();
 }
 
-class _myYouTubePlayerState extends State<myYouTubePlayer> {
+class _MyYouTubePlayerState extends State<MyYouTubePlayer> {
   late YoutubePlayerController _controller;
 
   @override

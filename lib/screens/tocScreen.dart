@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 import '../lists/tocLists.dart';
-import '../provider/dark_theme_provider.dart';
 
 class TocScreen extends StatefulWidget {
   const TocScreen({Key? key}) : super(key: key);
@@ -15,7 +13,6 @@ class _TocScreenState extends State<TocScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final themeState = Provider.of<DarkThemeProvider>(context);
     // final Color color = themeState.getDarkTheme ? Colors.white : Colors.black;
     return Scaffold(
         appBar: AppBar(title: const Text("Terms and Conditions"), backgroundColor: Colors.orangeAccent,),
