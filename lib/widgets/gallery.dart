@@ -109,19 +109,18 @@ import '../provider/dark_theme_provider.dart';
 
 class GridGalleryScreen extends StatefulWidget {
   final String folderName;
-  final List<String> imgLst;
-  const GridGalleryScreen({Key? key, required this.imgLst, required this.folderName}) : super(key: key);
+  const GridGalleryScreen({Key? key, required this.folderName}) : super(key: key);
 
 
   @override
-  _GridGalleryScreenState createState() => _GridGalleryScreenState(imgLst, folderName);
+  _GridGalleryScreenState createState() => _GridGalleryScreenState(folderName);
 }
 
 class _GridGalleryScreenState extends State<GridGalleryScreen> {
-  List<String> imgsLst= ['h', 'njk'];
+  late List<String> imgsLst;
   String folderName;
 
-  _GridGalleryScreenState(this.imgsLst, this.folderName);
+  _GridGalleryScreenState(this.folderName);
 
   @override
   Widget build(BuildContext context) {
@@ -129,6 +128,45 @@ class _GridGalleryScreenState extends State<GridGalleryScreen> {
     final Color borderColor = themeState.getDarkTheme ? Colors.white : Colors.black;
     final Color bgColor =
         themeState.getDarkTheme ? Colors.white10 : Colors.white;
+
+      switch (folderName) {
+        case 'संतसेवी जी महाराज के साथ बिताये गये कुछ पल':
+          imgsLst = [for (var i = 1; i <= 10; i++) '$i'];
+          break;
+        case 'ब्रह्मचर्य के समय की कुछ तस्वीरें':
+          imgsLst = [for (var i = 11; i < 21; i++) '$i'];
+          break;
+        case 'शाही स्वामी जी महाराज के साथ बिताये गये कुछ पल':
+          imgsLst = [for (var i = 21; i < 31; i++) '$i'];
+          break;
+        case 'साधु समाज के साथ कुछ तस्वीरें':
+          imgsLst = [for (var i = 31; i < 41; i++) '$i'];
+          break;
+        case 'गुरु महाराज के निवास स्थल तथा समाधि स्थल':
+          imgsLst = [for (var i = 41; i < 51; i++) '$i'];
+          break;
+        case 'कुप्पाघाट आश्रम में भ्रमण करते हुए':
+          imgsLst = [for (var i = 51; i < 61; i++) '$i'];
+          break;
+        case 'जिला वार्षिक':
+          imgsLst = [for (var i = 61; i < 71; i++) '$i'];
+          break;
+        case 'प्रखण्ड अधिवेशन':
+          imgsLst = [for (var i = 71; i < 81; i++) '$i'];
+          break;
+        case 'पर्सनल प्रोग्राम':
+          imgsLst = [for (var i = 81; i < 91; i++) '$i'];
+          break;
+        case '११०वाँ महाधिवेशन कंचनपुर':
+          imgsLst = [for (var i = 91; i < 101; i++) '$i'];
+          break;
+        case '१११वाँ महाधिवेशन कंचनपुर':
+          imgsLst = [for (var i = 101; i < 111; i++) '$i'];
+          break;
+        default:
+          imgsLst = [for (var i = 111; i < 121; i++) '$i'];
+          break;
+      }
 
     return Scaffold(
       appBar: AppBar(
@@ -172,8 +210,9 @@ class _GridGalleryScreenState extends State<GridGalleryScreen> {
                       FancyShimmerImage(
                         imageUrl: thisImgUrlQual10,
                         boxFit: BoxFit.cover,
-                        shimmerHighlightColor: Colors.orange,
+                        shimmerHighlightColor: Colors.amberAccent,
                         shimmerBaseColor: Colors.white,
+                        shimmerBackColor: Colors.white,
                         shimmerDuration: const Duration(milliseconds: 1000),
                         errorWidget:
                             const Icon(Icons.photo_size_select_actual_outlined),

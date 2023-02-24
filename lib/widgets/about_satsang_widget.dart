@@ -246,10 +246,10 @@ class AboutSantmatWidget extends StatelessWidget {
             thickness: 10,
             color: Colors.red.withOpacity(0.3),
           ),
-          Padding(
-            padding: const EdgeInsets.only(top: 25.0),
-            child: Container(
-              color: cardColor,
+          Container(
+            color: cardColor,
+            child: Padding(
+              padding: const EdgeInsets.all(18.0),
               child: Column(
                 children: [
                   Center(
@@ -265,508 +265,956 @@ class AboutSantmatWidget extends StatelessWidget {
                       ),
                     ),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.all(12.0),
-                    child: Column(
-                      children: [
-                        RichText(
-                          text: TextSpan(
-                              style: TextStyle(
-                                color: txtcol,
-                                fontSize: 20,
-                              ),
-                              children: const [
-                                TextSpan(
-                                    text: "\u2022",
-                                    style: TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                    )),
-                                TextSpan(
-                                    text:
-                                        " शान्ति स्थिरता वा निश्चलता को कहते हैं।\n",
-                                    style:
-                                        TextStyle(fontStyle: FontStyle.italic)),
-                                TextSpan(
-                                    text: "\u2022",
-                                    style: TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                    )),
-                                TextSpan(
-                                    text:
-                                        " शान्ति को जो प्राप्त कर लेते हैं, सन्त कहलाते हैं।\n",
-                                    style:
-                                        TextStyle(fontStyle: FontStyle.italic)),
-                                TextSpan(
-                                    text: "\u2022",
-                                    style: TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                    )),
-                                TextSpan(
-                                    text:
-                                        " सन्तों के मत वा धर्म को सन्तमत कहते हैं।",
-                                    style:
-                                        TextStyle(fontStyle: FontStyle.italic))
-                              ]),
-                          textAlign: TextAlign.justify,
-                        ),
-                        const Padding(
-                          padding: EdgeInsets.only(top: 12.0, bottom: 12.0),
-                          child: Divider(
-                            thickness: 2,
-                          ),
-                        ),
 
-                        //संतमत-जबसे सृष्टि में संत हुए हैं
-                        RichText(
-                          text: TextSpan(
+                  RichText(
+                    text: TextSpan(
+                        style: TextStyle(
+                          color: txtcol,
+                          fontSize: 20,
+                        ),
+                        children: const [
+                          TextSpan(
+                              text: "\u2022",
                               style: TextStyle(
-                                color: txtcol,
-                                fontSize: 20,
-                              ),
-                              children: const [
-                                TextSpan(
-                                    text:
-                                        '''संतमत-जबसे सृष्टि में संत हुए हैं, तबसे संतमत है। संतमत किसी एक संत के नाम पर प्रचारित मत नहीं है। विश्व में जो भी संत हो गये हैं, उन सभी संतों के मत को संतमत कहते हैं। संतमत कोई नया मत, नया धर्म, नया मजहब, नया रिलिजन (त्मसपहपवद) नहीं है। यह परम पुरातन, परम सनातन वैदिक मत है। यह वैदिक मत होते हुए भी किसी अवैदिक मत से ईर्ष्या, द्वेष, घृणा, रोष आदि नहीं करता है। संतमत सभी संतों का समान रूप से सम्मान करता है।
-                                    ''',
-                                    style:
-                                        TextStyle(fontStyle: FontStyle.italic))
-                              ]),
-                          textAlign: TextAlign.justify,
-                        ),
-                        const Padding(
-                          padding: EdgeInsets.only(top: 12.0, bottom: 12.0),
-                          child: Divider(
-                            thickness: 2,
-                          ),
-                        ),
-
-                        //  महर्षिजी की साधना-पद्धति-ब्रह्म
-                        RichText(
-                          text: TextSpan(
+                                fontWeight: FontWeight.bold,
+                              )),
+                          TextSpan(
                               text:
-                                  '''महर्षिजी की साधना-पद्धति-ब्रह्म को प्राप्त करने के लिए महर्षि मेँहीँ परमहंसजी महाराज चार प्रकार की प्रक्रियाएँ बतलाते थे-''',
+                                  " शान्ति स्थिरता वा निश्चलता को कहते हैं।\n",
+                              style: TextStyle(fontStyle: FontStyle.italic)),
+                          TextSpan(
+                              text: "\u2022",
                               style: TextStyle(
-                                  fontSize: 18,
-                                  color: txtcol,
-                                  fontStyle: FontStyle.italic,
-                                  fontWeight: FontWeight.bold)),
-                        ),
-                        RichText(
-                          text: TextSpan(
-                              style: TextStyle(
-                                color: txtcol,
-                                fontSize: 20,
-                              ),
-                              children: const [
-                                TextSpan(
-                                    text: "\n1)",
-                                    style: TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                    )),
-                                TextSpan(
-                                    text: " मानस जप\n",
-                                    style:
-                                        TextStyle(fontStyle: FontStyle.italic)),
-                                TextSpan(
-                                    text: "2)",
-                                    style: TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                    )),
-                                TextSpan(
-                                    text: " मानस ध्यान\n",
-                                    style:
-                                        TextStyle(fontStyle: FontStyle.italic)),
-                                TextSpan(
-                                    text: "3)",
-                                    style: TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                    )),
-                                TextSpan(
-                                    text: " दृष्टि-योग और\n",
-                                    style:
-                                        TextStyle(fontStyle: FontStyle.italic)),
-                                TextSpan(
-                                    text: "4)",
-                                    style: TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                    )),
-                                TextSpan(
-                                    text: " सुरत-शब्द- योग (नादानुसन्धान)।\n",
-                                    style:
-                                        TextStyle(fontStyle: FontStyle.italic)),
-                              ]),
-                          textAlign: TextAlign.justify,
-                        ),
-                        const Padding(
-                          padding: EdgeInsets.only(top: 12.0, bottom: 12.0),
-                          child: Divider(
-                            thickness: 2,
-                          ),
-                        ),
-
-                        //  जप-गुरु-प्रदत्त मंत्र की बारम्बार
-                        RichText(
-                          text: TextSpan(
+                                fontWeight: FontWeight.bold,
+                              )),
+                          TextSpan(
                               text:
-                                  '''जप-गुरु-प्रदत्त मंत्र की बारम्बार इस तरह आवृत्ति करना कि मन में मंत्र रहे और मंत्र में मन रहे, जप कहलाता है।  जप तीन तरह के होते हैं-''',
+                                  " शान्ति को जो प्राप्त कर लेते हैं, सन्त कहलाते हैं।\n",
+                              style: TextStyle(fontStyle: FontStyle.italic)),
+                          TextSpan(
+                              text: "\u2022",
                               style: TextStyle(
-                                  fontSize: 18,
-                                  color: txtcol,
-                                  fontStyle: FontStyle.italic,
-                                  fontWeight: FontWeight.bold)),
-                        ),
-                        RichText(
-                          text: TextSpan(
-                              style: TextStyle(
-                                color: txtcol,
-                                fontSize: 18,
-                              ),
-                              children: const [
-                                TextSpan(
-                                    text: "\n(1) वाचिक जप",
-                                    style: TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                    )),
-                                TextSpan(
-                                    text:
-                                        "\nवाचिक जप में मंत्र का बोल-बोलकर बारम्बार उच्चारण करते हैं। इसमें स्वयं तो सुनते ही हैं, दूसरे व्यक्ति भी सुनते हैं।\n",
-                                    style:
-                                        TextStyle(fontStyle: FontStyle.italic)),
-                                TextSpan(
-                                    text: "\n(2) उपांशु जप",
-                                    style: TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                    )),
-                                TextSpan(
-                                    text:
-                                        "\nइस जप में मंत्र का उच्चारण धीमे स्वर में किया जाता है। इसमें जीभ और ओष्ठ हिलते हैं, स्वयं अपने कान सुनते हैं; दूसरा व्यक्ति नहीं।\n",
-                                    style:
-                                        TextStyle(fontStyle: FontStyle.italic)),
-                                TextSpan(
-                                    text: "\n(3) मानस जप",
-                                    style: TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                    )),
-                                TextSpan(
-                                    text:
-                                        "\nइस जप में जीभ, ओंठ और कंठ नहीं हिलते हैं। मन-ही-मन मंत्र की आवृत्ति होती है। वाचिक जप से सौ गुणा अधिक उपांशु जप और उपांशु जप से हजार गुणा अधिक श्रेष्ठ मानस जप बतलाया गया है। मानस जप को जपों का राजा माना गया है। इसको फकीर लोग जिकर कहते हैं।\n",
-                                    style:
-                                        TextStyle(fontStyle: FontStyle.italic)),
-                                TextSpan(
-                                    text: "\n(4) मानस ध्यान",
-                                    style: TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                    )),
-                                TextSpan(
-                                    text:
-                                        "\nमानस ध्यान में चित्त ध्येेय तत्त्व पर टिका रहता है। ध्यान दो प्रकार के होते हैं-\n",
-                                    style:
-                                        TextStyle(fontStyle: FontStyle.italic)),
-                              ]),
-                          textAlign: TextAlign.justify,
-                        ),
-
-                        Padding(
-                          padding: const EdgeInsets.only(left: 18.0),
-                          child: RichText(
-                              text: TextSpan(
-                                  style: TextStyle(
-                                    color: txtcol,
-                                    fontSize: 18,
-                                  ),
-                                  children: const [
-                                TextSpan(
-                                    text: "(क) सगुण",
-                                    style: TextStyle(
-                                      fontSize: 20,
-                                    )),
-                                TextSpan(
-                                    text:
-                                        "\nध्यान-इष्ट के स्थूल रूप और ज्योतिर्मय विन्दु-रूप तथा अनहद नादों के ध्यान को सगुण-ध्यान कहते हैं। सगुण-ध्यान में ही मानस ध्यान आता है। इष्ट के देखे हुए स्थूल रूप को अपने मानस पटल पर हू-ब-हू उतारने की क्रिया को मानस ध्यान कहते हैं। जिन इष्ट के नाम का मानस जप करते हैं, उन्हीं के स्थूल रूप का मानस ध्यान करना चाहिए। इसको फकीर लोग फनाफिल मुर्शिद कहते हैं। मानस ध्यान में इष्ट के मनोमय रूप पर कुछ काल तक दृष्टि के स्थिर हो जाने पर दृष्टि-योग की क्रिया की जाती है।\n",
-                                    style:
-                                        TextStyle(fontStyle: FontStyle.italic)),
-                                TextSpan(
-                                    text: "\n(ख) निर्गुण-ध्यान",
-                                    style: TextStyle(
-                                      fontSize: 20,
-                                    )),
-                                TextSpan(
-                                    text:
-                                        "\nजिस आदिशब्द से सृष्टि का विकास हुआ है, उसे सारशब्द भी कहते हैं। वह त्रयगुण-रहित होने से निर्गुण कहलाता है। उसी सारशब्द के ध्यान को निर्गुण-ध्यान कहते हैं।\n",
-                                    style:
-                                        TextStyle(fontStyle: FontStyle.italic)),
-                              ])),
-                        ),
-                        const Padding(
-                          padding: EdgeInsets.only(top: 12.0, bottom: 12.0),
-                          child: Divider(
-                            thickness: 2,
-                          ),
-                        ),
-                        RichText(
-                            text: TextSpan(
-                                style: TextStyle(
-                                  color: txtcol,
-                                  fontSize: 18,
-                                ),
-                                children: const [
-                              //  दृष्टियोग
-                              TextSpan(
-                                  text: "\nदृष्टियोग",
-                                  style: TextStyle(
-                                    fontWeight: FontWeight.bold,
-                                  )),
-                              TextSpan(
-                                text:
-                                    "\nदेखने की शक्ति को दृष्टि कहते हैं। दोनों आँखों की दृष्टियों को मिलाकर मिलन-स्थान पर मन को टिकाकर देखने की क्रिया को दृष्टियोग कहते हैं। इस अभ्यास से एकविन्दुता की प्राप्ति होती है, जिससे सूक्ष्म वा दिव्य दृष्टि खुल जाती है। तब साधक के अन्दर अंधकार नहीं रहता है; अपने अन्दर उसे प्रकाश-ही-प्रकाश दीखता है। दृष्टि के चार भेद हैं-जाग्रत की दृष्टि, स्वप्न की दृष्टि, मानस दृष्टि और दिव्य दृष्टि। दृष्टि के पहले तीनों भेदों का निरोध होने से मनोनिरोध होता है और दिव्य दृष्टि खुल जाती है। तेजोमय विन्दु का ध्यान परम ध्यान कहा जाता है। इसको फकीर लोग सगले नसीरा कहते हैं।\n",
-                                style: TextStyle(fontStyle: FontStyle.italic),
-                              ),
-                              //  सुरत-शब्द-योग
-                              TextSpan(
-                                  text: "\nसुरत-शब्द-योग",
-                                  style: TextStyle(
-                                    fontWeight: FontWeight.bold,
-                                  )),
-                              TextSpan(
-                                  text:
-                                      '''\nआँख, कान और मुँह बन्द करके केन्द्रीय शब्द को पकड़ने की क्रिया को सुरत-शब्द-योग कहते हैं।
-                                        सृष्टि के पाँच मंडल हैं-स्थूल, सूक्ष्म, कारण, महाकारण और कैवल्य। इन पाँचो मंडलों के केन्द्रीय शब्द हैं। इन पाँचो केन्द्रीय शब्दों के अतिरिक्त अन्दर में विभिन्न प्रकार की असंख्य ध्वनियाँ हो रही हैं, जिन्हें अनहद नाद कहते हैं। इन अनहद नादों के बीच निचले मंडल के केन्द्रीय शब्द को क्रम-क्रम से पकड़ते हुए अन्ततः कैवल्य मंडल के केन्द्रीय शब्द-सारशब्द को पकड़ना नादानुसंधान (सुरत-शब्द-योग) का लक्ष्य है। केन्द्रीय शब्द को पकड़ने की युक्ति गुरु बतलाते हैं। दृष्टियोग पूरा होने पर और दृष्टियोग पूरा नहीं होने पर; दोनों स्थितियों में नादानुसंधान किया जा सकता है; परन्तु दोनों स्थितियों में नादानुसंधान की विधि अलग-अलग बतायी जाती है। दृष्टियोग में पूर्ण साधक को सीधे केन्द्रीय शब्द सुनाई पड़ता है और जो दृष्टियोग साधन में पूर्णता प्राप्त किये बिना नादानुसंधान करते हैं, उनके लिए यह कोई आवश्यक नहीं है कि वे शीघ्र केन्द्रीय शब्द को पकड़ ही ले।
-                          सारशब्द को नादानुसंधान के द्वारा पकड़ने पर साधक उसके आकर्षण से खिंचकर परमात्म-पद को प्राप्त कर लेते हैं। तब वे दैहिक, दैविक, भौतिक-इन त्रय तापों से मुक्त हो जाते हैं; आवागमन छूट जाता है। नादानुसंधान को फकीर लोग सुलतानु उलजकार कहते हैं।\n''',
-                                  style: TextStyle(
-                                    fontStyle: FontStyle.italic,
-                                  )),
-                            ])),
-                        const Padding(
-                          padding: EdgeInsets.only(top: 12.0, bottom: 12.0),
-                          child: Divider(
-                            thickness: 2,
-                          ),
-                        ),
-
-                        //  संतमत की विशेषता
-                        RichText(
-                          text: TextSpan(
-                              style: TextStyle(
-                                color: txtcol,
-                                fontSize: 20,
-                              ),
-                              children: const [
-                                TextSpan(
-                                    text: " \nसंतमत की विशेषता\n\n",
-                                    style: TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                      color: Colors.orange,
-                                      fontSize: 25,
-                                    )),
-                                TextSpan(
-                                    text: "1. ",
-                                    style:
-                                        TextStyle(fontStyle: FontStyle.italic)),
-                                TextSpan(
-                                    text:
-                                        " संतमत कहता है कि एक ईश्वर की भक्ति करो। ईश्वर की प्राप्ति जब कभी होगी, तो अपने अन्दर होगी। उस ईश्वर के पास जाने का रास्ता भी एक ही है, जो दशम द्वार से आरम्भ होता है। सभी स्थूल सगुण उपासनाएँ उस रास्ते को पकड़ाने के अवलम्ब है।\n\n",
-                                    style:
-                                        TextStyle(fontStyle: FontStyle.italic)),
-                                TextSpan(
-                                    text: "2. ",
-                                    style:
-                                        TextStyle(fontStyle: FontStyle.italic)),
-                                TextSpan(
-                                    text:
-                                        " संतमत की साधना का मूल उद्देश्य निर्गुण-सगुण पर परमात्मा की प्राप्ति है।\n\n",
-                                    style:
-                                        TextStyle(fontStyle: FontStyle.italic)),
-                                TextSpan(
-                                    text: "3. ",
-                                    style:
-                                        TextStyle(fontStyle: FontStyle.italic)),
-                                TextSpan(
-                                    text:
-                                        " संतमत किसी मत वा पन्थ का खण्डन नहीं करता है। इसका कथन है कि कोई किसी भी पन्थ का माननेवाला हो, वह मूल को जाने। इसकी साधनाएँ आन्तरिक हैं। इसमें तिलक लगाने, माला फेरने, उपवास करने, तीर्थ-भ्रमण करने आदि पर जोर नहीं दिया जाता।\n\n",
-                                    style:
-                                        TextStyle(fontStyle: FontStyle.italic)),
-                                TextSpan(
-                                    text: "4. ",
-                                    style:
-                                        TextStyle(fontStyle: FontStyle.italic)),
-                                TextSpan(
-                                    text:
-                                        " संतमत सामाजिक समन्वय का मत है। इस मत से जाति-पाँति, ऊँच-नीच, छुआछूत आदि का भेदभाव मिटाया जाता है। इसके अनुसार सभी वर्गों और सभी जातियों के नर-नारियों को ईश्वर-भक्ति करने का समान अधिकार है।\n\n",
-                                    style:
-                                        TextStyle(fontStyle: FontStyle.italic)),
-                                TextSpan(
-                                    text: "5. ",
-                                    style:
-                                        TextStyle(fontStyle: FontStyle.italic)),
-                                TextSpan(
-                                    text:
-                                        " संतमत परम प्रभु परमात्मा से मिलाने में पूरे गुरु की महत्त्वपूर्ण भूमिका मानता है। सद्गुरु की कृपा होगी, तब ही जीव माया-बन्धन से मुक्त हो सकता है।\n\n",
-                                    style:
-                                        TextStyle(fontStyle: FontStyle.italic)),
-                                TextSpan(
-                                    text: "6. ",
-                                    style:
-                                        TextStyle(fontStyle: FontStyle.italic)),
-                                TextSpan(
-                                    text:
-                                        " संतमत-साधना में ज्ञान, योग और भक्ति तीनों का समन्वय है।\n\n",
-                                    style:
-                                        TextStyle(fontStyle: FontStyle.italic)),
-                                TextSpan(
-                                    text: "7. ",
-                                    style:
-                                        TextStyle(fontStyle: FontStyle.italic)),
-                                TextSpan(
-                                    text:
-                                        " संतमत शंकराचार्य के अद्वैतवाद को स्वीकार करता है, जिनमें जगत् को असत्य और अद्वितीय परब्रह्म को सत्य माना गया है।\n\n",
-                                    style:
-                                        TextStyle(fontStyle: FontStyle.italic)),
-                                TextSpan(
-                                    text: "8. ",
-                                    style:
-                                        TextStyle(fontStyle: FontStyle.italic)),
-                                TextSpan(
-                                    text:
-                                        " संतमत आन्तरिक साधना पर अधिक जोर देता है। यह समाज के किसी व्यक्ति की उपेक्षा नहीं करता है। यह भेद-भाव को त्यागकर परोपकार करने की शिक्षा देता है।\n\n",
-                                    style:
-                                        TextStyle(fontStyle: FontStyle.italic))
-                              ]),
-                          textAlign: TextAlign.justify,
-                        ),
-                        const Padding(
-                          padding: EdgeInsets.only(top: 12.0, bottom: 12.0),
-                          child: Divider(
-                            thickness: 2,
-                          ),
-                        ),
-                        RichText(
-                          text: TextSpan(
-                              style: TextStyle(
-                                color: txtcol,
-                                fontSize: 20,
-                              ),
-                              children: const [
-                                TextSpan(
-                                    text: " \nसंतमत की दीक्षा विधि\n\n",
-                                    style: TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                      color: Colors.orange,
-                                      fontSize: 25,
-                                    )),
-                                TextSpan(
-                                    text: "1. ",
-                                    style:
-                                        TextStyle(fontStyle: FontStyle.italic)),
-                                TextSpan(
-                                    text:
-                                        " जो व्यक्ति छह माह पूर्व मांस-मछली का भोजन और नशा-सेवन छोड़ चुके हैं, उन्हें ही संतमत में दीक्षित किया जाता है।\n\n",
-                                    style:
-                                        TextStyle(fontStyle: FontStyle.italic)),
-                                TextSpan(
-                                    text: "2. ",
-                                    style:
-                                        TextStyle(fontStyle: FontStyle.italic)),
-                                TextSpan(
-                                    text:
-                                        " दीक्षा-पुस्तिका में दीक्षार्थी का नाम, जाति, पेशा, धर्म, गाँव, पत्रलय, जिला लिख लेते हैं और संतमत-सिद्धांत उन्हें समझाकर उनसे तीन प्रतिज्ञाएँ करवाते हैं-"
-                                        "\n(क) हम प्रतिज्ञा करते हैं/करती हैं कि संतमत की रीति-अभ्यास और उससे जो कुछ अन्तर में मालूम होगा, कभी किसी से नहीं कहेंगे/कहेंगी।"
-                                        "\n(ख) हम संतमत-सिद्धांत को अच्छी तरह समझ गये/समझ गयीं, उनको हम दिल से प्यार करते रहेंगे/रहेंगी और संतमत की उन्नति में तन-मन-धन से हमेशा मददगार रहेंगे/रहेंगी।"
-                                        "\n(ग) अभ्यास करने में जो शक्ति पैदा होगी, उसको बुरे कामों में खर्च नहीं करेंगे/करेंगी।"
-                                        "\nइतनी प्रतिज्ञा कराने के बाद दीक्षार्थी से उनके नाम-पते के खाने में हस्ताक्षर कराये जाते हैं। जो निरक्षर हैं, उनसे एक लकीर खिंचवा ली जाती है।\n\n",
-                                    style:
-                                        TextStyle(fontStyle: FontStyle.italic)),
-                                TextSpan(
-                                    text: "3. ",
-                                    style:
-                                        TextStyle(fontStyle: FontStyle.italic)),
-                                TextSpan(
-                                    text:
-                                        " दीक्षार्थी को स्नान करके पवित्र कपड़ा पहनकर और फूलों की एक माला एवं थोड़ा-सा प्रसाद अपने साथ लाना पड़ता है।\n\n",
-                                    style:
-                                        TextStyle(fontStyle: FontStyle.italic)),
-                                TextSpan(
-                                    text: "4. ",
-                                    style:
-                                        TextStyle(fontStyle: FontStyle.italic)),
-                                TextSpan(
-                                    text:
-                                        " दीक्षा के दिन दीक्षा लेने के पूर्व तक निराहार रहना पड़ता है। प्रायः 9-10 बजे पूर्वाह्ण में दीक्षा दी जाती है।\n\n",
-                                    style:
-                                        TextStyle(fontStyle: FontStyle.italic)),
-                                TextSpan(
-                                    text: "5. ",
-                                    style:
-                                        TextStyle(fontStyle: FontStyle.italic)),
-                                TextSpan(
-                                    text:
-                                        " परमात्मा के पास जाने की विधि (मानस जप, मानस ध्यान, दृष्टियोग और शब्द योग) दीक्षा में बतलायी जाती है।\n\n",
-                                    style:
-                                        TextStyle(fontStyle: FontStyle.italic)),
-                                TextSpan(
-                                    text: "6. ",
-                                    style:
-                                        TextStyle(fontStyle: FontStyle.italic)),
-                                TextSpan(
-                                    text:
-                                        " ध्यानाभ्यास के लिए किस आसन से, कैसे और कहाँ बैठना चाहिए, यह भी दीक्षार्थी को बताया जाता है।\n\n",
-                                    style:
-                                        TextStyle(fontStyle: FontStyle.italic)),
-                                TextSpan(
-                                    text: "7. ",
-                                    style:
-                                        TextStyle(fontStyle: FontStyle.italic)),
-                                TextSpan(
-                                    text:
-                                        " शनिवार को छोड़कर किसी भी दिन दीक्षा दी जा सकती है।\n\n",
-                                    style:
-                                        TextStyle(fontStyle: FontStyle.italic)),
-                              ]),
-                          textAlign: TextAlign.justify,
-                        ),
-                        const Padding(
-                          padding: EdgeInsets.only(top: 12.0, bottom: 12.0),
-                          child: Divider(
-                            thickness: 2,
-                          ),
-                        ),
-                        RichText(
-                          text: TextSpan(
-                              style: TextStyle(
-                                color: txtcol,
-                                fontSize: 20,
-                              ),
-                              children: const [
-                                TextSpan(
-                                    text: " \nसंतमत में विधि-निषेध-कर्म\n\n",
-                                    style: TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                      color: Colors.deepOrange,
-                                      fontSize: 25,
-                                    )),
-                                TextSpan(
-                                    text: "विधि-कर्म",
-                                    style:
-                                        TextStyle(fontWeight: FontWeight.bold)),
-                                TextSpan(
-                                    text:
-                                        " एक ईश्वर पर अचल विश्वास, पूर्ण भरोसा तथा उसकी प्राप्ति अपने अन्दर होगी-इसका दृढ़ निश्चय रखना, सद्गुरु की निष्कपट सेवा, सत्संग और दृढ़ ध्यानाभ्यास।\n\n",
-                                    style:
-                                        TextStyle(fontStyle: FontStyle.italic)),
-                                TextSpan(
-                                    text: "निषिद्ध-कर्म",
-                                    style:
-                                        TextStyle(fontStyle: FontStyle.italic)),
-                                TextSpan(
-                                    text:
-                                        " झूठ बोलना, नशा खाना, व्यभिचार करना, हिंसा करनी एवं मांस-मछली का भोजन करना और चोरी करना-इसको महर्षिजी महापाप कहते हैं। अतः ये त्याज्य कर्म हैं।\n",
-                                    style:
-                                        TextStyle(fontStyle: FontStyle.italic)),
-                              ]),
-                          textAlign: TextAlign.justify,
-                        ),
-                      ],
+                                fontWeight: FontWeight.bold,
+                              )),
+                          TextSpan(
+                              text: " सन्तों के मत वा धर्म को सन्तमत कहते हैं।",
+                              style: TextStyle(fontStyle: FontStyle.italic))
+                        ]),
+                    textAlign: TextAlign.justify,
+                  ),
+                  const Padding(
+                    padding: EdgeInsets.only(top: 12.0, bottom: 12.0),
+                    child: Divider(
+                      thickness: 2,
                     ),
                   ),
+
+                  //संतमत-जबसे सृष्टि में संत हुए हैं
+                  RichText(
+                    text: TextSpan(
+                        style: TextStyle(
+                          color: txtcol,
+                          fontSize: 20,
+                        ),
+                        children: const [
+                          TextSpan(
+                              text:
+                                  '''संतमत-जबसे सृष्टि में संत हुए हैं, तबसे संतमत है। संतमत किसी एक संत के नाम पर प्रचारित मत नहीं है। विश्व में जो भी संत हो गये हैं, उन सभी संतों के मत को संतमत कहते हैं। संतमत कोई नया मत, नया धर्म, नया मजहब, नया रिलिजन (त्मसपहपवद) नहीं है। यह परम पुरातन, परम सनातन वैदिक मत है। यह वैदिक मत होते हुए भी किसी अवैदिक मत से ईर्ष्या, द्वेष, घृणा, रोष आदि नहीं करता है। संतमत सभी संतों का समान रूप से सम्मान करता है।
+                                    ''',
+                              style: TextStyle(fontStyle: FontStyle.italic))
+                        ]),
+                    textAlign: TextAlign.justify,
+                  ),
+                  const Padding(
+                    padding: EdgeInsets.only(top: 12.0, bottom: 12.0),
+                    child: Divider(
+                      thickness: 2,
+                    ),
+                  ),
+
+                  //  महर्षिजी की साधना-पद्धति-ब्रह्म
+                  RichText(
+                    text: TextSpan(
+                        text:
+                            '''महर्षिजी की साधना-पद्धति-ब्रह्म को प्राप्त करने के लिए महर्षि मेँहीँ परमहंसजी महाराज चार प्रकार की प्रक्रियाएँ बतलाते थे-''',
+                        style: TextStyle(
+                            fontSize: 18,
+                            color: txtcol,
+                            fontStyle: FontStyle.italic,
+                            fontWeight: FontWeight.bold)),
+                  ),
+                  RichText(
+                    text: TextSpan(
+                        style: TextStyle(
+                          color: txtcol,
+                          fontSize: 20,
+                        ),
+                        children: const [
+                          TextSpan(
+                              text: "\n1)",
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                              )),
+                          TextSpan(
+                              text: " मानस जप\n",
+                              style: TextStyle(fontStyle: FontStyle.italic)),
+                          TextSpan(
+                              text: "2)",
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                              )),
+                          TextSpan(
+                              text: " मानस ध्यान\n",
+                              style: TextStyle(fontStyle: FontStyle.italic)),
+                          TextSpan(
+                              text: "3)",
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                              )),
+                          TextSpan(
+                              text: " दृष्टि-योग और\n",
+                              style: TextStyle(fontStyle: FontStyle.italic)),
+                          TextSpan(
+                              text: "4)",
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                              )),
+                          TextSpan(
+                              text: " सुरत-शब्द- योग (नादानुसन्धान)।\n",
+                              style: TextStyle(fontStyle: FontStyle.italic)),
+                        ]),
+                    textAlign: TextAlign.justify,
+                  ),
+                  const Padding(
+                    padding: EdgeInsets.only(top: 12.0, bottom: 12.0),
+                    child: Divider(
+                      thickness: 2,
+                    ),
+                  ),
+
+                  //  जप-गुरु-प्रदत्त मंत्र की बारम्बार
+                  RichText(
+                    text: TextSpan(
+                        text:
+                            '''जप-गुरु-प्रदत्त मंत्र की बारम्बार इस तरह आवृत्ति करना कि मन में मंत्र रहे और मंत्र में मन रहे, जप कहलाता है।  जप तीन तरह के होते हैं-''',
+                        style: TextStyle(
+                            fontSize: 18,
+                            color: txtcol,
+                            fontStyle: FontStyle.italic,
+                            fontWeight: FontWeight.bold)),
+                  ),
+                  RichText(
+                    text: TextSpan(
+                        style: TextStyle(
+                          color: txtcol,
+                          fontSize: 18,
+                        ),
+                        children: const [
+                          TextSpan(
+                              text: "\n(1) वाचिक जप",
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                              )),
+                          TextSpan(
+                              text:
+                                  "\nवाचिक जप में मंत्र का बोल-बोलकर बारम्बार उच्चारण करते हैं। इसमें स्वयं तो सुनते ही हैं, दूसरे व्यक्ति भी सुनते हैं।\n",
+                              style: TextStyle(fontStyle: FontStyle.italic)),
+                          TextSpan(
+                              text: "\n(2) उपांशु जप",
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                              )),
+                          TextSpan(
+                              text:
+                                  "\nइस जप में मंत्र का उच्चारण धीमे स्वर में किया जाता है। इसमें जीभ और ओष्ठ हिलते हैं, स्वयं अपने कान सुनते हैं; दूसरा व्यक्ति नहीं।\n",
+                              style: TextStyle(fontStyle: FontStyle.italic)),
+                          TextSpan(
+                              text: "\n(3) मानस जप",
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                              )),
+                          TextSpan(
+                              text:
+                                  "\nइस जप में जीभ, ओंठ और कंठ नहीं हिलते हैं। मन-ही-मन मंत्र की आवृत्ति होती है। वाचिक जप से सौ गुणा अधिक उपांशु जप और उपांशु जप से हजार गुणा अधिक श्रेष्ठ मानस जप बतलाया गया है। मानस जप को जपों का राजा माना गया है। इसको फकीर लोग जिकर कहते हैं।\n",
+                              style: TextStyle(fontStyle: FontStyle.italic)),
+                          TextSpan(
+                              text: "\n(4) मानस ध्यान",
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                              )),
+                          TextSpan(
+                              text:
+                                  "\nमानस ध्यान में चित्त ध्येेय तत्त्व पर टिका रहता है। ध्यान दो प्रकार के होते हैं-\n",
+                              style: TextStyle(fontStyle: FontStyle.italic)),
+                        ]),
+                    textAlign: TextAlign.justify,
+                  ),
+
+                  Padding(
+                    padding: const EdgeInsets.only(left: 18.0),
+                    child: RichText(
+                        text: TextSpan(
+                            style: TextStyle(
+                              color: txtcol,
+                              fontSize: 18,
+                            ),
+                            children: const [
+                          TextSpan(
+                              text: "(क) सगुण",
+                              style: TextStyle(
+                                fontSize: 20,
+                              )),
+                          TextSpan(
+                              text:
+                                  "\nध्यान-इष्ट के स्थूल रूप और ज्योतिर्मय विन्दु-रूप तथा अनहद नादों के ध्यान को सगुण-ध्यान कहते हैं। सगुण-ध्यान में ही मानस ध्यान आता है। इष्ट के देखे हुए स्थूल रूप को अपने मानस पटल पर हू-ब-हू उतारने की क्रिया को मानस ध्यान कहते हैं। जिन इष्ट के नाम का मानस जप करते हैं, उन्हीं के स्थूल रूप का मानस ध्यान करना चाहिए। इसको फकीर लोग फनाफिल मुर्शिद कहते हैं। मानस ध्यान में इष्ट के मनोमय रूप पर कुछ काल तक दृष्टि के स्थिर हो जाने पर दृष्टि-योग की क्रिया की जाती है।\n",
+                              style: TextStyle(fontStyle: FontStyle.italic)),
+                          TextSpan(
+                              text: "\n(ख) निर्गुण-ध्यान",
+                              style: TextStyle(
+                                fontSize: 20,
+                              )),
+                          TextSpan(
+                              text:
+                                  "\nजिस आदिशब्द से सृष्टि का विकास हुआ है, उसे सारशब्द भी कहते हैं। वह त्रयगुण-रहित होने से निर्गुण कहलाता है। उसी सारशब्द के ध्यान को निर्गुण-ध्यान कहते हैं।\n",
+                              style: TextStyle(fontStyle: FontStyle.italic)),
+                        ])),
+                  ),
+                  const Padding(
+                    padding: EdgeInsets.only(top: 12.0, bottom: 12.0),
+                    child: Divider(
+                      thickness: 2,
+                    ),
+                  ),
+                  RichText(
+                      text: TextSpan(
+                          style: TextStyle(
+                            color: txtcol,
+                            fontSize: 18,
+                          ),
+                          children: const [
+                        //  दृष्टियोग
+                        TextSpan(
+                            text: "\nदृष्टियोग",
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                            )),
+                        TextSpan(
+                          text:
+                              "\nदेखने की शक्ति को दृष्टि कहते हैं। दोनों आँखों की दृष्टियों को मिलाकर मिलन-स्थान पर मन को टिकाकर देखने की क्रिया को दृष्टियोग कहते हैं। इस अभ्यास से एकविन्दुता की प्राप्ति होती है, जिससे सूक्ष्म वा दिव्य दृष्टि खुल जाती है। तब साधक के अन्दर अंधकार नहीं रहता है; अपने अन्दर उसे प्रकाश-ही-प्रकाश दीखता है। दृष्टि के चार भेद हैं-जाग्रत की दृष्टि, स्वप्न की दृष्टि, मानस दृष्टि और दिव्य दृष्टि। दृष्टि के पहले तीनों भेदों का निरोध होने से मनोनिरोध होता है और दिव्य दृष्टि खुल जाती है। तेजोमय विन्दु का ध्यान परम ध्यान कहा जाता है। इसको फकीर लोग सगले नसीरा कहते हैं।\n",
+                          style: TextStyle(fontStyle: FontStyle.italic),
+                        ),
+                        //  सुरत-शब्द-योग
+                        TextSpan(
+                            text: "\nसुरत-शब्द-योग",
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                            )),
+                        TextSpan(
+                            text:
+                                '''\nआँख, कान और मुँह बन्द करके केन्द्रीय शब्द को पकड़ने की क्रिया को सुरत-शब्द-योग कहते हैं।
+                                        सृष्टि के पाँच मंडल हैं-स्थूल, सूक्ष्म, कारण, महाकारण और कैवल्य। इन पाँचो मंडलों के केन्द्रीय शब्द हैं। इन पाँचो केन्द्रीय शब्दों के अतिरिक्त अन्दर में विभिन्न प्रकार की असंख्य ध्वनियाँ हो रही हैं, जिन्हें अनहद नाद कहते हैं। इन अनहद नादों के बीच निचले मंडल के केन्द्रीय शब्द को क्रम-क्रम से पकड़ते हुए अन्ततः कैवल्य मंडल के केन्द्रीय शब्द-सारशब्द को पकड़ना नादानुसंधान (सुरत-शब्द-योग) का लक्ष्य है। केन्द्रीय शब्द को पकड़ने की युक्ति गुरु बतलाते हैं। दृष्टियोग पूरा होने पर और दृष्टियोग पूरा नहीं होने पर; दोनों स्थितियों में नादानुसंधान किया जा सकता है; परन्तु दोनों स्थितियों में नादानुसंधान की विधि अलग-अलग बतायी जाती है। दृष्टियोग में पूर्ण साधक को सीधे केन्द्रीय शब्द सुनाई पड़ता है और जो दृष्टियोग साधन में पूर्णता प्राप्त किये बिना नादानुसंधान करते हैं, उनके लिए यह कोई आवश्यक नहीं है कि वे शीघ्र केन्द्रीय शब्द को पकड़ ही ले।
+                          सारशब्द को नादानुसंधान के द्वारा पकड़ने पर साधक उसके आकर्षण से खिंचकर परमात्म-पद को प्राप्त कर लेते हैं। तब वे दैहिक, दैविक, भौतिक-इन त्रय तापों से मुक्त हो जाते हैं; आवागमन छूट जाता है। नादानुसंधान को फकीर लोग सुलतानु उलजकार कहते हैं।\n''',
+                            style: TextStyle(
+                              fontStyle: FontStyle.italic,
+                            )),
+                      ])),
+                  const Padding(
+                    padding: EdgeInsets.only(top: 12.0, bottom: 12.0),
+                    child: Divider(
+                      thickness: 2,
+                    ),
+                  ),
+
+                  //  संतमत की विशेषता
+                  RichText(
+                    text: TextSpan(
+                        style: TextStyle(
+                          color: txtcol,
+                          fontSize: 20,
+                        ),
+                        children: const [
+                          TextSpan(
+                              text: " \nसंतमत की विशेषता\n\n",
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                color: Colors.orange,
+                                fontSize: 25,
+                              )),
+                          TextSpan(
+                              text: "1. ",
+                              style: TextStyle(fontStyle: FontStyle.italic)),
+                          TextSpan(
+                              text:
+                                  " संतमत कहता है कि एक ईश्वर की भक्ति करो। ईश्वर की प्राप्ति जब कभी होगी, तो अपने अन्दर होगी। उस ईश्वर के पास जाने का रास्ता भी एक ही है, जो दशम द्वार से आरम्भ होता है। सभी स्थूल सगुण उपासनाएँ उस रास्ते को पकड़ाने के अवलम्ब है।\n\n",
+                              style: TextStyle(fontStyle: FontStyle.italic)),
+                          TextSpan(
+                              text: "2. ",
+                              style: TextStyle(fontStyle: FontStyle.italic)),
+                          TextSpan(
+                              text:
+                                  " संतमत की साधना का मूल उद्देश्य निर्गुण-सगुण पर परमात्मा की प्राप्ति है।\n\n",
+                              style: TextStyle(fontStyle: FontStyle.italic)),
+                          TextSpan(
+                              text: "3. ",
+                              style: TextStyle(fontStyle: FontStyle.italic)),
+                          TextSpan(
+                              text:
+                                  " संतमत किसी मत वा पन्थ का खण्डन नहीं करता है। इसका कथन है कि कोई किसी भी पन्थ का माननेवाला हो, वह मूल को जाने। इसकी साधनाएँ आन्तरिक हैं। इसमें तिलक लगाने, माला फेरने, उपवास करने, तीर्थ-भ्रमण करने आदि पर जोर नहीं दिया जाता।\n\n",
+                              style: TextStyle(fontStyle: FontStyle.italic)),
+                          TextSpan(
+                              text: "4. ",
+                              style: TextStyle(fontStyle: FontStyle.italic)),
+                          TextSpan(
+                              text:
+                                  " संतमत सामाजिक समन्वय का मत है। इस मत से जाति-पाँति, ऊँच-नीच, छुआछूत आदि का भेदभाव मिटाया जाता है। इसके अनुसार सभी वर्गों और सभी जातियों के नर-नारियों को ईश्वर-भक्ति करने का समान अधिकार है।\n\n",
+                              style: TextStyle(fontStyle: FontStyle.italic)),
+                          TextSpan(
+                              text: "5. ",
+                              style: TextStyle(fontStyle: FontStyle.italic)),
+                          TextSpan(
+                              text:
+                                  " संतमत परम प्रभु परमात्मा से मिलाने में पूरे गुरु की महत्त्वपूर्ण भूमिका मानता है। सद्गुरु की कृपा होगी, तब ही जीव माया-बन्धन से मुक्त हो सकता है।\n\n",
+                              style: TextStyle(fontStyle: FontStyle.italic)),
+                          TextSpan(
+                              text: "6. ",
+                              style: TextStyle(fontStyle: FontStyle.italic)),
+                          TextSpan(
+                              text:
+                                  " संतमत-साधना में ज्ञान, योग और भक्ति तीनों का समन्वय है।\n\n",
+                              style: TextStyle(fontStyle: FontStyle.italic)),
+                          TextSpan(
+                              text: "7. ",
+                              style: TextStyle(fontStyle: FontStyle.italic)),
+                          TextSpan(
+                              text:
+                                  " संतमत शंकराचार्य के अद्वैतवाद को स्वीकार करता है, जिनमें जगत् को असत्य और अद्वितीय परब्रह्म को सत्य माना गया है।\n\n",
+                              style: TextStyle(fontStyle: FontStyle.italic)),
+                          TextSpan(
+                              text: "8. ",
+                              style: TextStyle(fontStyle: FontStyle.italic)),
+                          TextSpan(
+                              text:
+                                  " संतमत आन्तरिक साधना पर अधिक जोर देता है। यह समाज के किसी व्यक्ति की उपेक्षा नहीं करता है। यह भेद-भाव को त्यागकर परोपकार करने की शिक्षा देता है।\n\n",
+                              style: TextStyle(fontStyle: FontStyle.italic))
+                        ]),
+                    textAlign: TextAlign.justify,
+                  ),
+                  const Padding(
+                    padding: EdgeInsets.only(top: 12.0, bottom: 12.0),
+                    child: Divider(
+                      thickness: 2,
+                    ),
+                  ),
+                  RichText(
+                    text: TextSpan(
+                        style: TextStyle(
+                          color: txtcol,
+                          fontSize: 20,
+                        ),
+                        children: const [
+                          TextSpan(
+                              text: " \nसंतमत की दीक्षा विधि\n\n",
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                color: Colors.orange,
+                                fontSize: 25,
+                              )),
+                          TextSpan(
+                              text: "1. ",
+                              style: TextStyle(fontStyle: FontStyle.italic)),
+                          TextSpan(
+                              text:
+                                  " जो व्यक्ति छह माह पूर्व मांस-मछली का भोजन और नशा-सेवन छोड़ चुके हैं, उन्हें ही संतमत में दीक्षित किया जाता है।\n\n",
+                              style: TextStyle(fontStyle: FontStyle.italic)),
+                          TextSpan(
+                              text: "2. ",
+                              style: TextStyle(fontStyle: FontStyle.italic)),
+                          TextSpan(
+                              text:
+                                  " दीक्षा-पुस्तिका में दीक्षार्थी का नाम, जाति, पेशा, धर्म, गाँव, पत्रलय, जिला लिख लेते हैं और संतमत-सिद्धांत उन्हें समझाकर उनसे तीन प्रतिज्ञाएँ करवाते हैं-"
+                                  "\n(क) हम प्रतिज्ञा करते हैं/करती हैं कि संतमत की रीति-अभ्यास और उससे जो कुछ अन्तर में मालूम होगा, कभी किसी से नहीं कहेंगे/कहेंगी।"
+                                  "\n(ख) हम संतमत-सिद्धांत को अच्छी तरह समझ गये/समझ गयीं, उनको हम दिल से प्यार करते रहेंगे/रहेंगी और संतमत की उन्नति में तन-मन-धन से हमेशा मददगार रहेंगे/रहेंगी।"
+                                  "\n(ग) अभ्यास करने में जो शक्ति पैदा होगी, उसको बुरे कामों में खर्च नहीं करेंगे/करेंगी।"
+                                  "\nइतनी प्रतिज्ञा कराने के बाद दीक्षार्थी से उनके नाम-पते के खाने में हस्ताक्षर कराये जाते हैं। जो निरक्षर हैं, उनसे एक लकीर खिंचवा ली जाती है।\n\n",
+                              style: TextStyle(fontStyle: FontStyle.italic)),
+                          TextSpan(
+                              text: "3. ",
+                              style: TextStyle(fontStyle: FontStyle.italic)),
+                          TextSpan(
+                              text:
+                                  " दीक्षार्थी को स्नान करके पवित्र कपड़ा पहनकर और फूलों की एक माला एवं थोड़ा-सा प्रसाद अपने साथ लाना पड़ता है।\n\n",
+                              style: TextStyle(fontStyle: FontStyle.italic)),
+                          TextSpan(
+                              text: "4. ",
+                              style: TextStyle(fontStyle: FontStyle.italic)),
+                          TextSpan(
+                              text:
+                                  " दीक्षा के दिन दीक्षा लेने के पूर्व तक निराहार रहना पड़ता है। प्रायः 9-10 बजे पूर्वाह्ण में दीक्षा दी जाती है।\n\n",
+                              style: TextStyle(fontStyle: FontStyle.italic)),
+                          TextSpan(
+                              text: "5. ",
+                              style: TextStyle(fontStyle: FontStyle.italic)),
+                          TextSpan(
+                              text:
+                                  " परमात्मा के पास जाने की विधि (मानस जप, मानस ध्यान, दृष्टियोग और शब्द योग) दीक्षा में बतलायी जाती है।\n\n",
+                              style: TextStyle(fontStyle: FontStyle.italic)),
+                          TextSpan(
+                              text: "6. ",
+                              style: TextStyle(fontStyle: FontStyle.italic)),
+                          TextSpan(
+                              text:
+                                  " ध्यानाभ्यास के लिए किस आसन से, कैसे और कहाँ बैठना चाहिए, यह भी दीक्षार्थी को बताया जाता है।\n\n",
+                              style: TextStyle(fontStyle: FontStyle.italic)),
+                          TextSpan(
+                              text: "7. ",
+                              style: TextStyle(fontStyle: FontStyle.italic)),
+                          TextSpan(
+                              text:
+                                  " शनिवार को छोड़कर किसी भी दिन दीक्षा दी जा सकती है।\n\n",
+                              style: TextStyle(fontStyle: FontStyle.italic)),
+                        ]),
+                    textAlign: TextAlign.justify,
+                  ),
+                  const Padding(
+                    padding: EdgeInsets.only(top: 12.0, bottom: 12.0),
+                    child: Divider(
+                      thickness: 2,
+                    ),
+                  ),
+                  RichText(
+                    text: TextSpan(
+                        style: TextStyle(
+                          color: txtcol,
+                          fontSize: 20,
+                        ),
+                        children: const [
+                          TextSpan(
+                              text: " \nसंतमत में विधि-निषेध-कर्म\n\n",
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                color: Colors.deepOrange,
+                                fontSize: 25,
+                              )),
+                          TextSpan(
+                              text: "विधि-कर्म",
+                              style: TextStyle(fontWeight: FontWeight.bold)),
+                          TextSpan(
+                              text:
+                                  " एक ईश्वर पर अचल विश्वास, पूर्ण भरोसा तथा उसकी प्राप्ति अपने अन्दर होगी-इसका दृढ़ निश्चय रखना, सद्गुरु की निष्कपट सेवा, सत्संग और दृढ़ ध्यानाभ्यास।\n\n",
+                              style: TextStyle(fontStyle: FontStyle.italic)),
+                          TextSpan(
+                              text: "निषिद्ध-कर्म",
+                              style: TextStyle(fontStyle: FontStyle.italic)),
+                          TextSpan(
+                              text:
+                                  " झूठ बोलना, नशा खाना, व्यभिचार करना, हिंसा करनी एवं मांस-मछली का भोजन करना और चोरी करना-इसको महर्षिजी महापाप कहते हैं। अतः ये त्याज्य कर्म हैं।\n",
+                              style: TextStyle(fontStyle: FontStyle.italic)),
+                        ]),
+                    textAlign: TextAlign.justify,
+                  ),
+
+                  // Padding(
+                  //   padding: const EdgeInsets.all(12.0),
+                  //   child: Column(
+                  //     children: [
+                  //       RichText(
+                  //         text: TextSpan(
+                  //             style: TextStyle(
+                  //               color: txtcol,
+                  //               fontSize: 20,
+                  //             ),
+                  //             children: const [
+                  //               TextSpan(
+                  //                   text: "\u2022",
+                  //                   style: TextStyle(
+                  //                     fontWeight: FontWeight.bold,
+                  //                   )),
+                  //               TextSpan(
+                  //                   text:
+                  //                       " शान्ति स्थिरता वा निश्चलता को कहते हैं।\n",
+                  //                   style:
+                  //                       TextStyle(fontStyle: FontStyle.italic)),
+                  //               TextSpan(
+                  //                   text: "\u2022",
+                  //                   style: TextStyle(
+                  //                     fontWeight: FontWeight.bold,
+                  //                   )),
+                  //               TextSpan(
+                  //                   text:
+                  //                       " शान्ति को जो प्राप्त कर लेते हैं, सन्त कहलाते हैं।\n",
+                  //                   style:
+                  //                       TextStyle(fontStyle: FontStyle.italic)),
+                  //               TextSpan(
+                  //                   text: "\u2022",
+                  //                   style: TextStyle(
+                  //                     fontWeight: FontWeight.bold,
+                  //                   )),
+                  //               TextSpan(
+                  //                   text:
+                  //                       " सन्तों के मत वा धर्म को सन्तमत कहते हैं।",
+                  //                   style:
+                  //                       TextStyle(fontStyle: FontStyle.italic))
+                  //             ]),
+                  //         textAlign: TextAlign.justify,
+                  //       ),
+                  //       const Padding(
+                  //         padding: EdgeInsets.only(top: 12.0, bottom: 12.0),
+                  //         child: Divider(
+                  //           thickness: 2,
+                  //         ),
+                  //       ),
+                  //
+                  //       //संतमत-जबसे सृष्टि में संत हुए हैं
+                  //       RichText(
+                  //         text: TextSpan(
+                  //             style: TextStyle(
+                  //               color: txtcol,
+                  //               fontSize: 20,
+                  //             ),
+                  //             children: const [
+                  //               TextSpan(
+                  //                   text:
+                  //                       '''संतमत-जबसे सृष्टि में संत हुए हैं, तबसे संतमत है। संतमत किसी एक संत के नाम पर प्रचारित मत नहीं है। विश्व में जो भी संत हो गये हैं, उन सभी संतों के मत को संतमत कहते हैं। संतमत कोई नया मत, नया धर्म, नया मजहब, नया रिलिजन (त्मसपहपवद) नहीं है। यह परम पुरातन, परम सनातन वैदिक मत है। यह वैदिक मत होते हुए भी किसी अवैदिक मत से ईर्ष्या, द्वेष, घृणा, रोष आदि नहीं करता है। संतमत सभी संतों का समान रूप से सम्मान करता है।
+                  //                   ''',
+                  //                   style:
+                  //                       TextStyle(fontStyle: FontStyle.italic))
+                  //             ]),
+                  //         textAlign: TextAlign.justify,
+                  //       ),
+                  //       const Padding(
+                  //         padding: EdgeInsets.only(top: 12.0, bottom: 12.0),
+                  //         child: Divider(
+                  //           thickness: 2,
+                  //         ),
+                  //       ),
+                  //
+                  //       //  महर्षिजी की साधना-पद्धति-ब्रह्म
+                  //       RichText(
+                  //         text: TextSpan(
+                  //             text:
+                  //                 '''महर्षिजी की साधना-पद्धति-ब्रह्म को प्राप्त करने के लिए महर्षि मेँहीँ परमहंसजी महाराज चार प्रकार की प्रक्रियाएँ बतलाते थे-''',
+                  //             style: TextStyle(
+                  //                 fontSize: 18,
+                  //                 color: txtcol,
+                  //                 fontStyle: FontStyle.italic,
+                  //                 fontWeight: FontWeight.bold)),
+                  //       ),
+                  //       RichText(
+                  //         text: TextSpan(
+                  //             style: TextStyle(
+                  //               color: txtcol,
+                  //               fontSize: 20,
+                  //             ),
+                  //             children: const [
+                  //               TextSpan(
+                  //                   text: "\n1)",
+                  //                   style: TextStyle(
+                  //                     fontWeight: FontWeight.bold,
+                  //                   )),
+                  //               TextSpan(
+                  //                   text: " मानस जप\n",
+                  //                   style:
+                  //                       TextStyle(fontStyle: FontStyle.italic)),
+                  //               TextSpan(
+                  //                   text: "2)",
+                  //                   style: TextStyle(
+                  //                     fontWeight: FontWeight.bold,
+                  //                   )),
+                  //               TextSpan(
+                  //                   text: " मानस ध्यान\n",
+                  //                   style:
+                  //                       TextStyle(fontStyle: FontStyle.italic)),
+                  //               TextSpan(
+                  //                   text: "3)",
+                  //                   style: TextStyle(
+                  //                     fontWeight: FontWeight.bold,
+                  //                   )),
+                  //               TextSpan(
+                  //                   text: " दृष्टि-योग और\n",
+                  //                   style:
+                  //                       TextStyle(fontStyle: FontStyle.italic)),
+                  //               TextSpan(
+                  //                   text: "4)",
+                  //                   style: TextStyle(
+                  //                     fontWeight: FontWeight.bold,
+                  //                   )),
+                  //               TextSpan(
+                  //                   text: " सुरत-शब्द- योग (नादानुसन्धान)।\n",
+                  //                   style:
+                  //                       TextStyle(fontStyle: FontStyle.italic)),
+                  //             ]),
+                  //         textAlign: TextAlign.justify,
+                  //       ),
+                  //       const Padding(
+                  //         padding: EdgeInsets.only(top: 12.0, bottom: 12.0),
+                  //         child: Divider(
+                  //           thickness: 2,
+                  //         ),
+                  //       ),
+                  //
+                  //       //  जप-गुरु-प्रदत्त मंत्र की बारम्बार
+                  //       RichText(
+                  //         text: TextSpan(
+                  //             text:
+                  //                 '''जप-गुरु-प्रदत्त मंत्र की बारम्बार इस तरह आवृत्ति करना कि मन में मंत्र रहे और मंत्र में मन रहे, जप कहलाता है।  जप तीन तरह के होते हैं-''',
+                  //             style: TextStyle(
+                  //                 fontSize: 18,
+                  //                 color: txtcol,
+                  //                 fontStyle: FontStyle.italic,
+                  //                 fontWeight: FontWeight.bold)),
+                  //       ),
+                  //       RichText(
+                  //         text: TextSpan(
+                  //             style: TextStyle(
+                  //               color: txtcol,
+                  //               fontSize: 18,
+                  //             ),
+                  //             children: const [
+                  //               TextSpan(
+                  //                   text: "\n(1) वाचिक जप",
+                  //                   style: TextStyle(
+                  //                     fontWeight: FontWeight.bold,
+                  //                   )),
+                  //               TextSpan(
+                  //                   text:
+                  //                       "\nवाचिक जप में मंत्र का बोल-बोलकर बारम्बार उच्चारण करते हैं। इसमें स्वयं तो सुनते ही हैं, दूसरे व्यक्ति भी सुनते हैं।\n",
+                  //                   style:
+                  //                       TextStyle(fontStyle: FontStyle.italic)),
+                  //               TextSpan(
+                  //                   text: "\n(2) उपांशु जप",
+                  //                   style: TextStyle(
+                  //                     fontWeight: FontWeight.bold,
+                  //                   )),
+                  //               TextSpan(
+                  //                   text:
+                  //                       "\nइस जप में मंत्र का उच्चारण धीमे स्वर में किया जाता है। इसमें जीभ और ओष्ठ हिलते हैं, स्वयं अपने कान सुनते हैं; दूसरा व्यक्ति नहीं।\n",
+                  //                   style:
+                  //                       TextStyle(fontStyle: FontStyle.italic)),
+                  //               TextSpan(
+                  //                   text: "\n(3) मानस जप",
+                  //                   style: TextStyle(
+                  //                     fontWeight: FontWeight.bold,
+                  //                   )),
+                  //               TextSpan(
+                  //                   text:
+                  //                       "\nइस जप में जीभ, ओंठ और कंठ नहीं हिलते हैं। मन-ही-मन मंत्र की आवृत्ति होती है। वाचिक जप से सौ गुणा अधिक उपांशु जप और उपांशु जप से हजार गुणा अधिक श्रेष्ठ मानस जप बतलाया गया है। मानस जप को जपों का राजा माना गया है। इसको फकीर लोग जिकर कहते हैं।\n",
+                  //                   style:
+                  //                       TextStyle(fontStyle: FontStyle.italic)),
+                  //               TextSpan(
+                  //                   text: "\n(4) मानस ध्यान",
+                  //                   style: TextStyle(
+                  //                     fontWeight: FontWeight.bold,
+                  //                   )),
+                  //               TextSpan(
+                  //                   text:
+                  //                       "\nमानस ध्यान में चित्त ध्येेय तत्त्व पर टिका रहता है। ध्यान दो प्रकार के होते हैं-\n",
+                  //                   style:
+                  //                       TextStyle(fontStyle: FontStyle.italic)),
+                  //             ]),
+                  //         textAlign: TextAlign.justify,
+                  //       ),
+                  //
+                  //       Padding(
+                  //         padding: const EdgeInsets.only(left: 18.0),
+                  //         child: RichText(
+                  //             text: TextSpan(
+                  //                 style: TextStyle(
+                  //                   color: txtcol,
+                  //                   fontSize: 18,
+                  //                 ),
+                  //                 children: const [
+                  //               TextSpan(
+                  //                   text: "(क) सगुण",
+                  //                   style: TextStyle(
+                  //                     fontSize: 20,
+                  //                   )),
+                  //               TextSpan(
+                  //                   text:
+                  //                       "\nध्यान-इष्ट के स्थूल रूप और ज्योतिर्मय विन्दु-रूप तथा अनहद नादों के ध्यान को सगुण-ध्यान कहते हैं। सगुण-ध्यान में ही मानस ध्यान आता है। इष्ट के देखे हुए स्थूल रूप को अपने मानस पटल पर हू-ब-हू उतारने की क्रिया को मानस ध्यान कहते हैं। जिन इष्ट के नाम का मानस जप करते हैं, उन्हीं के स्थूल रूप का मानस ध्यान करना चाहिए। इसको फकीर लोग फनाफिल मुर्शिद कहते हैं। मानस ध्यान में इष्ट के मनोमय रूप पर कुछ काल तक दृष्टि के स्थिर हो जाने पर दृष्टि-योग की क्रिया की जाती है।\n",
+                  //                   style:
+                  //                       TextStyle(fontStyle: FontStyle.italic)),
+                  //               TextSpan(
+                  //                   text: "\n(ख) निर्गुण-ध्यान",
+                  //                   style: TextStyle(
+                  //                     fontSize: 20,
+                  //                   )),
+                  //               TextSpan(
+                  //                   text:
+                  //                       "\nजिस आदिशब्द से सृष्टि का विकास हुआ है, उसे सारशब्द भी कहते हैं। वह त्रयगुण-रहित होने से निर्गुण कहलाता है। उसी सारशब्द के ध्यान को निर्गुण-ध्यान कहते हैं।\n",
+                  //                   style:
+                  //                       TextStyle(fontStyle: FontStyle.italic)),
+                  //             ])),
+                  //       ),
+                  //       const Padding(
+                  //         padding: EdgeInsets.only(top: 12.0, bottom: 12.0),
+                  //         child: Divider(
+                  //           thickness: 2,
+                  //         ),
+                  //       ),
+                  //       RichText(
+                  //           text: TextSpan(
+                  //               style: TextStyle(
+                  //                 color: txtcol,
+                  //                 fontSize: 18,
+                  //               ),
+                  //               children: const [
+                  //             //  दृष्टियोग
+                  //             TextSpan(
+                  //                 text: "\nदृष्टियोग",
+                  //                 style: TextStyle(
+                  //                   fontWeight: FontWeight.bold,
+                  //                 )),
+                  //             TextSpan(
+                  //               text:
+                  //                   "\nदेखने की शक्ति को दृष्टि कहते हैं। दोनों आँखों की दृष्टियों को मिलाकर मिलन-स्थान पर मन को टिकाकर देखने की क्रिया को दृष्टियोग कहते हैं। इस अभ्यास से एकविन्दुता की प्राप्ति होती है, जिससे सूक्ष्म वा दिव्य दृष्टि खुल जाती है। तब साधक के अन्दर अंधकार नहीं रहता है; अपने अन्दर उसे प्रकाश-ही-प्रकाश दीखता है। दृष्टि के चार भेद हैं-जाग्रत की दृष्टि, स्वप्न की दृष्टि, मानस दृष्टि और दिव्य दृष्टि। दृष्टि के पहले तीनों भेदों का निरोध होने से मनोनिरोध होता है और दिव्य दृष्टि खुल जाती है। तेजोमय विन्दु का ध्यान परम ध्यान कहा जाता है। इसको फकीर लोग सगले नसीरा कहते हैं।\n",
+                  //               style: TextStyle(fontStyle: FontStyle.italic),
+                  //             ),
+                  //             //  सुरत-शब्द-योग
+                  //             TextSpan(
+                  //                 text: "\nसुरत-शब्द-योग",
+                  //                 style: TextStyle(
+                  //                   fontWeight: FontWeight.bold,
+                  //                 )),
+                  //             TextSpan(
+                  //                 text:
+                  //                     '''\nआँख, कान और मुँह बन्द करके केन्द्रीय शब्द को पकड़ने की क्रिया को सुरत-शब्द-योग कहते हैं।
+                  //                       सृष्टि के पाँच मंडल हैं-स्थूल, सूक्ष्म, कारण, महाकारण और कैवल्य। इन पाँचो मंडलों के केन्द्रीय शब्द हैं। इन पाँचो केन्द्रीय शब्दों के अतिरिक्त अन्दर में विभिन्न प्रकार की असंख्य ध्वनियाँ हो रही हैं, जिन्हें अनहद नाद कहते हैं। इन अनहद नादों के बीच निचले मंडल के केन्द्रीय शब्द को क्रम-क्रम से पकड़ते हुए अन्ततः कैवल्य मंडल के केन्द्रीय शब्द-सारशब्द को पकड़ना नादानुसंधान (सुरत-शब्द-योग) का लक्ष्य है। केन्द्रीय शब्द को पकड़ने की युक्ति गुरु बतलाते हैं। दृष्टियोग पूरा होने पर और दृष्टियोग पूरा नहीं होने पर; दोनों स्थितियों में नादानुसंधान किया जा सकता है; परन्तु दोनों स्थितियों में नादानुसंधान की विधि अलग-अलग बतायी जाती है। दृष्टियोग में पूर्ण साधक को सीधे केन्द्रीय शब्द सुनाई पड़ता है और जो दृष्टियोग साधन में पूर्णता प्राप्त किये बिना नादानुसंधान करते हैं, उनके लिए यह कोई आवश्यक नहीं है कि वे शीघ्र केन्द्रीय शब्द को पकड़ ही ले।
+                  //         सारशब्द को नादानुसंधान के द्वारा पकड़ने पर साधक उसके आकर्षण से खिंचकर परमात्म-पद को प्राप्त कर लेते हैं। तब वे दैहिक, दैविक, भौतिक-इन त्रय तापों से मुक्त हो जाते हैं; आवागमन छूट जाता है। नादानुसंधान को फकीर लोग सुलतानु उलजकार कहते हैं।\n''',
+                  //                 style: TextStyle(
+                  //                   fontStyle: FontStyle.italic,
+                  //                 )),
+                  //           ])),
+                  //       const Padding(
+                  //         padding: EdgeInsets.only(top: 12.0, bottom: 12.0),
+                  //         child: Divider(
+                  //           thickness: 2,
+                  //         ),
+                  //       ),
+                  //
+                  //       //  संतमत की विशेषता
+                  //       RichText(
+                  //         text: TextSpan(
+                  //             style: TextStyle(
+                  //               color: txtcol,
+                  //               fontSize: 20,
+                  //             ),
+                  //             children: const [
+                  //               TextSpan(
+                  //                   text: " \nसंतमत की विशेषता\n\n",
+                  //                   style: TextStyle(
+                  //                     fontWeight: FontWeight.bold,
+                  //                     color: Colors.orange,
+                  //                     fontSize: 25,
+                  //                   )),
+                  //               TextSpan(
+                  //                   text: "1. ",
+                  //                   style:
+                  //                       TextStyle(fontStyle: FontStyle.italic)),
+                  //               TextSpan(
+                  //                   text:
+                  //                       " संतमत कहता है कि एक ईश्वर की भक्ति करो। ईश्वर की प्राप्ति जब कभी होगी, तो अपने अन्दर होगी। उस ईश्वर के पास जाने का रास्ता भी एक ही है, जो दशम द्वार से आरम्भ होता है। सभी स्थूल सगुण उपासनाएँ उस रास्ते को पकड़ाने के अवलम्ब है।\n\n",
+                  //                   style:
+                  //                       TextStyle(fontStyle: FontStyle.italic)),
+                  //               TextSpan(
+                  //                   text: "2. ",
+                  //                   style:
+                  //                       TextStyle(fontStyle: FontStyle.italic)),
+                  //               TextSpan(
+                  //                   text:
+                  //                       " संतमत की साधना का मूल उद्देश्य निर्गुण-सगुण पर परमात्मा की प्राप्ति है।\n\n",
+                  //                   style:
+                  //                       TextStyle(fontStyle: FontStyle.italic)),
+                  //               TextSpan(
+                  //                   text: "3. ",
+                  //                   style:
+                  //                       TextStyle(fontStyle: FontStyle.italic)),
+                  //               TextSpan(
+                  //                   text:
+                  //                       " संतमत किसी मत वा पन्थ का खण्डन नहीं करता है। इसका कथन है कि कोई किसी भी पन्थ का माननेवाला हो, वह मूल को जाने। इसकी साधनाएँ आन्तरिक हैं। इसमें तिलक लगाने, माला फेरने, उपवास करने, तीर्थ-भ्रमण करने आदि पर जोर नहीं दिया जाता।\n\n",
+                  //                   style:
+                  //                       TextStyle(fontStyle: FontStyle.italic)),
+                  //               TextSpan(
+                  //                   text: "4. ",
+                  //                   style:
+                  //                       TextStyle(fontStyle: FontStyle.italic)),
+                  //               TextSpan(
+                  //                   text:
+                  //                       " संतमत सामाजिक समन्वय का मत है। इस मत से जाति-पाँति, ऊँच-नीच, छुआछूत आदि का भेदभाव मिटाया जाता है। इसके अनुसार सभी वर्गों और सभी जातियों के नर-नारियों को ईश्वर-भक्ति करने का समान अधिकार है।\n\n",
+                  //                   style:
+                  //                       TextStyle(fontStyle: FontStyle.italic)),
+                  //               TextSpan(
+                  //                   text: "5. ",
+                  //                   style:
+                  //                       TextStyle(fontStyle: FontStyle.italic)),
+                  //               TextSpan(
+                  //                   text:
+                  //                       " संतमत परम प्रभु परमात्मा से मिलाने में पूरे गुरु की महत्त्वपूर्ण भूमिका मानता है। सद्गुरु की कृपा होगी, तब ही जीव माया-बन्धन से मुक्त हो सकता है।\n\n",
+                  //                   style:
+                  //                       TextStyle(fontStyle: FontStyle.italic)),
+                  //               TextSpan(
+                  //                   text: "6. ",
+                  //                   style:
+                  //                       TextStyle(fontStyle: FontStyle.italic)),
+                  //               TextSpan(
+                  //                   text:
+                  //                       " संतमत-साधना में ज्ञान, योग और भक्ति तीनों का समन्वय है।\n\n",
+                  //                   style:
+                  //                       TextStyle(fontStyle: FontStyle.italic)),
+                  //               TextSpan(
+                  //                   text: "7. ",
+                  //                   style:
+                  //                       TextStyle(fontStyle: FontStyle.italic)),
+                  //               TextSpan(
+                  //                   text:
+                  //                       " संतमत शंकराचार्य के अद्वैतवाद को स्वीकार करता है, जिनमें जगत् को असत्य और अद्वितीय परब्रह्म को सत्य माना गया है।\n\n",
+                  //                   style:
+                  //                       TextStyle(fontStyle: FontStyle.italic)),
+                  //               TextSpan(
+                  //                   text: "8. ",
+                  //                   style:
+                  //                       TextStyle(fontStyle: FontStyle.italic)),
+                  //               TextSpan(
+                  //                   text:
+                  //                       " संतमत आन्तरिक साधना पर अधिक जोर देता है। यह समाज के किसी व्यक्ति की उपेक्षा नहीं करता है। यह भेद-भाव को त्यागकर परोपकार करने की शिक्षा देता है।\n\n",
+                  //                   style:
+                  //                       TextStyle(fontStyle: FontStyle.italic))
+                  //             ]),
+                  //         textAlign: TextAlign.justify,
+                  //       ),
+                  //       const Padding(
+                  //         padding: EdgeInsets.only(top: 12.0, bottom: 12.0),
+                  //         child: Divider(
+                  //           thickness: 2,
+                  //         ),
+                  //       ),
+                  //       RichText(
+                  //         text: TextSpan(
+                  //             style: TextStyle(
+                  //               color: txtcol,
+                  //               fontSize: 20,
+                  //             ),
+                  //             children: const [
+                  //               TextSpan(
+                  //                   text: " \nसंतमत की दीक्षा विधि\n\n",
+                  //                   style: TextStyle(
+                  //                     fontWeight: FontWeight.bold,
+                  //                     color: Colors.orange,
+                  //                     fontSize: 25,
+                  //                   )),
+                  //               TextSpan(
+                  //                   text: "1. ",
+                  //                   style:
+                  //                       TextStyle(fontStyle: FontStyle.italic)),
+                  //               TextSpan(
+                  //                   text:
+                  //                       " जो व्यक्ति छह माह पूर्व मांस-मछली का भोजन और नशा-सेवन छोड़ चुके हैं, उन्हें ही संतमत में दीक्षित किया जाता है।\n\n",
+                  //                   style:
+                  //                       TextStyle(fontStyle: FontStyle.italic)),
+                  //               TextSpan(
+                  //                   text: "2. ",
+                  //                   style:
+                  //                       TextStyle(fontStyle: FontStyle.italic)),
+                  //               TextSpan(
+                  //                   text:
+                  //                       " दीक्षा-पुस्तिका में दीक्षार्थी का नाम, जाति, पेशा, धर्म, गाँव, पत्रलय, जिला लिख लेते हैं और संतमत-सिद्धांत उन्हें समझाकर उनसे तीन प्रतिज्ञाएँ करवाते हैं-"
+                  //                       "\n(क) हम प्रतिज्ञा करते हैं/करती हैं कि संतमत की रीति-अभ्यास और उससे जो कुछ अन्तर में मालूम होगा, कभी किसी से नहीं कहेंगे/कहेंगी।"
+                  //                       "\n(ख) हम संतमत-सिद्धांत को अच्छी तरह समझ गये/समझ गयीं, उनको हम दिल से प्यार करते रहेंगे/रहेंगी और संतमत की उन्नति में तन-मन-धन से हमेशा मददगार रहेंगे/रहेंगी।"
+                  //                       "\n(ग) अभ्यास करने में जो शक्ति पैदा होगी, उसको बुरे कामों में खर्च नहीं करेंगे/करेंगी।"
+                  //                       "\nइतनी प्रतिज्ञा कराने के बाद दीक्षार्थी से उनके नाम-पते के खाने में हस्ताक्षर कराये जाते हैं। जो निरक्षर हैं, उनसे एक लकीर खिंचवा ली जाती है।\n\n",
+                  //                   style:
+                  //                       TextStyle(fontStyle: FontStyle.italic)),
+                  //               TextSpan(
+                  //                   text: "3. ",
+                  //                   style:
+                  //                       TextStyle(fontStyle: FontStyle.italic)),
+                  //               TextSpan(
+                  //                   text:
+                  //                       " दीक्षार्थी को स्नान करके पवित्र कपड़ा पहनकर और फूलों की एक माला एवं थोड़ा-सा प्रसाद अपने साथ लाना पड़ता है।\n\n",
+                  //                   style:
+                  //                       TextStyle(fontStyle: FontStyle.italic)),
+                  //               TextSpan(
+                  //                   text: "4. ",
+                  //                   style:
+                  //                       TextStyle(fontStyle: FontStyle.italic)),
+                  //               TextSpan(
+                  //                   text:
+                  //                       " दीक्षा के दिन दीक्षा लेने के पूर्व तक निराहार रहना पड़ता है। प्रायः 9-10 बजे पूर्वाह्ण में दीक्षा दी जाती है।\n\n",
+                  //                   style:
+                  //                       TextStyle(fontStyle: FontStyle.italic)),
+                  //               TextSpan(
+                  //                   text: "5. ",
+                  //                   style:
+                  //                       TextStyle(fontStyle: FontStyle.italic)),
+                  //               TextSpan(
+                  //                   text:
+                  //                       " परमात्मा के पास जाने की विधि (मानस जप, मानस ध्यान, दृष्टियोग और शब्द योग) दीक्षा में बतलायी जाती है।\n\n",
+                  //                   style:
+                  //                       TextStyle(fontStyle: FontStyle.italic)),
+                  //               TextSpan(
+                  //                   text: "6. ",
+                  //                   style:
+                  //                       TextStyle(fontStyle: FontStyle.italic)),
+                  //               TextSpan(
+                  //                   text:
+                  //                       " ध्यानाभ्यास के लिए किस आसन से, कैसे और कहाँ बैठना चाहिए, यह भी दीक्षार्थी को बताया जाता है।\n\n",
+                  //                   style:
+                  //                       TextStyle(fontStyle: FontStyle.italic)),
+                  //               TextSpan(
+                  //                   text: "7. ",
+                  //                   style:
+                  //                       TextStyle(fontStyle: FontStyle.italic)),
+                  //               TextSpan(
+                  //                   text:
+                  //                       " शनिवार को छोड़कर किसी भी दिन दीक्षा दी जा सकती है।\n\n",
+                  //                   style:
+                  //                       TextStyle(fontStyle: FontStyle.italic)),
+                  //             ]),
+                  //         textAlign: TextAlign.justify,
+                  //       ),
+                  //       const Padding(
+                  //         padding: EdgeInsets.only(top: 12.0, bottom: 12.0),
+                  //         child: Divider(
+                  //           thickness: 2,
+                  //         ),
+                  //       ),
+                  //       RichText(
+                  //         text: TextSpan(
+                  //             style: TextStyle(
+                  //               color: txtcol,
+                  //               fontSize: 20,
+                  //             ),
+                  //             children: const [
+                  //               TextSpan(
+                  //                   text: " \nसंतमत में विधि-निषेध-कर्म\n\n",
+                  //                   style: TextStyle(
+                  //                     fontWeight: FontWeight.bold,
+                  //                     color: Colors.deepOrange,
+                  //                     fontSize: 25,
+                  //                   )),
+                  //               TextSpan(
+                  //                   text: "विधि-कर्म",
+                  //                   style:
+                  //                       TextStyle(fontWeight: FontWeight.bold)),
+                  //               TextSpan(
+                  //                   text:
+                  //                       " एक ईश्वर पर अचल विश्वास, पूर्ण भरोसा तथा उसकी प्राप्ति अपने अन्दर होगी-इसका दृढ़ निश्चय रखना, सद्गुरु की निष्कपट सेवा, सत्संग और दृढ़ ध्यानाभ्यास।\n\n",
+                  //                   style:
+                  //                       TextStyle(fontStyle: FontStyle.italic)),
+                  //               TextSpan(
+                  //                   text: "निषिद्ध-कर्म",
+                  //                   style:
+                  //                       TextStyle(fontStyle: FontStyle.italic)),
+                  //               TextSpan(
+                  //                   text:
+                  //                       " झूठ बोलना, नशा खाना, व्यभिचार करना, हिंसा करनी एवं मांस-मछली का भोजन करना और चोरी करना-इसको महर्षिजी महापाप कहते हैं। अतः ये त्याज्य कर्म हैं।\n",
+                  //                   style:
+                  //                       TextStyle(fontStyle: FontStyle.italic)),
+                  //             ]),
+                  //         textAlign: TextAlign.justify,
+                  //       ),
+                  //     ],
+                  //   ),
+                  // ),
                   const Padding(
                     padding: EdgeInsets.only(top: 12.0, bottom: 12.0),
                     child: Divider(
@@ -1433,92 +1881,111 @@ class AboutSantmatWidget extends StatelessWidget {
 
                   //  others
                   Column(
+                    mainAxisSize: MainAxisSize.min,
                     children: [
-                      SizedBox(
-                        child: Expanded(
-                          child: ListView.builder(
-                              itemCount: santmatMonks.length,
-                              scrollDirection: Axis.vertical,
-                              shrinkWrap: true,
-                              physics: const BouncingScrollPhysics(),
-                              itemBuilder: (BuildContext context, int index) {
-                                return Padding(
-                                  padding: const EdgeInsets.all(8.0),
-                                  child: Card(
-                                      shape: RoundedRectangleBorder(
-                                        borderRadius: BorderRadius.circular(20),
-                                        //set border radius more than 50% of height and width to make circle
-                                      ),
-                                    color: cardColor.withBlue(1000),
-                                    shadowColor: Colors.black87,
-                                    elevation: 5,
-                                    child: Column(
-                                      children: [
-                                        Container(
-                                          width: double.infinity,
-                                          // color: const Color.fromRGBO(
-                                          //     245, 144, 158, 1.0),
-                                          decoration: const BoxDecoration(
-                                              borderRadius:
-                                                  BorderRadius.only(topRight: Radius.circular(10), topLeft: Radius.circular(10),),
-                                              color: Color.fromRGBO(
-                                                  245, 144, 158, 1.0)),
-                                          child: Padding(
-                                            padding: const EdgeInsets.all(8.0),
-                                            child: Text(
-                                              "${santmatMonks[index]['नाम']}",
-                                              textAlign: TextAlign.center,
-                                              style: const TextStyle(
-                                                fontWeight: FontWeight.bold,
-                                                color: Colors.deepPurple,
-                                                fontSize: 20,
-                                              ),
-                                            ),
-                                          ),
-                                        ),
-                                        Padding(
-                                          padding: const EdgeInsets.all(10),
-                                          child: Container(
-                                            width: 70,
-                                            height: 70,
-                                            decoration: BoxDecoration(
-                                              border: Border.all(width:2, color: Colors.purple),
-                                                shape: BoxShape.circle,
-                                                image: const DecorationImage(
-                                                    fit: BoxFit.cover,
-                                                    image: NetworkImage(
-                                                      'https://ik.imagekit.io/prmhnsimgkt/sntmtstngapp/imgs/mnksProfiles/default.png',
-                                                    ))),
-                                          ),
-                                        ),
-                                        Container(
-                                          width: double.infinity,
-                                          color: Colors.white60,
-                                          child: Padding(
-                                            padding:
-                                                const EdgeInsets.all(12.0),
-                                            child: Column(
-                                              crossAxisAlignment:
-                                                  CrossAxisAlignment.center,
-                                              children: [
-                                                Text(
-                                                    "जन्मतिथि  : ${santmatMonks[index]['जन्मतिथि']}", style: const TextStyle(fontWeight: FontWeight.bold),),
-                                                Text(
-                                                    "दीक्षा तिथि  :  ${santmatMonks[index]['दीक्षा तिथि']}", style: const TextStyle(fontWeight: FontWeight.bold),),
-                                                Text(
-                                                    "दीक्षा गुरु: ${santmatMonks[index]['दीक्षा गुरु']}", style: const TextStyle(fontWeight: FontWeight.bold),),
-                                                Text(
-                                                    "परिनिर्वाण दिवस  : ${santmatMonks[index]['परिनिर्वाण दिवस']}", style: const TextStyle(fontWeight: FontWeight.bold),),
-                                              ],
-                                            ),
-                                          ),
-                                        )
-                                      ],
-                                    ),
+                      Flexible(
+                        fit: FlexFit.loose,
+                        child: ListView.builder(
+                            itemCount: santmatMonks.length,
+                            scrollDirection: Axis.vertical,
+                            shrinkWrap: true,
+                            physics: const BouncingScrollPhysics(),
+                            itemBuilder: (BuildContext context, int index) {
+                              return Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Card(
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(20),
+                                    //set border radius more than 50% of height and width to make circle
                                   ),
-                                );
-                              }),
-                        ),
+                                  color: cardColor.withBlue(1000),
+                                  shadowColor: Colors.black87,
+                                  elevation: 5,
+                                  child: Column(
+                                    children: [
+                                      Container(
+                                        width: double.infinity,
+                                        // color: const Color.fromRGBO(
+                                        //     245, 144, 158, 1.0),
+                                        decoration: const BoxDecoration(
+                                            borderRadius: BorderRadius.only(
+                                              topRight: Radius.circular(10),
+                                              topLeft: Radius.circular(10),
+                                            ),
+                                            color: Color.fromRGBO(
+                                                245, 144, 158, 1.0)),
+                                        child: Padding(
+                                          padding: const EdgeInsets.all(8.0),
+                                          child: Text(
+                                            "${santmatMonks[index]['नाम']}",
+                                            textAlign: TextAlign.center,
+                                            style: const TextStyle(
+                                              fontWeight: FontWeight.bold,
+                                              color: Colors.deepPurple,
+                                              fontSize: 20,
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                      Padding(
+                                        padding: const EdgeInsets.all(10),
+                                        child: Container(
+                                          width: 70,
+                                          height: 70,
+                                          decoration: BoxDecoration(
+                                              border: Border.all(
+                                                  width: 2,
+                                                  color: Colors.purple),
+                                              shape: BoxShape.circle,
+                                              image: const DecorationImage(
+                                                  fit: BoxFit.cover,
+                                                  image: NetworkImage(
+                                                    'https://ik.imagekit.io/prmhnsimgkt/sntmtstngapp/imgs/mnksProfiles/default.png',
+                                                  ))),
+                                        ),
+                                      ),
+                                      Container(
+                                        width: double.infinity,
+                                        color: Colors.white60,
+                                        child: Padding(
+                                          padding: const EdgeInsets.all(12.0),
+                                          child: Column(
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.center,
+                                            children: [
+                                              Text(
+                                                "जन्मतिथि  : ${santmatMonks[index]['जन्मतिथि']}",
+                                                style: const TextStyle(
+                                                    fontWeight:
+                                                        FontWeight.bold),
+                                              ),
+                                              Text(
+                                                "दीक्षा तिथि  :  ${santmatMonks[index]['दीक्षा तिथि']}",
+                                                style: const TextStyle(
+                                                    fontWeight:
+                                                        FontWeight.bold),
+                                              ),
+                                              Text(
+                                                "दीक्षा गुरु: ${santmatMonks[index]['दीक्षा गुरु']}",
+                                                style: const TextStyle(
+                                                    fontWeight:
+                                                        FontWeight.bold),
+                                              ),
+                                              Text(
+                                                "परिनिर्वाण दिवस  : ${santmatMonks[index]['परिनिर्वाण दिवस']}",
+                                                style: const TextStyle(
+                                                    fontWeight:
+                                                        FontWeight.bold),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                      )
+                                    ],
+                                  ),
+                                ),
+                              );
+                            }),
                       ),
                       Container(
                         width: double.infinity,

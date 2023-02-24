@@ -1,25 +1,33 @@
 // import 'dart:io';
 import 'package:fancy_shimmer_image/fancy_shimmer_image.dart';
 import 'package:flutter/material.dart';
+// import 'package:flutter_html/flutter_html.dart';
 // import 'package:iconly/iconly.dart';
 import 'package:provider/provider.dart';
 import 'package:readmore/readmore.dart';
 import 'package:satsangapp/lists/ashramRules.dart';
 import 'package:satsangapp/lists/residingMonks.dart';
+import 'package:satsangapp/widgets/text_widget.dart';
 // import 'package:satsangapp/screens/yt_screen.dart';
 // import 'package:satsangapp/widgets/text_widget.dart';
 // import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 import '../lists/mahotsava.dart';
 import '../provider/dark_theme_provider.dart';
+import '../screens/gallery_screen.dart';
+import '../screens/yt_screen.dart';
 
 class AshramWidget extends StatelessWidget {
   AshramWidget({Key? key}) : super(key: key);
   String vidSrc = 'https://www.youtube.com/watch?v=BnQK0ue-tYk';
 
+  List<String> imgsLst = [
+    "https://ik.imagekit.io/prmhnsimgkt/sntmtstngapp/imgs/ashramPhoto/1.jpg"
+  ];
+
   @override
   Widget build(BuildContext context) {
     final themeState = Provider.of<DarkThemeProvider>(context);
-    // double w = MediaQuery.of(context).size.width;
+    double w = MediaQuery.of(context).size.width;
     // double h = MediaQuery.of(context).size.height;
     final Color txtcol =
         themeState.getDarkTheme ? Colors.white70 : Colors.black;
@@ -44,9 +52,10 @@ class AshramWidget extends StatelessWidget {
                 child: Column(
                   children: [
                     FancyShimmerImage(
+                      width: double.infinity,
                       imageUrl:
                           "https://res.cloudinary.com/de9omilub/image/upload/v1673012232/satsangapp/images/ashram/My_project-1_22_bx1rkm.png",
-                      boxFit: BoxFit.fitWidth,
+                      boxFit: BoxFit.cover,
                     ),
                     const Text(
                       "महर्षि मेँहीँ योगाश्रम मुख्य द्वार",
@@ -86,7 +95,254 @@ class AshramWidget extends StatelessWidget {
               ),
             ),
 
-            // Monks residing in Ashram
+            //  आश्रम का फोटो विडियो
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Card(
+                elevation: 5,
+                shape: const RoundedRectangleBorder(
+                    borderRadius: BorderRadius.all(Radius.circular(10)),
+                    side: BorderSide(width: 3, color: Colors.white24)),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Container(
+                      decoration: const BoxDecoration(
+                        color: Colors.white24,
+                        borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(10),
+                          topRight: Radius.circular(10),
+                        ),
+                        // color: Colors.white.withOpacity(0.4),
+                      ),
+                      height: 50,
+                      width: double.infinity,
+                      child: Padding(
+                        padding: const EdgeInsets.only(top: 10.0),
+                        child: Title(
+                          color: Colors.white,
+                          child: const Text(
+                            "आश्रम का फोटो विडियो",
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 20,
+                                color: Colors.deepOrange),
+                          ),
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                        height: w * 1.4,
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: GridView.count(
+                            physics: const NeverScrollableScrollPhysics(),
+                            // physics: const BouncingScrollPhysics(),
+                            crossAxisCount: 2,
+                            children: List.generate(
+                              6,
+                              (index) {
+                                String thisImgUrlQual10 =
+                                    "https://ik.imagekit.io/prmhnsimgkt/sntmtstngapp/imgs/ashramPhoto/tr:q-1/${index + 1}.jpg";
+                                String thisImgUrl =
+                                    "https://ik.imagekit.io/prmhnsimgkt/sntmtstngapp/imgs/ashramPhoto/${index + 1}.jpg";
+                                return InkWell(
+                                  onTap: () {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) =>
+                                            FullScreenImagePage(
+                                          imageUrl: thisImgUrl,
+                                        ),
+                                      ),
+                                    );
+                                  },
+                                  child: ClipRRect(
+                                    borderRadius: const BorderRadius.all(
+                                        Radius.circular(20)),
+                                    child: Padding(
+                                      padding: const EdgeInsets.all(5.0),
+                                      child: FancyShimmerImage(
+                                        height: 200,
+                                        imageUrl: thisImgUrlQual10,
+                                        boxFit: BoxFit.cover,
+                                        shimmerHighlightColor: Colors.orange,
+                                        shimmerBaseColor: Colors.white,
+                                        shimmerDuration:
+                                            const Duration(milliseconds: 1000),
+                                        errorWidget: const Icon(Icons
+                                            .photo_size_select_actual_outlined),
+                                      ),
+                                    ),
+                                  ),
+                                );
+                              },
+                            ),
+                          ),
+                        )),
+                    const Divider(
+                      thickness: 3,
+                    ),
+                    const Center(
+                      child: Padding(
+                        padding: EdgeInsets.only(top: 10.0),
+                        child: Text(
+                          "विडियो",
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                              color: Colors.deepOrange,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 22),
+                        ),
+                      ),
+                    ),
+                    // FancyShimmerImage(imageUrl: "01g7LWEChUc")
+                    Padding(
+                      padding: const EdgeInsets.only(
+                          left: 10, right: 10, bottom: 10),
+                      child: InkWell(
+                        onTap: () {
+                          String vidSrc = "Hatxu2zeZes";
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) =>
+                                      MyYouTubePlayer(v: vidSrc)));
+                        },
+                        child: Column(
+                          children: [
+                            Container(
+                              decoration: const BoxDecoration(
+                                  borderRadius: BorderRadius.only(
+                                      topLeft: Radius.circular(10),
+                                      topRight: Radius.circular(10)),
+                                  color: Colors.purple),
+                              width: double.infinity,
+                              // color: Colors.purple,
+                              child: Center(
+                                child: Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: TextWidget(
+                                    isTitle: true,
+                                    text:
+                                        "संत सद्गुरु महर्षि मेँहीँ परमहंस जी महाराज समाधि स्थल कुप्पाघाट",
+                                    color: Colors.white,
+                                    textSize: 18,
+                                  ),
+                                ),
+                              ),
+                            ),
+                            SizedBox(
+                              width: double.infinity,
+                              height: w * 0.45,
+                              child: FancyShimmerImage(
+                                imageUrl:
+                                    'https://ik.imagekit.io/prmhnsimgkt/sntmtstngapp/imgs/ashramPhoto/ytVidThumb/tr:e-contrast/1.jpg',
+                                boxFit: BoxFit.cover,
+                                shimmerDuration:
+                                    const Duration(milliseconds: 500),
+                                shimmerBaseColor: Colors.amberAccent,
+                              ),
+                            ),
+                            Container(
+                              decoration: const BoxDecoration(
+                                  borderRadius: BorderRadius.only(
+                                      bottomLeft: Radius.circular(10),
+                                      bottomRight: Radius.circular(10)),
+                                  color: Colors.blueAccent),
+                              width: double.infinity,
+                              child: Center(
+                                child: Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: TextWidget(
+                                    isTitle: true,
+                                    text: "देखें",
+                                    color: Colors.white,
+                                    textSize: 18,
+                                  ),
+                                ),
+                              ),
+                            )
+                          ],
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(
+                          top: 18.0, left: 10, right: 10, bottom: 10),
+                      child: InkWell(
+                        onTap: () {
+                          String vidSrc = "01g7LWEChUc";
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) =>
+                                      MyYouTubePlayer(v: vidSrc)));
+                        },
+                        child: Column(
+                          children: [
+                            Container(
+                              decoration: const BoxDecoration(
+                                  borderRadius: BorderRadius.only(
+                                      topLeft: Radius.circular(10),
+                                      topRight: Radius.circular(10)),
+                                  color: Colors.purple),
+                              width: double.infinity,
+                              child: Center(
+                                child: Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: TextWidget(
+                                    isTitle: true,
+                                    text: "महर्षि मेँहीँ आश्रम कुप्पाघाट पार्क",
+                                    color: Colors.white,
+                                    textSize: 18,
+                                  ),
+                                ),
+                              ),
+                            ),
+                            SizedBox(
+                              height: w * 0.45,
+                              width: double.infinity,
+                              child: FancyShimmerImage(
+                                imageUrl:
+                                    'https://ik.imagekit.io/prmhnsimgkt/sntmtstngapp/imgs/ashramPhoto/ytVidThumb/tr:e-contrast/2.jpg',
+                                boxFit: BoxFit.cover,
+                                shimmerDuration:
+                                    const Duration(milliseconds: 500),
+                                shimmerBaseColor: Colors.amberAccent,
+                              ),
+                            ),
+                            Container(
+                              decoration: const BoxDecoration(
+                                  borderRadius: BorderRadius.only(
+                                      bottomLeft: Radius.circular(10),
+                                      bottomRight: Radius.circular(10)),
+                                  color: Colors.blueAccent),
+                              width: double.infinity,
+                              child: Center(
+                                child: Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: TextWidget(
+                                    isTitle: true,
+                                    text: "देखें",
+                                    color: Colors.white,
+                                    textSize: 18,
+                                  ),
+                                ),
+                              ),
+                            )
+                          ],
+                        ),
+                      ),
+                    )
+                  ],
+                ),
+              ),
+            ),
+
+            // आश्रम में निवास कर रहे संत
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Card(
@@ -123,7 +379,7 @@ class AshramWidget extends StatelessWidget {
                         ),
                       ),
                     ),
-                    const SizedBox(height: 520, child: ResidingMonkWidget())
+                    const SizedBox(height: 800,child: ResidingMonkWidget(),)
                   ],
                 ),
               ),
@@ -278,7 +534,9 @@ class AshramWidget extends StatelessWidget {
                       ],
                     ),
 
-                    const Divider(thickness: 5,),
+                    const Divider(
+                      thickness: 5,
+                    ),
 
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.center,
@@ -304,7 +562,9 @@ class AshramWidget extends StatelessWidget {
                       ],
                     ),
 
-                    const Divider(thickness: 5,),
+                    const Divider(
+                      thickness: 5,
+                    ),
                     //  Aarti
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.center,
@@ -331,7 +591,9 @@ class AshramWidget extends StatelessWidget {
                       ],
                     ),
 
-                    const Divider(thickness: 5,),
+                    const Divider(
+                      thickness: 5,
+                    ),
 
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.center,
@@ -358,7 +620,9 @@ class AshramWidget extends StatelessWidget {
                       ],
                     ),
 
-                    const Divider(thickness: 5,),
+                    const Divider(
+                      thickness: 5,
+                    ),
 
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.center,
@@ -385,7 +649,9 @@ class AshramWidget extends StatelessWidget {
                       ],
                     ),
 
-                    const Divider(thickness: 5,),
+                    const Divider(
+                      thickness: 5,
+                    ),
                     //  प्रातः सांयकालीन सन्त-स्तुति
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.center,
@@ -412,7 +678,9 @@ class AshramWidget extends StatelessWidget {
                       ],
                     ),
 
-                    const Divider(thickness: 5,),
+                    const Divider(
+                      thickness: 5,
+                    ),
                     //  प्रातःकालीन गुरु-स्तुति
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.center,
@@ -439,7 +707,9 @@ class AshramWidget extends StatelessWidget {
                       ],
                     ),
 
-                    const Divider(thickness: 5,),
+                    const Divider(
+                      thickness: 5,
+                    ),
                     //  छप्पय
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.center,
@@ -466,7 +736,9 @@ class AshramWidget extends StatelessWidget {
                       ],
                     ),
 
-                    const Divider(thickness: 5,),
+                    const Divider(
+                      thickness: 5,
+                    ),
                     //  छप्प्रातः कालीन नाम-संकीत्र्तन
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.center,

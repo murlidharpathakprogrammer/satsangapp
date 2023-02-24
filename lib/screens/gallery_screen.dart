@@ -20,9 +20,9 @@ class _GalleryScreenState extends State<GalleryScreen> {
     final Color crdTxtCol =
         themeState.getDarkTheme ? Colors.black : Colors.black;
     final double screenWidth = MediaQuery.of(context).size.width;
-    final double screenHeight = MediaQuery.of(context).size.height;
+    // final double screenHeight = MediaQuery.of(context).size.height;
 
-    InkWell _buildImgsCrd(Color color, Color crdTxtCol, String folderName,
+    InkWell buildImgsCrd(Color color, Color crdTxtCol, String folderName,
         List<String> imgIndxLst, List<String> subFolders) {
       int lnth = subFolders.length;
       return InkWell(
@@ -30,82 +30,71 @@ class _GalleryScreenState extends State<GalleryScreen> {
           Navigator.push(
             context,
             MaterialPageRoute(
-                builder: (context) => SubGalleryScreen(folderName, subFolders, lnth)),
+                builder: (context) =>
+                    SubGalleryScreen(folderName, subFolders, lnth)),
           );
         },
         child: Padding(
           padding: const EdgeInsets.all(8.0),
           child: Card(
-            elevation: 6.0,
-            color: color,
-            // shadowColor: color.withBlue(255),
+            elevation: 3.0,
+            // color: color,
+            shadowColor: Colors.deepOrange,
             /*1*/
             shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(14),
+              borderRadius: BorderRadius.circular(20),
             ),
-            child: SizedBox(
-              height: screenHeight * 0.35,
+            child: Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(20),
+                gradient: const LinearGradient(
+                    colors: [Colors.red, Colors.cyan],
+                    begin: Alignment.centerRight,
+                    end: Alignment.centerLeft
+                ),
+                image: DecorationImage(
+                  image: NetworkImage(
+                      'https://ik.imagekit.io/imgktmdp/monks/tr:pr-true/monkimg__${imgIndxLst[0]}_.JPG'),
+
+                  fit: BoxFit.cover,
+                  alignment: Alignment.topCenter,
+                ),
+              ),
               child: Column(
                 children: [
-                  Padding(
-                    padding:
-                        const EdgeInsets.only(top: 15.0, left: 12, right: 12),
-                    child: Text(
-                      folderName,
-                      style: TextStyle(
-                          color: crdTxtCol,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 18),
-                      textAlign: TextAlign.center,
-                    ),
-                  ),
                   Container(
-                    width: screenWidth,
-                    height: screenHeight * 0.2,
-                    padding: const EdgeInsets.only(top: 8, left: 10, right: 10),
-                    child: GridView.count(
-                      physics: const NeverScrollableScrollPhysics(),
-                      crossAxisCount: 3,
-                      children: List.generate(
-                        3,
-                        (index) {
-                          String thisImgUrlQual10 =
-                              'https://ik.imagekit.io/imgktmdp/monks/tr:q-1/monkimg__${imgIndxLst[index]}_.JPG';
-                          return Padding(
-                            padding: const EdgeInsets.only(
-                              left: 4.0,
-                              right: 4,
-                            ),
-                            child: FancyShimmerImage(
-                              imageUrl: thisImgUrlQual10,
-                              boxFit: BoxFit.cover,
-                              shimmerHighlightColor: Colors.orange,
-                              shimmerBaseColor: Colors.white,
-                              shimmerDuration:
-                                  const Duration(milliseconds: 1000),
-                              errorWidget: const Icon(
-                                  Icons.photo_size_select_actual_outlined),
-                            ),
-                          );
-                        },
-                      ),
-                    ),
-                  ),
-                  const Spacer(),
-                  Container(
-                    color: Colors.black.withOpacity(0.5),
                     width: double.infinity,
-                    child: const Center(
-                        child: Padding(
-                      padding: EdgeInsets.only(top: 8.0, bottom: 8),
-                      child: Text(
-                        'और फोटो देखें',
-                        style: TextStyle(
-                          color: Colors.white,
-                        ),
+                    height: screenWidth/3,
+                    // color: color.withOpacity(0.8),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20),
+                      gradient: LinearGradient(
+                          colors: [Color.fromRGBO(119, 92, 0, 1), Colors.white30, Colors.white54, color.withOpacity(0.8), color.withOpacity(0.8), color.withOpacity(0.8), color.withOpacity(0.8), Colors.deepOrange.shade200],
+                          begin: Alignment.centerRight,
+                          end: Alignment.centerLeft
                       ),
-                    )),
+                    ),
+                    child: Row(
+                      children: [
+                        SizedBox(
+                          width: screenWidth*0.8,
+                          child: Padding(
+                            padding: const EdgeInsets.only(left: 50.0),
+                            child: Text(folderName,
+                              style: TextStyle(
+                                  color: crdTxtCol,
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 20),
+                              textAlign: TextAlign.start,
+                            ),
+                          ),
+                        ),
+                        const Spacer(),
+                        const Icon(Icons.arrow_forward_ios, size: 50, color: Colors.white, shadows: [Shadow(color: Colors.black, blurRadius: 10)],)
+                      ],
+                    ),
                   ),
+
                 ],
               ),
             ),
@@ -124,8 +113,8 @@ class _GalleryScreenState extends State<GalleryScreen> {
         physics: const BouncingScrollPhysics(),
         child: Column(
           children: [
-            _buildImgsCrd(
-                Colors.lightGreenAccent,
+            buildImgsCrd(
+                const Color.fromRGBO(215, 255, 162, 1.0),
                 crdTxtCol,
                 "महर्षि योगनन्द परमहंस जी महाराज का कुप्पाघाट में कुछ तस्वीरें",
                 [
@@ -135,9 +124,10 @@ class _GalleryScreenState extends State<GalleryScreen> {
                 ],
                 [
                   'संतसेवी जी महाराज के साथ बिताये गये कुछ पल',
-                  'ब्रह्मचर्य के समय की कुछ तस्वीरें'
+                  'ब्रह्मचर्य के समय की कुछ तस्वीरें',
+                  'शाही स्वामी जी महाराज के साथ बिताये गये कुछ पल'
                 ]),
-            _buildImgsCrd(Colors.cyanAccent, crdTxtCol, "वर्तमान के कुछ पल", [
+            buildImgsCrd(Color.fromRGBO(169, 255, 255, 1.0), crdTxtCol, "वर्तमान के कुछ पल", [
               '10',
               '11',
               '000'
@@ -146,14 +136,22 @@ class _GalleryScreenState extends State<GalleryScreen> {
               'गुरु महाराज के निवास स्थल तथा समाधि स्थल',
               'कुप्पाघाट आश्रम में भ्रमण करते हुए'
             ]),
-            _buildImgsCrd(
-                Colors.greenAccent,
+            buildImgsCrd(
+                Color.fromRGBO(206, 255, 216, 1.0),
                 crdTxtCol,
                 "बीते कार्यक्रम की कुछ तस्वीरें",
                 ['21', '22', '000'],
-                ['जिला वार्षिक, प्रखण्ड अधिवेशन, पर्सनल प्रोग्राम']),
-            _buildImgsCrd(
-                Colors.red, crdTxtCol, "अन्य फोटो", ['31', '32', '000'], []),
+                ['जिला वार्षिक', 'प्रखण्ड अधिवेशन', 'पर्सनल प्रोग्राम']),
+            buildImgsCrd(Colors.red.shade200, crdTxtCol, "अन्य फोटो",
+                ['31', '32', '000'], ['अन्य फोटो']),
+            buildImgsCrd(Colors.lightBlue.shade50, crdTxtCol, "महाधिवेशन का फोटो", [
+              '10',
+              '11',
+              '000'
+            ], [
+              '११०वाँ महाधिवेशन कंचनपुर',
+              '१११वाँ महाधिवेशन कंचनपुर',
+            ]),
           ],
         ),
       ),
@@ -164,16 +162,13 @@ class _GalleryScreenState extends State<GalleryScreen> {
 class FullScreenImagePage extends StatelessWidget {
   final String imageUrl;
 
-  const FullScreenImagePage({Key? key, required this.imageUrl}) : super(key: key);
+  const FullScreenImagePage({Key? key, required this.imageUrl})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     final double screenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
-      appBar: AppBar(
-        title: const Icon(Icons.photo_size_select_actual_outlined),
-        backgroundColor: Colors.deepOrangeAccent,
-      ),
       body: GestureDetector(
         onTap: () {
           Navigator.pop(context);
